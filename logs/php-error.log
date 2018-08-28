@@ -1,0 +1,360 @@
+[2018-07-25 06:56:37] PHP Fatal error: session_start(): Cannot send session cache limiter - headers already sent (output started at /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:57) in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/library/Session.php:23 
+[2018-07-25 06:56:37] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-07-25 06:56:45] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:61 
+[2018-07-25 06:59:43] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:61 
+[2018-07-25 07:00:25] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:61 
+[2018-07-25 07:00:51] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:61 
+[2018-08-01 02:48:57] PHP Fatal error: Error] config error [Detail] sysconfig not set or empty in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Config.php:66 
+[2018-08-01 02:48:57] PHP Fatal error: Call to undefined method Zy_Common::show_error_page() in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Common.php:70 
+[2018-08-01 02:48:57] PHP Fatal error: Uncaught Error: Call to undefined method Zy_Common::show_error_page() in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Common.php:70
+Stack trace:
+#0 /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Common.php(75): Zy_Common::setErrorHandler(0, 'Call to undefin...', '/Users/maxranje...', 70)
+#1 [internal function]: Zy_Common::setExceptionHandler(Object(Error))
+#2 {main}
+  thrown in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Common.php:70 
+[2018-08-01 02:48:57] PHP Fatal error: Error] config error [Detail] sysconfig not set or empty in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Config.php:66 
+[2018-08-01 02:48:57] PHP Fatal error: Call to undefined method Zy_Common::show_error_page() in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Common.php:70 
+[2018-08-01 02:48:57] PHP Fatal error: Uncaught Error: Call to undefined method Zy_Common::show_error_page() in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Common.php:70
+Stack trace:
+#0 /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Common.php(75): Zy_Common::setErrorHandler(0, 'Call to undefin...', '/Users/maxranje...', 70)
+#1 [internal function]: Zy_Common::setExceptionHandler(Object(Error))
+#2 {main}
+  thrown in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Common.php:70 
+[2018-08-01 02:49:25] PHP Fatal error: Error] config error [Detail] sysconfig not set or empty in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Config.php:66 
+[2018-08-01 02:50:38] PHP Fatal error: Error] config error [Detail] sysconfig not set or empty in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Config.php:66 
+[2018-08-01 02:52:28] PHP Fatal error: /Users/maxranje/Programer/php-workspace/workspace/zy/zy/config/config.php in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Config.php:59 
+[2018-08-01 03:03:12] PHP Fatal error: template file not finde "index.twig" in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Template.php:75 
+[2018-08-01 03:03:34] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 03:03:34] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 03:03:34] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 03:03:34] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 03:03:34] PHP Fatal error: [Error] router error [Detail] appname unequals in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:66 
+[2018-08-01 03:03:34] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 09:06:35] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 09:06:35] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 09:06:35] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 09:06:35] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 09:06:35] PHP Fatal error: [Error] router error [Detail] appname unequals in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:66 
+[2018-08-01 09:06:36] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 09:06:41] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 09:06:41] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 09:06:41] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:20:18] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:20:18] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:20:18] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:20:18] PHP Fatal error: [Error] router error [Detail] appname unequals in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:66 
+[2018-08-01 11:20:18] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:20:18] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:21:28] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:21:28] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:25:20] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:25:20] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:25:43] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:25:43] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:31:13] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:31:23] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:32:02] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:32:19] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:32:20] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:32:21] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:32:22] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:32:22] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:32:22] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:32:29] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:32:35] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:34:16] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:34:59] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:36:14] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:36:51] PHP Fatal error: Unknown "var_dump" function. in /Users/maxranje/Programer/php-workspace/workspace/zy/webroot/platmis/base.twig:15 
+[2018-08-01 11:38:33] PHP Fatal error: Unexpected character "$". in /Users/maxranje/Programer/php-workspace/workspace/zy/webroot/platmis/base.twig:15 
+[2018-08-01 11:39:15] PHP Fatal error: Unexpected character "$". in /Users/maxranje/Programer/php-workspace/workspace/zy/webroot/platmis/base.twig:15 
+[2018-08-01 11:39:15] PHP Fatal error: Unexpected character "$". in /Users/maxranje/Programer/php-workspace/workspace/zy/webroot/platmis/base.twig:15 
+[2018-08-01 11:39:29] PHP Fatal error: Unknown "dump" function. in /Users/maxranje/Programer/php-workspace/workspace/zy/webroot/platmis/base.twig:15 
+[2018-08-01 11:40:47] PHP Fatal error: Unknown "dump" function. in /Users/maxranje/Programer/php-workspace/workspace/zy/webroot/platmis/base.twig:15 
+[2018-08-01 11:41:58] PHP Fatal error: Unknown "dump" function. in /Users/maxranje/Programer/php-workspace/workspace/zy/webroot/platmis/a.twig:1 
+[2018-08-01 11:43:43] PHP Fatal error: Unknown "dump" function. in /Users/maxranje/Programer/php-workspace/workspace/zy/webroot/platmis/a.twig:1 
+[2018-08-01 11:47:08] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:47:15] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:47:15] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:47:16] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:47:16] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:47:17] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:47:26] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:47:53] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:49:19] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:49:20] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:49:20] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:49:21] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:49:22] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:49:23] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:49:24] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:49:38] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:49:39] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:49:39] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:49:40] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:49:41] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:49:42] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-01 11:50:13] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:07:41] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:08:32] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:08:32] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:08:59] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:09:02] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:09:20] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:09:21] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:21 
+[2018-08-06 12:20:43] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:21:18] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:22:53] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:27:05] PHP Fatal error: Error] router error [Detail] file not found "Home.php" in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:77 
+[2018-08-06 12:27:10] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:27:12] PHP Fatal error: Error] router error [Detail] file not found "Home.php" in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:77 
+[2018-08-06 12:28:12] PHP Fatal error: [Error] base controller error, [Detail] action file does not exist  in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:27 
+[2018-08-06 12:28:12] PHP Fatal error: [Error] base controller error, [Detail] action file does not exist  in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:27 
+[2018-08-06 12:29:18] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:35:46] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:36:27] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:36:27] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:36:27] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:37:11] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:37:33] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:37:36] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:38:01] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:38:01] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:38:01] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:39:00] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:39:11] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:39:23] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:39:23] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:39:23] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:39:42] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:39:42] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:39:42] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:39:48] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:39:48] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:39:48] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:40:03] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:40:03] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:40:04] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:40:16] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:40:22] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:40:53] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:42:37] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:43:16] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:43:33] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:44:18] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:44:37] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:44:54] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:45:45] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:45:59] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:46:14] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:46:20] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:49:14] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:49:54] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:50:17] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:51:18] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:51:26] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:51:37] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:52:25] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-06 12:52:54] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 11:38:49] PHP Fatal error: Error] router error [Detail] file not found "Home.php" in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:77 
+[2018-08-08 11:38:51] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 11:39:38] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 11:39:38] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 11:39:38] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 11:41:49] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 11:50:10] PHP Fatal error: Error] router error [Detail] file not found "Home.php" in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:77 
+[2018-08-08 11:50:12] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 11:50:15] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 11:50:39] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 11:50:52] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 11:50:56] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 11:51:20] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 11:51:32] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 11:51:36] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 11:51:46] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 11:52:16] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 11:52:51] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 11:53:04] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 12:13:25] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 12:14:09] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 12:14:27] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 12:15:54] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 12:18:11] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 12:21:32] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 12:21:34] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:21 
+[2018-08-08 12:21:36] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 12:21:38] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 12:23:07] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:21 
+[2018-08-08 12:23:17] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 12:23:20] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:21 
+[2018-08-08 12:24:42] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 12:25:46] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 12:27:59] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 12:31:22] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 12:32:29] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-08 12:32:52] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:05:37] PHP Fatal error: Error] router error [Detail] file not found "Author.php" in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:77 
+[2018-08-09 02:06:04] PHP Fatal error: Error] router error [Detail] file not found "Authuser.php" in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:77 
+[2018-08-09 02:06:12] PHP Fatal error: Error] router error [Detail] file not found "Home.php" in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:77 
+[2018-08-09 02:06:13] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:06:17] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:06:26] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:06:31] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:06:45] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:07:56] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:08:03] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:09:13] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:11:20] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:15:32] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:15:47] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:17:54] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:18:47] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:20:24] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:20:59] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:21:34] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:21:54] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:24:28] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:25:13] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:26:05] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:27:36] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:28:20] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:29:29] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:30:06] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:30:42] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:31:06] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:31:27] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:32:04] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:32:37] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:33:29] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-09 02:34:08] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 09:25:40] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 09:31:47] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:21 
+[2018-08-13 09:31:49] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:21 
+[2018-08-13 09:33:06] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 09:40:30] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 09:41:43] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 09:43:05] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 10:52:47] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 10:56:45] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 10:56:57] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 10:58:25] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 10:58:27] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 10:58:45] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 10:59:37] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 10:59:50] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:00:07] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:01:34] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:02:01] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:02:22] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:02:35] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:03:01] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:05:31] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:05:52] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:06:07] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:06:33] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:09:56] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:10:36] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:11:08] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:11:31] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:16:30] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:17:21] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:19:25] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:19:48] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:20:02] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:21:10] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:21:42] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:21:54] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:21:54] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:21:56] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:21 
+[2018-08-13 11:22:18] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:22:21] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:21 
+[2018-08-13 11:22:22] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:22:22] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:27:28] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:32:43] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:34:29] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:36:56] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:37:18] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 11:37:37] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:20:03] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:20:09] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:21 
+[2018-08-13 12:20:09] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:20:15] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:21 
+[2018-08-13 12:20:21] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:20:21] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:21 
+[2018-08-13 12:23:03] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:23:20] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:23:23] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:21 
+[2018-08-13 12:23:29] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:23:51] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:24:08] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:27:18] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:27:31] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:30:31] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:30:36] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:32:35] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:32:49] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:33:37] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:33:47] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:33:57] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:34:18] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:35:11] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:40:45] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:41:46] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:43:55] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:44:29] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:47:34] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:50:26] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:50:44] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:51:11] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:51:16] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:51:28] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:51:47] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:52:12] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:52:40] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-13 12:53:06] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 11:16:53] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 11:18:44] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 11:20:06] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 12:30:31] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 12:31:56] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 12:32:17] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 12:36:42] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 12:38:23] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 12:38:57] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 12:39:21] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 12:40:22] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 12:40:33] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 12:42:23] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 12:42:36] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 12:42:51] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 12:45:14] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 12:45:53] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 12:46:28] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 12:49:05] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 12:49:06] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:21 
+[2018-08-14 12:49:07] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-14 12:49:26] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:21 
+[2018-08-14 12:49:32] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:21 
+[2018-08-14 12:51:10] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:21 
+[2018-08-14 12:51:11] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:21 
+[2018-08-15 11:11:52] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-15 11:11:59] PHP Fatal error: Error] router error [Detail] file not found "Correct.php" in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:77 
+[2018-08-15 11:21:53] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-15 11:21:56] PHP Fatal error: Access level to Controller_Collect::$actions must be public (as in class Zy_Controller) in /Users/maxranje/Programer/php-workspace/workspace/zy/application/platmis/controllers/Correct.php:2 
+[2018-08-15 11:21:56] PHP Fatal error: Cannot modify header information - headers already sent by (output started at /Users/maxranje/Programer/php-workspace/workspace/zy/application/platmis/controllers/Correct.php:2) in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Common.php:54 
+[2018-08-15 11:22:16] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-15 11:22:19] PHP Fatal error: Error] router error [Detail] class not found "Controller_Correct" in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:82 
+[2018-08-15 11:23:46] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-15 11:23:53] PHP Fatal error: Error] router error [Detail] class not found "Controller_Correct" in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:82 
+[2018-08-15 11:24:16] PHP Fatal error: Error] router error [Detail] class not found "Controller_Correct" in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:82 
+[2018-08-15 11:25:47] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-15 11:25:51] PHP Fatal error: [Error] base controller error, [Detail] action file does not exist  in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:27 
+[2018-08-15 11:26:35] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-15 11:27:06] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Controller.php:21 
+[2018-08-15 11:28:22] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-15 11:28:29] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-15 11:30:30] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-15 11:36:56] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-28 06:54:47] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 
+[2018-08-28 06:54:59] PHP Fatal error: [Error] router error [Detail] empty uri_segment in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Bootstrap.php:62 

@@ -1,0 +1,2 @@
+WARNING: 2018-07-25 07:00:51 [/Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Log.php:139]  uri [/index.php/napi/article/list]  refer []  client_ip [127.0.0.1]  module [napi]  uid [0] dasdasdas 
+WARNING: 2018-07-25 07:00:51 [/Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Log.php:139]  uri [/index.php/favicon.ico]  refer [http://127.0.0.1:8070/napi/article/list?name=123&password=sss]  client_ip [127.0.0.1]  module [napi]  uid [0] dasdasdas 
