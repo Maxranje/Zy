@@ -55,7 +55,7 @@ class Zy_Common
     }
 
     // 重定向登录页面
-    public static function http_redirect ($url, $status)
+    public static function http_redirect ($url, $status = 301)
     {
         self::set_header_status($status);
         header('Location: ' . $url) ;
@@ -74,7 +74,7 @@ class Zy_Common
 
         $msg = sprintf("[%s] PHP Fatal error: %s in %s:%s \r\n", date('Y-m-d H:i:s', time()), $errStr, $filepath, $line);
         error_log($msg, 3, BASEPATH . 'logs/php-error.log');
-        self::redirect_error(500);
+        //self::redirect_error(500);
     }
 
     public static function setExceptionHandler($e)

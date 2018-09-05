@@ -56,10 +56,10 @@ class Zy_Bootstrap {
      * @return
      */
     private function _initAutoRoute () {
-        $uri_segment = Zy_Library_URI::getSegmentUri() ;
 
+        $uri_segment = Zy_Library_URI::getSegmentUri() ;
         if (empty($uri_segment) || ! is_array($uri_segment)) {
-            trigger_error ('[Error] router error [Detail] empty uri_segment');
+            trigger_error ('[Error] router error [Detail] empty uri_segment'.$_SERVER['REQUEST_URI']);
         }
 
         if ($uri_segment['appname'] !== APP_NAME) {

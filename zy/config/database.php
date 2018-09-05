@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$db['maxdb'] = array(
+$db['zy'] = array(
     'dsn'   => '',
     'hostname' => '127.0.0.1',
     'db_port'  => 3306,

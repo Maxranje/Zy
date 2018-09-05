@@ -15,9 +15,6 @@ $configure['log_path']  = BASEPATH . 'logs/';
 // 正则URI
 $configure['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
 
-// log 路径
-$configure['log_path'] = APPPATH . 'logs/';
-
 // xss 开启
 $configure['global_xss_filtering'] = TRUE;
 
@@ -26,6 +23,11 @@ $configure['compress_output']   = TRUE;
 
 // 用户信息库
 $configure['db_ucloud']   = 'zy';
+
+// session
+$config['sess_driver'] = 'files';
+$config['sess_cookie_name'] = 'zyuss';
+$config['sess_expiration'] = 7200;
 
 // $config['enable_hooks'] = FALSE;
 // $config['error_views_path'] = '';

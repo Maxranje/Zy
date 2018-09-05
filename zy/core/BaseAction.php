@@ -25,9 +25,9 @@ abstract class Zy_BaseAction
     // response
     protected $_tplData = array
     (
-        'errNo' => 0,
-        'errStr' => 'success',
-        'data' => array(),
+        'errNo'     => 0,
+        'errStr'    => 'success',
+        'data'      => array(),
     );
 
     // ------------------------------
@@ -75,13 +75,12 @@ abstract class Zy_BaseAction
 
         // session中有用户信息,  获取用户信息
         $objSession = Zy_Library_Session::getInstance();
-        if ( $objSession !== NULL && $objSession->hasInfo() )
+        if ( $objSession !== NULL && $objSession->hasSession() )
         {
-            $this->_userInfo['uid']     = $objSession->get('uid');
-            $this->_userInfo['uname']   = $objSession->get('uname');
-            $this->_userInfo['avatar']  = $objSession->get('avatar');
-            $this->_userInfo['role']    = $objSession->get('role');
-            $this->_userInfo['for']    = $objSession->get('role');
+            $this->_userInfo['uid']     = $objSession->getSession('uid');
+            $this->_userInfo['uname']   = $objSession->getSession('uname');
+            $this->_userInfo['avatar']  = $objSession->getSession('avatar');
+            $this->_userInfo['role']    = $objSession->getSession('role');
 
             if ($this->_userInfo['uid'] > 0)
             {

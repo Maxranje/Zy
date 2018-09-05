@@ -69,7 +69,6 @@ class Zy_Log {
         $this->_log_path = ($log_path !== '') ? $log_path : BASEPATH . 'logs/' ;
         $this->_log_path .= APP_NAME . DIRECTORY_SEPARATOR;
         $this->_file_ext = "log";
-
         file_exists($this->_log_path) OR mkdir($this->_log_path, 0755, TRUE);
 
         if ( ! is_dir($this->_log_path) OR ! is_writable($this->_log_path))
@@ -116,7 +115,8 @@ class Zy_Log {
         }
 
         if ($this->_levels[$level] <= 2) {
-            $filepath = $this->_log_path.APP_NAME.'.'.date('Ymd').'.'.$this->_file_ext . ".wf";
+            //$filepath = $this->_log_path.APP_NAME.'.'.date('Ymd').'.'.$this->_file_ext . ".wf";
+            $filepath = $this->_log_path.APP_NAME.'.'.$this->_file_ext . ".wf";
         } else {
             $filepath = $this->_log_path.APP_NAME.'.'.date('Ymd').'.'.$this->_file_ext;
         }
