@@ -99,7 +99,7 @@ class Zy_Library_IdCrypt {
         $str = pack ('NnCCVvC', $qid, $qid % self::MAGIC_NUM, 0, 0, $qid, $qid % self::MAGIC_NUM2, 0);
 
         // 兼容以前bug，使用0做padding
-        $str = self::zeropadding($str, 'des', 'ecb');
+        // $str = self::zeropadding($str, 'des', 'ecb');
 
         $bin = base64_decode(openssl_encrypt($str, 'des-ecb', self::NAPI_ARTICLE_CRYPT_KEY, OPENSSL_ZERO_PADDING));
 
@@ -146,7 +146,7 @@ class Zy_Library_IdCrypt {
         $str = pack ('NnCCVvC', $id, $id % self::MAGIC_NUM, 0, 0, $id, $id % self::MAGIC_NUM2, 0);
 
         // 兼容以前bug，使用0做padding
-        $str = self::zeropadding($str, 'des', 'ecb');
+        // $str = self::zeropadding($str, 'des', 'ecb');
 
         $bin = base64_decode(openssl_encrypt($str, 'des-ecb', self::ZYB_CHARGE_CRYPT_KEY, OPENSSL_ZERO_PADDING));
 
@@ -193,7 +193,7 @@ class Zy_Library_IdCrypt {
         $str = pack('NnCCVvC', $id, $id % self::MAGIC_NUM, 0, 0, $id, $id % self::MAGIC_NUM2, 0);
 
         // 兼容以前bug，使用0做padding
-        $str = self::zeropadding($str, 'des', 'ecb');
+        // $str = self::zeropadding($str, 'des', 'ecb');
 
         $bin = base64_decode(openssl_encrypt($str, 'des-ecb', self::ZYB_LECTURE_CRYPT_KEY, OPENSSL_ZERO_PADDING));
 
@@ -238,7 +238,7 @@ class Zy_Library_IdCrypt {
         $str = pack ('NnCCVvC', $qid, $qid % self::MAGIC_NUM, 0, 0, $qid, $qid % self::MAGIC_NUM2, 0);
 
         // 兼容以前bug，使用0做padding
-        $str = self::zeropadding($str, 'des', 'ecb');
+        // $str = self::zeropadding($str, 'des', 'ecb');
 
         $bin = base64_decode(openssl_encrypt($str, 'des-ecb', self::ZYB_OPENID_CRYPT_KEY, OPENSSL_ZERO_PADDING));
 
@@ -284,7 +284,7 @@ class Zy_Library_IdCrypt {
         $str = pack ('NnCCVvC', $id, $id % self::MAGIC_NUM, 0, 0, $id, $id % self::MAGIC_NUM2, 0);
 
         // 兼容以前bug，使用0做padding
-        $str = self::zeropadding($str, 'des', 'ecb');
+        // $str = self::zeropadding($str, 'des', 'ecb');
 
         $bin = base64_decode(openssl_encrypt($str, 'des-ecb', self::ZYB_UID_CRYPT_KEY, OPENSSL_ZERO_PADDING));
 

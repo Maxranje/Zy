@@ -71,3 +71,13 @@
 [2018-09-04 07:57:26] PHP Fatal error: session_start(): Failed to read session data: files (path: ) in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/library/Session.php:40 
 [2018-09-04 07:57:26] PHP Fatal error: [Error] session error, [Detail] can not start session  in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/library/Session.php:41 
 [2018-09-04 07:57:26] PHP Fatal error: Using $this when not in object context in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/library/Session.php:43 
+[2018-09-06 11:00:13] PHP Fatal error: syntax error, unexpected ';', expecting ',' or ')' in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Session.php:23 
+[2018-09-06 11:00:53] PHP Fatal error: syntax error, unexpected '}', expecting ';' in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Session.php:54 
+[2018-09-06 11:01:06] PHP Fatal error: Cannot instantiate abstract class Zy_Session in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Session.php:28 
+[2018-09-06 11:03:57] PHP Fatal error: Using $this when not in object context in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Session.php:19 
+[2018-09-06 11:04:47] PHP Fatal error: syntax error, unexpected '=' in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Session.php:19 
+[2018-09-06 11:06:10] PHP Fatal error: syntax error, unexpected '}', expecting ';' in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/library/sess/Files.php:70 
+[2018-09-06 11:06:27] PHP Fatal error: Call to private Zy_Library_Sess_Files::__construct() from context 'Zy_Session' in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Session.php:25 
+[2018-09-06 11:07:08] PHP Fatal error: Using $this when not in object context in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/library/Session.php:36 
+[2018-09-06 11:08:15] PHP Fatal error: Cannot call abstract method Zy_Session::makeSession() in /Users/maxranje/Programer/php-workspace/workspace/zy/application/platmis/models/service/app/Login.php:49 
+[2018-09-06 11:10:42] PHP Fatal error: Call to undefined function mcrypt_get_block_size() in /Users/maxranje/Programer/php-workspace/workspace/zy/zy/library/IdCrypt.php:328 

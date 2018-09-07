@@ -46,7 +46,8 @@ class Service_App_Login  {
             'role'      =>  $ret[0]['role'],
         ];
 
-        $ret = Zy_Library_Session::makeSession($userInfo);
+        $objSession = Zy_Session::getInstance();
+        $ret = $objSession->makeSession($userInfo);
         if ($ret === false) {
             return $this->getOutput (Zy_ExceptionCode::SYSTEM_CRAZY);
         }

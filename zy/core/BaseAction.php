@@ -74,13 +74,13 @@ abstract class Zy_BaseAction
         $this->_publicParam = empty($_SERVER) ? array() : $_SERVER ;
 
         // session中有用户信息,  获取用户信息
-        $objSession = Zy_Library_Session::getInstance();
-        if ( $objSession !== NULL && $objSession->hasSession() )
+        $objSession = Zy_Session::getInstance();
+        if ( $objSession !== NULL && $objSession->sessionStatus() )
         {
-            $this->_userInfo['uid']     = $objSession->getSession('uid');
-            $this->_userInfo['uname']   = $objSession->getSession('uname');
-            $this->_userInfo['avatar']  = $objSession->getSession('avatar');
-            $this->_userInfo['role']    = $objSession->getSession('role');
+            $this->_userInfo['uid']     = $objSession->getSessionInfo('uid');
+            $this->_userInfo['uname']   = $objSession->getSessionInfo('uname');
+            $this->_userInfo['avatar']  = $objSession->getSessionInfo('avatar');
+            $this->_userInfo['role']    = $objSession->getSessionInfo('role');
 
             if ($this->_userInfo['uid'] > 0)
             {
