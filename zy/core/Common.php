@@ -74,6 +74,7 @@ class Zy_Common
 
         $msg = sprintf("[%s] PHP Fatal error: %s in %s:%s \r\n", date('Y-m-d H:i:s', time()), $errStr, $filepath, $line);
         error_log($msg, 3, BASEPATH . 'logs/php-error.log');
+        exit;
         //self::redirect_error(500);
     }
 

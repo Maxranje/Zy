@@ -14,7 +14,7 @@ class Zy_Benchmark {
 
 	private function __construct(){}
 
-	public function get_instance()
+	public static function get_instance()
 	{
 		if (self::$instance === NULL)
 		{

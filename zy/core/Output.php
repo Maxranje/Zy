@@ -249,8 +249,8 @@ class Zy_Output {
 		}
 
 		Zy_Log::addnotice("time: [" . Zy_Benchmark::elapsed_all() . "] request and response done" );
-		echo $output;
-		ob_get_clean();
+		echo json_encode($output);
+		ob_end_flush();
 		exit;
 	}
 

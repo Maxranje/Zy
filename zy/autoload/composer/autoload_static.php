@@ -10,6 +10,7 @@ class ComposerStaticInit5dd2bcd33707ad3654caeb1d6ecaae61
         'Zy'        => BASEPATH . '/',
         'Service'   => APPPATH . '/' . 'models' . '/',
         'Dao'       => APPPATH . '/' . 'models' . '/',
+        'Lib'       => APPPATH . '/' . 'library' . '/',
         'Twig'      => SYSPATH . '/' . 'library' . '/',
         'Alipay'    => SYSPATH . '/' . 'library' . '/' . 'pay' . '/',
         'Wxpay'     => SYSPATH . '/' . 'library' . '/' . 'pay' . '/',

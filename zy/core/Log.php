@@ -178,7 +178,7 @@ class Zy_Log {
         $client_ip   = $_SERVER['REMOTE_ADDR'];
         $date        = date($this->_date_fmt);
 
-        if ($this->_levels[$levels] == 1 || $this->_levels[$level] == 2)
+        if ($this->_levels[$level] == 1 || $this->_levels[$level] == 2)
         {
             $trace = debug_backtrace();
             $trace = count($trace) > 0 && is_array($trace) ? $trace[0] : array();

@@ -136,7 +136,6 @@ class Zy_BaseDao{
         if (empty($this->_db)) {
              $this->_db = Zy_Database_DBservice::getDB($this->_dbName);
         }
-
         //限制条件字段以及格式的转换
         $arrConds  = Zy_Database_DBservice::mapRow($arrConds, $this->arrFieldsMap);
         $arrConds  = Zy_Database_DBservice::getConds($arrConds);
@@ -146,7 +145,6 @@ class Zy_BaseDao{
         //表名以及强制索引字段的添加
         $tableName = (empty($strIndex)) ? $this->_table : $this->_table." {$strIndex}";
         $querySql = Zy_Database_DBsqlmaker::getSelect ($this->_db, $tableName, $arrFields,$arrConds, $arrOptions, $arrAppends);
-
         $this->_res = $this->_db->query($querySql);
         if ($this->_res === false){
             return FALSE;
@@ -250,7 +248,7 @@ class Zy_BaseDao{
         $arrConds = Zy_Database_DBservice::mapRow($arrConds, $this->arrFieldsMap);
         $arrConds = Zy_Database_DBservice::getConds($arrConds);
 
-        $querySql = Zy_Database_DBsqlmaker::getDelete ($this->_db, $this->_table, NULL, $arrConds);
+        $querySql = Zy_Database_DBsqlmaker::getDelete ($this->_db, $this->_table, $arrConds, NULL);
         $this->_res = $this->_db->query($querySql);
         return $this->_res === false ? false : true;
     }

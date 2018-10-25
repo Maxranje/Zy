@@ -1,7 +1,7 @@
 <?php
 
 // BASE URI
-$configure['base_url'] = 'http://172.20.131.223:8070/';
+$configure['base_url'] = 'http://127.0.0.1:8090/';
 
 // 语言
 $configure['language'] = 'en';

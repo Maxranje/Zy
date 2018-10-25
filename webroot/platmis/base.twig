@@ -21,7 +21,11 @@
         </div>
         <div class="zy-header-right">
             <p><strong class="easyui-tooltip" title="2条未读消息">{{result.uname}}</strong>，欢迎您！</p>
-            <p><a href="#">网站首页</a>|<a href="#">帮助中心</a>|<a href="#">安全退出</a></p>
+            <p> 
+                <a href="#">网站首页</a>|
+                <a href="/platmis/app/personaldetail">个人中心</a>|
+                <a href="/platmis/app/logout">安全退出</a>
+            </p>
         </div>
     </div>
     <!-- end of header -->
@@ -30,7 +34,7 @@
         <div class="easyui-accordion" data-options="border:false,fit:true">
             <div title="权限管理" data-options="iconCls:'icon-application-cascade'" style="padding:5px;">
                 <ul class="easyui-tree zy-side-tree">
-                    <li iconCls="icon-users"><a href="javascript:void(0)" data-icon="icon-users" data-link="/platmis/authmis/authuser" iframe="1">用户管理</a></li>
+                    <li iconCls="icon-users"><a href="javascript:void(0)" data-icon="icon-users" data-link="/platmis/authmis/authdetail" iframe="1">用户管理</a></li>
                 </ul>
             </div>
             <div title="主站管理" data-options="iconCls:'icon-creditcards'" style="padding:5px;">
@@ -45,9 +49,9 @@
             </div>
             <div title="批改平台" data-options="iconCls:'icon-table-edit'" style="padding:5px;">
                 <ul class="easyui-tree zy-side-tree">
-                    <li iconCls="icon-coins"><a href="javascript:void(0)" data-icon="icon-coins" data-link="/platmis/correct/purchase" iframe="1">购买记录</a></li>
-                    <li iconCls="icon-book-go"><a href="javascript:void(0)" data-icon="icon-book-go" data-link="temp/layout-3.html" iframe="1">批改记录</a></li>
-                    <li iconCls="icon-basket-add"><a href="javascript:void(0)" data-icon="icon-basket-add" data-link="temp/layout-3.html" iframe="1">商品管理</a></li>
+                    <li iconCls="icon-coins"><a href="javascript:void(0)" data-icon="icon-coins" data-link="purchaseRecord" iframe="1">购买记录</a></li>
+                    <li iconCls="icon-book-go"><a href="javascript:void(0)" data-icon="icon-book-go" data-link="correctRecord" iframe="1">批改记录</a></li>
+                    <li iconCls="icon-basket-add"><a href="javascript:void(0)" data-icon="icon-basket-add" data-link="courseList" iframe="1">商品管理</a></li>
                 </ul>
             </div>
             <div title="模考系统" data-options="iconCls:'icon-application-form'" style="padding:5px;">

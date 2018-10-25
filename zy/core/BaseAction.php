@@ -26,7 +26,7 @@ abstract class Zy_BaseAction
     protected $_tplData = array
     (
         'errNo'     => 0,
-        'errStr'    => 'success',
+        'errstr'    => 'success',
         'data'      => array(),
     );
 
@@ -46,9 +46,8 @@ abstract class Zy_BaseAction
         catch (Exception $ec)
         {
             $this->_tplData['errNo']  = $ec->getCode ();
-            $this->_tplData['errStr'] = $ec->getMessage ();
+            $this->_tplData['errstr'] = $ec->getMessage ();
         }
-
         $this->_after();
     }
 
@@ -91,7 +90,7 @@ abstract class Zy_BaseAction
 
     // 结果内容处理
     protected function _after () {
-        $this->_output = new Zy_Output ();
+        $this->_output = new Zy_Output ();   
         $this->_output->display($this->_tplData);
     }
 }

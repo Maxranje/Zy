@@ -57,27 +57,23 @@
 <link rel="stylesheet" type="text/css" href="{{resource.base_url}}/public/css/platmis.css" />
 <script type="text/javascript" src="{{resource.base_url}}/public/js/jquery.min.js"></script>
 <script type="text/javascript" src="{{resource.base_url}}/public/js/easyui/jquery.easyui.min.js"></script>
-<!-- End of easyui-dialog -->
 <script type="text/javascript">
-
-    /**
-    * Name 添加记录
-    */
-    function add(){
-        $('#zy-form').form('submit', {
-            url:'',
-            success:function(data){
-                if(data){
-                    $.messager.alert('信息提示','提交成功！','info');
-                    $('#zy-dialog').dialog('close');
-                }
-                else
-                {
-                    $.messager.alert('信息提示','提交失败！','info');
-                }
+// 添加用户
+function add(){
+    $('#zy-form').form('submit', {
+        url:'',
+        success:function(data){
+            if(data){
+                $.messager.alert('信息提示','提交成功！','info');
+                $('#zy-dialog').dialog('close');
             }
-        });
-    }
+            else
+            {
+                $.messager.alert('信息提示','提交失败！','info');
+            }
+        }
+    });
+}
 
     /**
     * Name 修改记录

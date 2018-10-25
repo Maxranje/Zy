@@ -1,51 +1,24 @@
 <?php
 
-class Service_App_Login  {
+class Service_App_Personal  {
 
     public function __construct() {
         $this->daoUcloud = new Dao_Na_Ucloud ();
     }
 
     public function execute ($arrInput) {
-
-        $this->arrOutput = array(
-            'uname'     => '',
-            'upass'     => '',
-            'token'     => '',
-            'state'     => 0,
-            'reson'     => '',
-        );
-
-        if (empty($arrInput['token'])) {
-            return $this->getOutput();
-        }
-
-        if (empty($arrInput['phone']) || empty($arrInput['upass'])) {
-            return $this->getOutput (Zy_ExceptionCode::LOGIN_INFO_EMPTY);
-        }
-
-        $arrInput['token'] = Zy_Library_StrCrypt::decodeStr($arrInput['token']);
-        if (time() - $arrInput['token'] > 3600) {
-            return $this->getOutput (Zy_ExceptionCode::LOGIN_TOKEN_ERR);
-        }
-
         $conds = [
-            'phone' => $arrInput['phone'],
-            'password' => md5($arrInput['upass']),
-            'role > 1',
+            'uid' => $arrInput['uid'],
         ];
         $fields = Dao_Na_Ucloud::$arrFields;
         $ret = $this->daoUcloud->getListByConds ($conds, $fields);
         if (empty($ret) || !isset($ret[0])) {
-            $this->arrOutput['phone'] = $arrInput['phone'];
-            return $this->getOutput (Zy_ExceptionCode::LOGIN_USERINFO_ERR);
+            throw new Zy_Exception(Zy_ExceptionCode::SYSTEM_CRAZY);   
         }
 
         $userInfo = [
             'uname'     =>  $ret[0]['uname'],
             'avatar'    =>  $ret[0]['avatar'],
-            'uid'       =>  $ret[0]['uid'],
-            'role'      =>  $ret[0]['role'],
         ];
 
         $objSession = Zy_Session::getInstance();

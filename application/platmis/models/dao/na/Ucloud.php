@@ -2,6 +2,8 @@
 
 class Dao_Na_Ucloud extends Zy_BaseDao {
 
+    public static $arrFields = array('uid','uname','phone','password','avatar','email','role',
+        'forbidden','last_log_time','createdTime','updatedTime');
 
     public function __construct() {
         $this->_dbName      = "zy";
@@ -19,8 +21,6 @@ class Dao_Na_Ucloud extends Zy_BaseDao {
             'createdTime' => 'createdTime',
             'updatedTime' => 'updatedTime',
         );
-        $this->arrFields = array('uid','uname','phone','password','avatar','email','role',
-            'forbidden','last_log_time','createdTime','updatedTime');
     }
 
     public function getUserInfoById ($uid) {
@@ -37,42 +37,7 @@ class Dao_Na_Ucloud extends Zy_BaseDao {
             return array();
         }
         $uids = implode(",", $uids);
-        $ret = $this->getListByConds(array('uid in ('.$uids.')'), $this->arrFields);
-        return $ret;
-    }
-
-    public function getUserInfoByParam ($conds) {
-        if (empty($conds) || !is_array($conds)) {
-            return array();
-        }
-        $ret = $this->getListByConds($conds, $this->arrFields);
-        return $ret;
-    }
-
-    public function addUser ($fields) {
-        if (empty($conds) || !is_array($conds)) {
-            return false;
-        }
-        $ret = $this->insertRecords ($fields);
-        return $ret;
-    }
-
-    public function updateUser($conds, $fields) {
-        if (empty($conds) || !is_array($conds)) {
-            return false;
-        }
-        if (empty($fields) || !is_array($fields)) {
-            return false;
-        }
-        $ret = $this->updateByConds($conds, $fields);
-        return $ret;
-    }
-
-    public function delUser ($conds){
-        if (empty($conds) || !is_array($conds)) {
-            return false;
-        }
-        $ret = $this->deleteByConds ($conds);
+        $ret = $this->getListByConds(array('uid in ('.$uids.')'), Dao_Na_Ucloud::$arrFields);
         return $ret;
     }
 }

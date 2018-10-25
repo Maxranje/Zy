@@ -53,7 +53,7 @@ class Zy_Exception extends Exception {
         }
 
         Zy_Log::$level("{$this->errstr} at [{$function} at {$file}:{$line}]", $this->errno, $this->arg, 1);
-        parent::__construct($this->errno, $this->errstr);
+        parent::__construct($this->errstr, $this->errno);
     }
 
     public function getErrNo() {
