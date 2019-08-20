@@ -4,21 +4,19 @@
             <!-- Begin of toolbar -->
             <div id="zy-toolbar">
                 <div class="zy-toolbar-button">
-                    <a href="#" class="easyui-linkbutton" iconCls="icon-add" onclick="openAdd()" plain="true">添加</a>
-                    <a href="#" class="easyui-linkbutton" iconCls="icon-edit" onclick="openEdit()" plain="true">修改</a>
-                    <a href="#" class="easyui-linkbutton" iconCls="icon-remove" onclick="baseRemove()" plain="true">删除</a>
-                    <a href="#" class="easyui-linkbutton" iconCls="icon-reload" onclick="resetPass()" plain="true">重置密码</a>
+                    <a href="#" class="easyui-linkbutton" iconCls="icon-information" onclick="moreInfo()" plain="true">详细信息</a>
                     <a href="#" class="easyui-linkbutton" iconCls="icon-refresh" onclick="reload()" plain="true">刷新</a>
                 </div>                
                 <div class="zy-toolbar-search">
                     <form id="zy-search-form">
                         <label>UID: </label><input class="easyui-textbox" name="uid" style="width:100px;">
-                        <label>用户名: </label><input class="easyui-textbox" name="uname" style="width:100px;">
-                        <label>用户角色：</label>
-                        <select class="easyui-combobox" panelHeight="auto" name="role" style="width:150px">
-                            <option value="0">选择用户组</option>
-                            <option value="2">管理员</option>
-                            <option value="1">普通用户</option>
+                        <label> 购买时间: </label><input class="easyui-datebox" name="startTime" style="width:110px;">
+                        <label> - </label><input class="easyui-datebox" name="endTime" style="width:110px;">
+                        <label> 购买分类：</label>
+                        <select class="easyui-combobox" panelHeight="auto" name="type" style="width:150px">
+                            <option value="0">全部</option>
+                            <option value="2">托福</option>
+                            <option value="1">雅思</option>
                         </select>
                         <a href="javascript:;" onclick="baseSearch()" class="easyui-linkbutton" iconCls="icon-search">开始检索</a>
                     </form>
@@ -184,7 +182,7 @@ function reload () {
 
 $(function (){
     $('#zy-datagrid').datagrid({
-        url:"{{resource.base_url}}/platmis/authmis/userlist",
+        url:"{{resource.base_url}}/platmis/correct/orderlist",
         loadFilter:pagerFilter,
         rownumbers:true,
         pageSize:20,
@@ -196,16 +194,26 @@ $(function (){
         checkbox:true,
         columns:[[
             { field: 'ck', checkbox: true },
+            { field:'id',title:'ID', width:100, hidden:true},
+            { field:'orderId',title:'订单ID', width:100},
             { field:'uid',title:'UID', width:100},
             { field:'uname',title:'用户名', width:100},
-            { field:'role',title:'用户角色', width:100},
             { field:'phone',title:'手机号码', width:100},
-            { field:'email',title:'邮件地址', width:100},
-            { field:'avatar',title:'用户头像', width:100, align:'center', formatter: function(value,row,index){
-                var avatar = value == "" ? "" : "<a style='color:blue;' href='"+value+"' target='_blank'>预览</a>";
-                return avatar;
-            }},
-            { field:'createdTime',title:'创建时间', width:100}
+            { field:'serviceId',title:'服务ID', width:100, hidden:true},
+            { field:'name',title:'商品名称', width:100},
+            { field:'quantity',title:'购买数目', width:100},
+            { field:'totalFee',title:'支付金额(元)', width:100},
+            { field:'payChannel',title:'支付方式', width:100},
+            { field:'createTime',title:'创建时间', width:100},
+            { field:'payStatus',title:'支付状态', width:100,align:'center', formatter: function(value,row,index){
+                if (value == 1) {
+                    return "<strong style='color:green; '>已支付</strong>";
+                }else if (value == 2) {
+                    return "<strong style='color:yellow;' >待支付</strong>";
+                }else {
+                    return "<strong style='color:red;' >取消/失败</strong>";
+                }
+            }}
         ]]
     });
 });

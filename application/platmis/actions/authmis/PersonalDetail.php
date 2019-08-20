@@ -6,11 +6,11 @@ class Action_PersonalDetail extends Zy_BaseWebAction {
             'act'   => "getpersoninfo",
         );
 
-        $objPs = new Service_App_Personal ();
+        $objPs = new Service_Authmis_Personal ();
         $arrOutput = $objPs->execute($arrInput);
 
         $template = Zy_Template::getInstance();
         $template->assgin(array('result' => $arrOutput)) ;
-        $template->display('persional.twig');
+        $template->display('personal.twig');
     }
 }

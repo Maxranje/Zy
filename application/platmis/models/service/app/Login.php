@@ -34,6 +34,7 @@ class Service_App_Login  {
             'password' => md5($arrInput['upass']),
             'role > 1',
         ];
+        Zy_Log::warning(var_export($conds, true));
         $fields = Dao_Na_Ucloud::$arrFields;
         $ret = $this->daoUcloud->getListByConds ($conds, $fields);
         if (empty($ret) || !isset($ret[0])) {

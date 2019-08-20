@@ -43,6 +43,7 @@ class Service_Authmis_UserModify  {
             'createdTime' => time(),
             'updatedTime' => time(),
         );
+
         $ret = $this->daoUcloud->insertRecords($fields);
         if ($ret == false) {
             throw new Zy_Exception(Zy_ExceptionCode::SYSTEM_CRAZY);   

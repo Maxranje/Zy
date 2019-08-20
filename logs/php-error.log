@@ -287,3 +287,47 @@
 [2018-10-25 16:35:39] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
 [2018-10-25 16:49:21] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
 [2018-10-25 16:50:15] PHP Fatal error: Non-static method Zy_Session::unsetSessionInfo() should not be called statically in /Users/maxranje/app/php/workspace/zy/application/platmis/actions/app/Logout.php:15 
+[2018-10-26 11:29:30] PHP Fatal error: Unexpected token "punctuation" of value "{" ("end of statement block" expected). in /Users/maxranje/app/php/workspace/zy/webroot/platmis/base.twig:35 
+[2018-10-26 11:31:58] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-26 11:45:25] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-26 14:47:06] PHP Fatal error: Class 'Service_Authmis_Personal' not found in /Users/maxranje/app/php/workspace/zy/application/platmis/actions/authmis/PersonalDetail.php:9 
+[2018-10-26 14:54:58] PHP Fatal error: Class 'Service_Authmis_Personal' not found in /Users/maxranje/app/php/workspace/zy/application/platmis/actions/authmis/PersonalDetail.php:9 
+[2018-10-26 14:55:37] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-26 14:55:40] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-26 14:55:41] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-26 14:55:41] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-26 16:32:29] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-26 16:35:14] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-26 16:35:20] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-26 16:35:21] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-26 16:35:33] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-26 16:35:33] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-26 16:35:43] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-26 16:35:50] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-26 16:36:16] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-26 16:37:31] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-26 16:38:06] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-26 16:42:01] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-26 20:25:29] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-27 13:25:56] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-27 13:38:27] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-27 13:44:44] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-27 13:44:51] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-27 13:47:10] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-27 13:47:44] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-27 14:25:57] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-27 14:25:58] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-27 14:32:11] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-29 11:28:42] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-29 11:28:48] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-10-29 11:28:48] PHP Fatal error: [Error] base controller error, [Detail] action request param error in /Users/maxranje/app/php/workspace/zy/zy/core/Controller.php:21 
+[2018-11-05 17:22:25] PHP Fatal error: Undefined index: role in /Users/maxranje/app/php/workspace/zy/application/platmis/models/service/correct/OrderList.php:47 
+[2018-11-05 17:23:19] PHP Fatal error: Undefined property: Service_Correct_OrderList::$daoUcloud in /Users/maxranje/app/php/workspace/zy/application/platmis/models/service/correct/OrderList.php:40 
+[2018-11-05 17:23:43] PHP Fatal error: Invalid argument supplied for foreach() in /Users/maxranje/app/php/workspace/zy/application/platmis/models/service/correct/OrderList.php:62 
+[2018-11-05 17:24:20] PHP Fatal error: Invalid argument supplied for foreach() in /Users/maxranje/app/php/workspace/zy/application/platmis/models/service/correct/OrderList.php:62 
+[2018-11-05 17:24:31] PHP Fatal error: Invalid argument supplied for foreach() in /Users/maxranje/app/php/workspace/zy/application/platmis/models/service/correct/OrderList.php:62 
+[2018-11-05 17:26:15] PHP Fatal error: Invalid argument supplied for foreach() in /Users/maxranje/app/php/workspace/zy/application/platmis/models/service/correct/OrderList.php:62 
+[2018-11-05 17:31:10] PHP Fatal error: Undefined variable: uinfo in /Users/maxranje/app/php/workspace/zy/application/platmis/models/service/correct/OrderList.php:67 
+[2018-11-05 17:31:27] PHP Fatal error: Undefined variable: uinfo in /Users/maxranje/app/php/workspace/zy/application/platmis/models/service/correct/OrderList.php:68 
+[2018-12-12 20:52:24] PHP Fatal error: [Error] router error [Detail] empty uri_segment/ in /Users/maxranje/app/php/workspace/zy/zy/core/Bootstrap.php:62 
+[2019-08-20 20:38:24] PHP Fatal error: [Error] router error [Detail] empty uri_segment/zy/ in /Users/maxranje/app/php/workspace/zy/zy/core/Bootstrap.php:62 

@@ -15,6 +15,7 @@ class Action_Index extends Zy_BaseWebAction {
 
         $arrOutput = array (
             'uname' => $this->_userInfo['uname'],
+            'role'  => $this->_userInfo['role'],
         );
 
         $template = Zy_Template::getInstance();

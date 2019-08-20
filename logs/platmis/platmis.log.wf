@@ -86,3 +86,68 @@ WARNING: 2018-10-25 16:03:01 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.p
 WARNING: 2018-10-25 16:03:51 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/authmis/userdel]  refer [http://127.0.0.1:8090/platmis/app/index]  client_ip [127.0.0.1]  module [platmis]  uid [0] 'DELETE  FROM tblUcloud WHERE (uid = 220000003) ' 
 WARNING: 2018-10-25 16:04:41 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/authmis/userdel]  refer [http://127.0.0.1:8090/platmis/app/index]  client_ip [127.0.0.1]  module [platmis]  uid [0] 'DELETE  FROM tblUcloud WHERE (uid = 220000005) ' 
 WARNING: 2018-10-25 17:00:50 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/authmis/useredit]  refer [http://127.0.0.1:8090/platmis/app/index]  client_ip [127.0.0.1]  module [platmis]  uid [0] 手机号已经他人注册~ at [Service_Authmis_UserModify->editUser at /Users/maxranje/app/php/workspace/zy/application/platmis/models/service/authmis/UserModify.php:65] 
+WARNING: 2018-10-26 18:52:38 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/authmis/useredit]  refer [http://127.0.0.1:8090/platmis/authmis/personaldetail]  client_ip [127.0.0.1]  module [platmis]  uid [0] 请求参数错误~ -- role error at [Service_Authmis_UserModify->checkRequestParam at /Users/maxranje/app/php/workspace/zy/application/platmis/models/service/authmis/UserModify.php:89] 
+WARNING: 2018-10-26 18:53:27 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/authmis/useredit]  refer [http://127.0.0.1:8090/platmis/authmis/personaldetail]  client_ip [127.0.0.1]  module [platmis]  uid [0] 请求参数错误~ -- role error at [Service_Authmis_UserModify->checkRequestParam at /Users/maxranje/app/php/workspace/zy/application/platmis/models/service/authmis/UserModify.php:89] 
+WARNING: 2018-10-26 19:14:56 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/authmis/useredit]  refer [http://127.0.0.1:8090/platmis/authmis/personaldetail]  client_ip [127.0.0.1]  module [platmis]  uid [0] 请求参数错误~ -- role error at [Service_Authmis_UserModify->checkRequestParam at /Users/maxranje/app/php/workspace/zy/application/platmis/models/service/authmis/UserModify.php:89] 
+WARNING: 2018-10-26 19:15:25 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/authmis/useredit]  refer [http://127.0.0.1:8090/platmis/authmis/personaldetail]  client_ip [127.0.0.1]  module [platmis]  uid [0] 请求参数错误~ -- role error at [Service_Authmis_UserModify->checkRequestParam at /Users/maxranje/app/php/workspace/zy/application/platmis/models/service/authmis/UserModify.php:89] 
+WARNING: 2018-10-26 19:16:15 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/authmis/useredit]  refer [http://127.0.0.1:8090/platmis/authmis/personaldetail]  client_ip [127.0.0.1]  module [platmis]  uid [0] 请求参数错误~ -- role error at [Service_Authmis_UserModify->checkRequestParam at /Users/maxranje/app/php/workspace/zy/application/platmis/models/service/authmis/UserModify.php:89] 
+WARNING: 2018-10-26 19:16:31 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/authmis/useredit]  refer [http://127.0.0.1:8090/platmis/authmis/personaldetail]  client_ip [127.0.0.1]  module [platmis]  uid [0] 请求参数错误~ -- role error at [Service_Authmis_UserModify->checkRequestParam at /Users/maxranje/app/php/workspace/zy/application/platmis/models/service/authmis/UserModify.php:89] 
+WARNING: 2018-10-26 19:40:53 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/app/login]  refer [http://127.0.0.1:8090/platmis/app/login]  client_ip [127.0.0.1]  module [platmis]  uid [0] array (
+  'phone' => '18601256640',
+  'password' => '',
+  0 => 'role > 1',
+) 
+WARNING: 2018-10-26 19:41:24 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/app/login]  refer [http://127.0.0.1:8090/platmis/app/login]  client_ip [127.0.0.1]  module [platmis]  uid [0] array (
+  'phone' => '18601256640',
+  'password' => '7aD17EOHKzisoD45+7pA8R2gUT8A+DPg',
+  0 => 'role > 1',
+) 
+WARNING: 2018-10-26 19:41:28 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/app/login]  refer [http://127.0.0.1:8090/platmis/app/login]  client_ip [127.0.0.1]  module [platmis]  uid [0] array (
+  'phone' => '18601256640',
+  'password' => 'a9D17EOHKzisoD45+7pA8RpAewyED3Ew',
+  0 => 'role > 1',
+) 
+WARNING: 2018-10-26 19:43:21 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/app/login]  refer [http://127.0.0.1:8090/platmis/app/login]  client_ip [127.0.0.1]  module [platmis]  uid [0] array (
+  'phone' => '18601256640',
+  'password' => 'e10adc3949ba59abbe56e057f20f883e',
+  0 => 'role > 1',
+) 
+WARNING: 2018-10-27 13:24:41 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/app/login]  refer [http://127.0.0.1:8090/platmis/app/login]  client_ip [127.0.0.1]  module [platmis]  uid [0] array (
+  'phone' => '18601256640',
+  'password' => 'e10adc3949ba59abbe56e057f20f883e',
+  0 => 'role > 1',
+) 
+WARNING: 2018-10-27 13:24:48 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/app/login]  refer [http://127.0.0.1:8090/platmis/app/login]  client_ip [127.0.0.1]  module [platmis]  uid [0] array (
+  'phone' => '18513001551',
+  'password' => 'e10adc3949ba59abbe56e057f20f883e',
+  0 => 'role > 1',
+) 
+WARNING: 2018-10-27 13:44:27 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/app/login]  refer [http://127.0.0.1:8090/platmis/app/login]  client_ip [127.0.0.1]  module [platmis]  uid [0] array (
+  'phone' => '18601256640',
+  'password' => 'e10adc3949ba59abbe56e057f20f883e',
+  0 => 'role > 1',
+) 
+WARNING: 2018-10-27 13:45:40 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/app/login]  refer [http://127.0.0.1:8090/platmis/app/login]  client_ip [127.0.0.1]  module [platmis]  uid [0] array (
+  'phone' => '18513001551',
+  'password' => 'e10adc3949ba59abbe56e057f20f883e',
+  0 => 'role > 1',
+) 
+WARNING: 2018-10-27 13:47:37 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/app/login]  refer [http://127.0.0.1:8090/platmis/app/login]  client_ip [127.0.0.1]  module [platmis]  uid [0] array (
+  'phone' => '18601256640',
+  'password' => 'e10adc3949ba59abbe56e057f20f883e',
+  0 => 'role > 1',
+) 
+WARNING: 2018-10-29 11:28:36 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/app/login]  refer [http://127.0.0.1:8090/platmis/app/login]  client_ip [127.0.0.1]  module [platmis]  uid [0] array (
+  'phone' => '18601256640',
+  'password' => 'e10adc3949ba59abbe56e057f20f883e',
+  0 => 'role > 1',
+) 
+WARNING: 2018-11-05 16:38:12 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/app/login]  refer [http://127.0.0.1:8090/platmis/app/login]  client_ip [127.0.0.1]  module [platmis]  uid [0] array (
+  'phone' => '18601256640',
+  'password' => 'e10adc3949ba59abbe56e057f20f883e',
+  0 => 'role > 1',
+) 
+WARNING: 2018-11-05 17:23:43 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/correct/orderlist]  refer [http://127.0.0.1:8090/platmis/app/index]  client_ip [127.0.0.1]  module [platmis]  uid [0] db query error: Unknown column 'createdTime' in 'field list' - Invalid query: SELECT id as id, uid as uid, orderId as orderId, productId as productId, serviceId as serviceId, itemId as itemId, name as name, quantity as quantity, price as price, bargain as bargain, fee as fee, totalFee as totalFee, payChannel as payChannel, payStatus as payStatus, tranStatus as tranStatus, evalStatus as evalStatus, uinfo as uinfo, createdTime as createdTime, updatedTime as updatedTime, ext as ext, payTime as payTime FROM tblPayOrder order by createdTime asc limit 0, 100 
+WARNING: 2018-11-05 17:24:20 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/correct/orderlist]  refer [http://127.0.0.1:8090/platmis/app/index]  client_ip [127.0.0.1]  module [platmis]  uid [0] db query error: Unknown column 'createdTime' in 'order clause' - Invalid query: SELECT id as id, uid as uid, orderId as orderId, productId as productId, serviceId as serviceId, itemId as itemId, name as name, quantity as quantity, price as price, bargain as bargain, fee as fee, totalFee as totalFee, payChannel as payChannel, payStatus as payStatus, tranStatus as tranStatus, evalStatus as evalStatus, uinfo as uinfo, createTime as createTime, updateTime as updateTime, ext as ext, payTime as payTime FROM tblPayOrder order by createdTime asc limit 0, 100 
+WARNING: 2018-11-05 17:24:31 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/correct/orderlist]  refer [http://127.0.0.1:8090/platmis/app/index]  client_ip [127.0.0.1]  module [platmis]  uid [0] db query error: Unknown column 'createdTime' in 'order clause' - Invalid query: SELECT id as id, uid as uid, orderId as orderId, productId as productId, serviceId as serviceId, itemId as itemId, name as name, quantity as quantity, price as price, bargain as bargain, fee as fee, totalFee as totalFee, payChannel as payChannel, payStatus as payStatus, tranStatus as tranStatus, evalStatus as evalStatus, uinfo as uinfo, createTime as createTime, updateTime as updateTime, ext as ext, payTime as payTime FROM tblPayOrder order by createdTime asc limit 0, 100 
+WARNING: 2018-11-05 17:26:15 [/Users/maxranje/app/php/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/correct/orderlist]  refer [http://127.0.0.1:8090/platmis/app/index]  client_ip [127.0.0.1]  module [platmis]  uid [0] db query error: Unknown column 'createdTime' in 'order clause' - Invalid query: SELECT id as id, uid as uid, orderId as orderId, productId as productId, serviceId as serviceId, itemId as itemId, name as name, quantity as quantity, price as price, bargain as bargain, fee as fee, totalFee as totalFee, payChannel as payChannel, payStatus as payStatus, tranStatus as tranStatus, evalStatus as evalStatus, uinfo as uinfo, createTime as createTime, updateTime as updateTime, ext as ext, payTime as payTime FROM tblPayOrder order by createdTime asc limit 0, 100 

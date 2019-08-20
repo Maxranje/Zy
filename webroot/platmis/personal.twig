@@ -1,61 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Basic PropertyGrid - jQuery EasyUI Demo</title>
-	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
-	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
-	<link rel="stylesheet" type="text/css" href="../demo.css">
-	<script type="text/javascript" src="../../jquery.min.js"></script>
-	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="copyright" content="All Rights Reserved, Copyright (C) 2018, maxranje, Ltd." />
+<title>PLATMIS</title>
+<link rel="stylesheet" type="text/css" href="{{resource.base_url}}/public/js/easyui/themes/Material-Teal/easyui.css" />
+<link rel="stylesheet" type="text/css" href="{{resource.base_url}}/public/js/easyui/themes/icon.css" />
+<link rel="stylesheet" type="text/css" href="{{resource.base_url}}/public/css/platmis.css" />
+<script type="text/javascript" src="{{resource.base_url}}/public/js/jquery.min.js"></script>
+<script type="text/javascript" src="{{resource.base_url}}/public/js/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="{{resource.base_url}}/public/js/platmis/platmis.js"></script>
+<!-- <script type="text/javascript" src="js/easyui/locale/easyui-lang-zh_CN.js"></script> -->
 </head>
-<body>
-	<h2>Basic PropertyGrid</h2>
-	<p>Click on row to change each property value.</p>
-	<div style="margin:20px 0;">
-		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="showGroup()">ShowGroup</a>
-		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="hideGroup()">HideGroup</a>
-		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="showHeader()">ShowHeader</a>
-		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="hideHeader()">HideHeader</a>
-		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="getChanges()">GetChanges</a>
-	</div>
-	<table id="pg" class="easyui-propertygrid" style="width:300px" data-options="
-				url:'propertygrid_data1.json',
-				method:'get',
-				showGroup:true,
-				scrollbarSize:0
-			">
-	</table>
- 
-	<script type="text/javascript">
-		function showGroup(){
-			$('#pg').propertygrid({
-				showGroup:true
-			});
-		}
-		function hideGroup(){
-			$('#pg').propertygrid({
-				showGroup:false
-			});
-		}
-		function showHeader(){
-			$('#pg').propertygrid({
-				showHeader:true
-			});
-		}
-		function hideHeader(){
-			$('#pg').propertygrid({
-				showHeader:false
-			});
-		}
-		function getChanges(){
-			var s = '';
-			var rows = $('#pg').propertygrid('getChanges');
-			for(var i=0; i<rows.length; i++){
-				s += rows[i].name + ':' + rows[i].value + ',';
-			}
-			alert(s)
-		}
-	</script>
+
+<body style="text-align: center">
+    <div style="display:inline-block; margin-top:5em">
+        <div id="p" class="easyui-panel" title="个人信息"  data-options="region:'center'" style="width:700px;padding:10px;">
+            <p style="font-size:12px">PLATMIS 平台个人信息汇总</p>
+            <ul style="font-size:12px; line-height:2em">
+                <li>重置密码或默认密码均为123456, 安全系数较弱, 请及时修改, 保障安安全</li>
+                <li>个人信息只能修改密码,邮箱,头像. 如需改其他信息请联系超管</li>
+                <li>修改个人信息时请不要填写一些诡异的字符, 容易无法使用平台</li>
+            </ul>
+            <form id="ff" method="post" style="margin-top:40px;">
+                <input name="uid" style="width:100%;" type="hidden" value="{{result.uid}}">
+                <div style="margin-bottom:20px">
+                    <input class="easyui-textbox" name="name" style="width:100%" data-options="
+                    label:'用户名',required:true, disabled:true" value="{{result.uname}}">
+                </div>
+                <div style="margin-bottom:20px">
+                    <input class="easyui-textbox" name="phone" style="width:100%" data-options="
+                    label:'手机号',required:true,disabled:true" value="{{result.phone}}">
+                </div>
+                <div style="margin-bottom:20px">
+                    <input class="easyui-textbox changes" type="password" name="password" style="width:100%" data-options="
+                    label:'密码',required:true,disabled:true" value="{{result.password}}">
+                </div>
+                <div style="margin-bottom:20px">
+                    <input class="easyui-textbox changes" name="avatar" style="width:100%" data-options="
+                    label:'头像',required:true,disabled:true" value="{{result.avatar}}">
+                </div>                                    
+                <div style="margin-bottom:20px">
+                    <input class="easyui-textbox changes" name="email" style="width:100%" data-options="label:'邮箱:',required:true,validType:'email',disabled:true" value="{{result.email}}">
+                </div>
+                <div style="margin-top:30px;">
+                    <a href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-reload'" onclick="reset()">重置</a>
+                    <a href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-save'" onclick="save()">保存</a>
+                </div>
+            </form>        
+        </div>
+    </div>
 </body>
+<script type="text/javascript">
+function reset () {
+    $('.changes').textbox({'disabled':false});
+}
+function save () {
+    $("#ff").form('submit', {
+        url:"/platmis/authmis/personaledit",
+        onSubmit: function(){
+            var isValid = $(this).form('validate');
+            if (!isValid){
+                $.messager.alert('信息提示','提交数据不正确, 请检查','info');
+            }
+            return isValid; 
+        },
+        success: function(data){
+            data = JSON.parse(data); 
+            if(data.errNo == 0){
+                $.messager.alert('信息提示','提交成功！','info');
+                $('#zy-dialog').dialog('close');
+                $('#zy-datagrid').datagrid('load');
+            }
+            else
+            {
+                $.messager.alert('信息提示','Error: '+ data.errstr,'error');
+            }
+        }
+    });  
+}
+</script>
 </html>

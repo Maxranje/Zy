@@ -23,7 +23,7 @@
             <p><strong class="easyui-tooltip" title="2条未读消息">{{result.uname}}</strong>，欢迎您！</p>
             <p> 
                 <a href="#">网站首页</a>|
-                <a href="/platmis/app/personaldetail">个人中心</a>|
+                {% if result.role != 9  %}<a href="/platmis/authmis/personaldetail">个人中心</a>|{% endif %}
                 <a href="/platmis/app/logout">安全退出</a>
             </p>
         </div>
@@ -32,11 +32,13 @@
     <!-- begin of sidebar -->
     <div class="zy-sidebar" data-options="region:'west',split:true,border:true,title:'导航菜单'">
         <div class="easyui-accordion" data-options="border:false,fit:true">
+            {% if result.role == 9  %}
             <div title="权限管理" data-options="iconCls:'icon-application-cascade'" style="padding:5px;">
                 <ul class="easyui-tree zy-side-tree">
                     <li iconCls="icon-users"><a href="javascript:void(0)" data-icon="icon-users" data-link="/platmis/authmis/authdetail" iframe="1">用户管理</a></li>
                 </ul>
             </div>
+            {% endif %}
             <div title="主站管理" data-options="iconCls:'icon-creditcards'" style="padding:5px;">
                 <ul class="easyui-tree zy-side-tree">
                     <li iconCls="icon-chart-organisation"><a href="javascript:void(0)" data-icon="icon-chart-organisation" data-link="layout-3.html" iframe="1">导航标题</a></li>
@@ -49,7 +51,7 @@
             </div>
             <div title="批改平台" data-options="iconCls:'icon-table-edit'" style="padding:5px;">
                 <ul class="easyui-tree zy-side-tree">
-                    <li iconCls="icon-coins"><a href="javascript:void(0)" data-icon="icon-coins" data-link="purchaseRecord" iframe="1">购买记录</a></li>
+                    <li iconCls="icon-coins"><a href="javascript:void(0)" data-icon="icon-coins" data-link="/platmis/correct/purchase" iframe="1">购买记录</a></li>
                     <li iconCls="icon-book-go"><a href="javascript:void(0)" data-icon="icon-book-go" data-link="correctRecord" iframe="1">批改记录</a></li>
                     <li iconCls="icon-basket-add"><a href="javascript:void(0)" data-icon="icon-basket-add" data-link="courseList" iframe="1">商品管理</a></li>
                 </ul>
@@ -73,11 +75,11 @@
                     <li iconCls="icon-application-osx-error"><a href="javascript:void(0)" data-icon="icon-application-osx-error" data-link="temp/layout-3.html" iframe="1">导航标题</a></li>
                 </ul>
             </div>
-            <div title="系统设置" data-options="iconCls:'icon-wrench'" style="padding:5px;">
+{#             <div title="系统信息" data-options="iconCls:'icon-wrench'" style="padding:5px;">
                 <ul class="easyui-tree zy-side-tree">
-                    <li iconCls="icon-chart-organisation"><a href="javascript:void(0)" data-icon="icon-chart-organisation" data-link="layout-3.html" iframe="1">系统配置</a></li>
+                    <li iconCls="icon-chart-organisation"><a href="javascript:void(0)" data-icon="icon-chart-organisation" data-link="/platmis/system/systeminfo" iframe="1">系统信息</a></li>
                 </ul>
-            </div>
+            </div> #}
         </div>
     </div>
     <!-- end of sidebar -->

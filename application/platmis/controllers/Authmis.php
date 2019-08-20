@@ -13,5 +13,7 @@ class Controller_Authmis extends Zy_Controller{
         'useredit' 			=> 'actions/authmis/UserEdit.php',  	# 编辑用户
         'userdel' 			=> 'actions/authmis/UserDel.php',  		# 删除用户
         'userreset' 		=> 'actions/authmis/UserReset.php',  	# 用户重置密码
+        'personaldetail'	=> 'actions/authmis/PersonalDetail.php',		# 个人详情页
+        'personaledit'		=> 'actions/authmis/PersonalEdit.php',			# 个人信息编辑
     );
 }

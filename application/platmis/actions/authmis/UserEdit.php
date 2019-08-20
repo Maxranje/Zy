@@ -10,6 +10,7 @@ class Action_UserEdit extends Zy_BaseAction {
             'email'         => isset($this->_requestParam['email']) ? trim($this->_requestParam['email']) : '',
             'avatar'        => isset($this->_requestParam['avatar']) ? trim($this->_requestParam['avatar']) : '',
             'role'          => isset($this->_requestParam['role']) ? intval($this->_requestParam['role']) : 0,
+            'password'      => isset($this->_requestParam['password']) ? trim($this->_requestParam['password']) : '',
             'act'           => "edit",
         );
 
