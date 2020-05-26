@@ -1,7 +1,0 @@
-WARNING: 2018-08-29 09:36:14 [/Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/app/login]  refer []  client_ip [127.0.0.1]  module [platmis]  uid [0] no tihi 
-WARNING: 2018-08-29 09:41:54 [/Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Log.php:139]  uri [/index.php/platmis/app/login]  refer []  client_ip [127.0.0.1]  module [platmis]  uid [0] no tihi 
-WARNING: 2018-08-29 09:45:49 [/Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Log.php:138]  uri [/index.php/plamtis/app/login]  refer []  client_ip [172.20.131.223]  module [platmis]  uid [0] no tihi 
-WARNING: 2018-08-29 09:46:01 [/Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Log.php:138]  uri [/index.php/platmtis/app/login]  refer []  client_ip [172.20.131.223]  module [platmis]  uid [0] no tihi 
-WARNING: 2018-08-29 09:46:11 [/Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Log.php:138]  uri [/index.php/platmis/app/login]  refer []  client_ip [172.20.131.223]  module [platmis]  uid [0] no tihi 
-WARNING: 2018-08-29 09:46:50 [/Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Log.php:138]  uri [/index.php/platmis/app/login]  refer []  client_ip [172.20.131.223]  module [platmis]  uid [0] no tihi 
-WARNING: 2018-08-29 09:46:54 [/Users/maxranje/Programer/php-workspace/workspace/zy/zy/core/Log.php:138]  uri [/index.php/platmis/app/login]  refer []  client_ip [172.20.131.223]  module [platmis]  uid [0] no tihi 

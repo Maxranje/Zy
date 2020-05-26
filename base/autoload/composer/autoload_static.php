@@ -19,7 +19,7 @@ class ComposerStaticInit5dd2bcd33707ad3654caeb1d6ecaae61
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            ComposerStaticInit5dd2bcd33707ad3654caeb1d6ecaae61::$prefixesPsr0[ucfirst(APP_NAME)] = APPPATH . '/' . 'library' . '/';
+            ComposerStaticInit5dd2bcd33707ad3654caeb1d6ecaae61::$prefixesPsr0[ucfirst(APP_NAME)] = APPPATH . '/' . 'base' . '/';
             $loader->prefixesPsr0 = ComposerStaticInit5dd2bcd33707ad3654caeb1d6ecaae61::$prefixesPsr0;
         }, null, ClassLoader::class);
     }
