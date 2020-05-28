@@ -19,14 +19,10 @@ define('ENV',       'production');
 // }
 
 # set file path
-$application_path   = 'application/' . APP_NAME;
-$template_path      = 'webroot/' . APP_NAME;
-$system_path 		= 'zy/';
+$system_path    = 'libray/';
 
-define('APPPATH',   realpath($application_path).DIRECTORY_SEPARATOR);
-define('VIEWPATH',  realpath($template_path).DIRECTORY_SEPARATOR);
-define('SYSPATH',   realpath($system_path).DIRECTORY_SEPARATOR);
 define('BASEPATH',  dirname(__FILE__).DIRECTORY_SEPARATOR);
+define('SYSPATH',   BASEPATH . $system_path);
 
 require_once SYSPATH . 'autoload/autoload.php';
 Zy_Bootstrap::getInstance()->run();
