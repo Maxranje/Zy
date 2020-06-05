@@ -9,7 +9,7 @@
  * </code>
  *
  */
-class Zy_Controller {
+class Zy_Base_Controller {
 
     public $actions = array();
 

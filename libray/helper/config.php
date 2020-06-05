@@ -6,7 +6,7 @@
  *
  */
 
-class Zy_Config {
+class Zy_Helper_Config {
 
 	private static $config = array();
 

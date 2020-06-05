@@ -4,7 +4,7 @@
  *  php 版本仅支持7.0以上
  */
 
-class Zy_Common
+class Zy_Helper_Common
 {
     /**
      * 校验手机号是否合法

@@ -5,7 +5,7 @@
  *
  */
 
-class Zy_Benchmark {
+class Zy_Helper_Benchmark {
 
 	public $marker = array();
 	public $marker_name = array();
@@ -18,7 +18,7 @@ class Zy_Benchmark {
 	{
 		if (self::$instance === NULL)
 		{
-			self::$instance  =  new Zy_Benchmark();
+			self::$instance  =  new Zy_Helper_Benchmark();
 		}
 		return self::$instance;
 	}

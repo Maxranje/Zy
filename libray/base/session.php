@@ -5,7 +5,7 @@
  * @author wangxuewen <maxranje@aliyun.com>
  */
 
-abstract class Zy_Session  {
+abstract class Zy_Base_Session  {
 
     private static $instance    = null;
 
@@ -17,9 +17,9 @@ abstract class Zy_Session  {
     public static function getInstance () {
         if (self::$instance === NULL) {
             self::$_config = [
-                'sess_driver'       => Zy_Config::getConfig("sess_driver"),
-                'sess_cookie_name'  => Zy_Config::getConfig("sess_cookie_name"),
-                'sess_expiration'   => Zy_Config::getConfig("sess_expiration"),
+                'sess_driver'       => Zy_Helper_Config::getConfig("sess_driver"),
+                'sess_cookie_name'  => Zy_Helper_Config::getConfig("sess_cookie_name"),
+                'sess_expiration'   => Zy_Helper_Config::getConfig("sess_expiration"),
             ];
             $sess_class_name = "Zy_Library_Sess_" . ucfirst(self::$_config['sess_driver']);
             self::$instance = new $sess_class_name (self::$_config);

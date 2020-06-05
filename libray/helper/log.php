@@ -2,7 +2,7 @@
 /**
  * 输出LOG到对应工程下的 APPPATH . logs/下
  */
-class Zy_Log {
+class Zy_Helper_Log {
 
     /**
      * Path to save log files
@@ -64,7 +64,7 @@ class Zy_Log {
      */
     private function __construct()
     {
-        $log_path = Zy_Config::getConfig('log_path');
+        $log_path = Zy_Helper_Config::getConfig('log_path');
 
         $this->_log_path = ($log_path !== '') ? $log_path : BASEPATH . 'logs/' ;
         $this->_log_path .= APP_NAME . DIRECTORY_SEPARATOR;
@@ -81,18 +81,18 @@ class Zy_Log {
     {
         if (self::$instance === NULL)
         {
-            self::$instance = new Zy_Log();
+            self::$instance = new Zy_Helper_Log();
         }
         return self::$instance;
     }
 
-    public static function warning($message = "")
+    public static function warning($message)
     {
         $log = self::getInstance();
         $log->write_log("WARNING", $message);
     }
 
-    public static function addnotice($message = "")
+    public static function addnotice($message)
     {
         $log = self::getInstance();
         $log->write_log("NOTICE", $message);
@@ -121,9 +121,6 @@ class Zy_Log {
             $filepath = $this->_log_path.APP_NAME.'.'.date('Ymd').'.'.$this->_file_ext;
         }
 
-
-        $message = '';
-
         if ( ! file_exists($filepath))
         {
             $newfile = TRUE;
@@ -134,17 +131,7 @@ class Zy_Log {
             return FALSE;
         }
 
-        flock($fp, LOCK_EX);
-
-        $message .= $this->_format_line($level, $msg);
-
-        for ($written = 0, $length = self::strlen($message); $written < $length; $written += $result)
-        {
-            if (($result = fwrite($fp, self::substr($message, $written))) === FALSE)
-            {
-                break;
-            }
-        }
+        fwrite($fp, $this->_format_line($level, $msg));
 
         flock($fp, LOCK_UN);
         fclose($fp);
@@ -154,7 +141,7 @@ class Zy_Log {
             chmod($filepath, $this->_file_permissions);
         }
 
-        return is_int($result);
+        return true;
     }
 
     // --------------------------------------------------------------------

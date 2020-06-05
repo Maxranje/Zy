@@ -3,11 +3,11 @@
  * @brief 通用异常处理流程
  *
  *
- * @filesource zy/core/Exception.php
+ * @filesource zy/base/Exception.php
  * @version 1.0.0
  * @date    2018-06-11
  */
-class Zy_Exception extends Exception {
+class Zy_Base_Exception extends Exception {
 
     const TRACE   = 'trace';
     const DEBUG   = 'debug';
@@ -15,29 +15,26 @@ class Zy_Exception extends Exception {
     const WARNING = 'warning';
     const FATAL   = 'fatal';
 
-    protected $errno;
-    protected $errstr;
+    protected $ec;
+    protected $em;        
     protected $arg;
-    protected $errmsg;        // 错误号对应的错误信息
-    protected $errext;        // 附加信息
 
     /**
-     * @param int    $errno      传入的错误号
-     * @param string $errext     附加信息
+     * @param int    $ec      传入的错误号
+     * @param string $em     附加信息
      * @param array  $arg        上下文
      * @param string $level      日志打印级别
      * @return void
      */
-    public function __construct($errno, $errext = '', $arg = array(), $level = self::WARNING) {
-        $this->errno  = $errno;
-        $this->errext = $errext;
-        $this->arg    = $arg;
+    public function __construct($ec, $em = '', $arg = array(), $level = self::WARNING) {
+        $this->ec   = $ec;
+        $this->em   = $em;
+        $this->arg  = $arg;
+
         if (empty($this->arg) || !is_array($this->arg)) {
             $this->arg = array();
         }
-
-        $this->errmsg = Zy_ExceptionCode::getErrMsg($errno);
-        $this->errstr = $this->errmsg . ('' != $errext ? " -- {$errext}" : '');
+        $this->arg = json_encode($this->arg);
 
         $stackTrace   = $this->getTrace();
         $class        = @$stackTrace[0]['class'];
@@ -45,31 +42,25 @@ class Zy_Exception extends Exception {
         $function     = @$stackTrace[0]['function'];
         $file         = $this->file;
         $line         = $this->line;
+
         if (null != $class) {
             $function = "{$class}{$type}{$function}";
         }
+
         if (empty($level)) {
             $level    = self::WARNING;
         }
 
-        Zy_Log::$level("{$this->errstr} at [{$function} at {$file}:{$line}]", $this->errno, $this->arg, 1);
-        parent::__construct($this->errstr, $this->errno);
+        Zy_Helper_Log::$level("{$this->em} at [{$function} in {$file}:{$line}] content-text:[{$this->arg}]");
+        parent::__construct($this->em, $this->ec);
     }
 
     public function getErrNo() {
-        return $this->errno;
+        return $this->ec;
     }
 
     public function getErrStr() {
-        return $this->errstr;
-    }
-
-    public function getErrMsg() {
-        return $this->errmsg;
-    }
-
-    public function getErrExt() {
-        return $this->errext;
+        return $this->em;
     }
 
     public function getErrArg() {

@@ -377,11 +377,11 @@ class ClassLoader
 
         if (isset($this->prefixesPsr0[$segment_class[0]])) {
             $logicalPathPsr0 = $this->prefixesPsr0[$segment_class[0]];
-            for ( $i = 0; $i < count($segment_class) - 1; $i++ ) {
+            for ( $i = 1; $i < count($segment_class) - 1; $i++ ) {
                 $logicalPathPsr0 .= strtolower($segment_class[$i]) . DIRECTORY_SEPARATOR;
             }
             if ( !empty(trim($logicalPathPsr0)) ){
-                if (file_exists($file = $logicalPathPsr0 . $segment_class[count($segment_class) - 1] . $ext)) {
+                if (file_exists($file = $logicalPathPsr0 . strtolower($segment_class[count($segment_class) - 1]) . $ext)) {
                     return $file;
                 }
             }

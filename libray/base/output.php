@@ -2,7 +2,7 @@
 /**
  *  工程输出类
  */
-class Zy_Output {
+class Zy_Base_Output {
 
 	// 最终输出内容
 	public $final_output;
@@ -33,14 +33,14 @@ class Zy_Output {
 		$this->_zlib_oc = (bool) ini_get('zlib.output_compression');
 		$this->_compress_output = (
 			$this->_zlib_oc === FALSE
-			&& Zy_Config::getConfig('compress_output') === TRUE
+			&& Zy_Helper_Config::getConfig('compress_output') === TRUE
 			&& extension_loaded('zlib')
 		);
 
 		isset(self::$func_overload) OR self::$func_overload = (extension_loaded('mbstring') && ini_get('mbstring.func_overload'));
 
 		// Get mime types for later
-		$this->mimes = Zy_Common::get_mimes();
+		$this->mimes = Zy_Helper_Common::get_mimes();
 	}
 
 	public function get_output()

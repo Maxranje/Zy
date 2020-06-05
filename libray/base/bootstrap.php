@@ -5,7 +5,7 @@
  *
  */
 
-class Zy_Bootstrap {
+class Zy_Base_Bootstrap {
 
     private function __construct() {}
 
@@ -16,9 +16,9 @@ class Zy_Bootstrap {
     private function _initVariables () {
 
         // set error handler
-        set_error_handler('Zy_Common::setErrorHandler');
-        set_exception_handler('Zy_Common::setExceptionHandler');
-        register_shutdown_function('Zy_Common::shutdownHandler');
+        set_error_handler('Zy_Helper_Common::setErrorHandler');
+        set_exception_handler('Zy_Helper_Common::setExceptionHandler');
+        register_shutdown_function('Zy_Helper_Common::shutdownHandler');
 
         // load constants
         if ( !file_exists( SYSPATH . 'config/constants.php' ) ) {
@@ -27,7 +27,7 @@ class Zy_Bootstrap {
         require_once (SYSPATH . 'config/constants.php');
 
         // set charset-related stuff
-        $charset = strtoupper(Zy_Config::getConfig('charset'));
+        $charset = strtoupper(Zy_Helper_Config::getConfig('charset'));
         if (empty($charset)){
             trigger_error('[Error] system initialization, [Detail] charset empty');
         }
@@ -57,7 +57,7 @@ class Zy_Bootstrap {
      */
     private function _initAutoRoute () {
 
-        $uri_segment = Zy_Library_URI::getSegmentUri() ;
+        $uri_segment = Zy_Helper_URI::getSegmentUri() ;
         if (empty($uri_segment) || ! is_array($uri_segment)) {
             trigger_error ('[Error] router error [Detail] empty uri_segment'.$_SERVER['REQUEST_URI']);
         }
@@ -95,7 +95,7 @@ class Zy_Bootstrap {
      * @return  object
      */
     public function run() {
-        Zy_Benchmark::start('ts_all');
+        Zy_Helper_Benchmark::start('ts_all');
         $this->_initVariables ();
         $this->_initAutoRoute ();
     }
@@ -104,7 +104,7 @@ class Zy_Bootstrap {
 
     public static function getInstance () {
         if ( self::$instance === NULL ) {
-            self::$instance = new Zy_Bootstrap();
+            self::$instance = new Zy_Base_Bootstrap();
         }
         return self::$instance ;
     }

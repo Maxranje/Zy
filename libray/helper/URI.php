@@ -1,5 +1,5 @@
 <?php
-class Zy_Library_URI {
+class Zy_Helper_URI {
 
 
 	/**
@@ -46,26 +46,4 @@ class Zy_Library_URI {
 
 		return $segments;
 	}
-
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Filter URI
-	 *
-	 * Filters segments for malicious characters.
-	 *
-	 * @param	string	$str
-	 * @return	void
-	 */
-	public static function filter_uri($str)
-	{
-		if ( ! empty($str) && ! empty($this->_permitted_uri_chars) && ! preg_match('/^['.$this->_permitted_uri_chars.']+$/i'.(UTF8_ENABLED ? 'u' : ''), $str))
-		{
-			return FALSE;
-		}
-		return TRUE;
-	}
-
-
 }
