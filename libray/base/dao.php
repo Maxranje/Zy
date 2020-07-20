@@ -12,7 +12,7 @@ class Zy_Base_Dao{
 
     /**
      * 数据库连接对象
-     * @var resource
+     * @var object
      */
     protected $_db;
 

@@ -1,7 +1,7 @@
 <?php
 
 
-class Action_List extends Zy_BaseWebAction {
+class Action_List extends Zy_Base_WebAction {
     public function invoke () {
         $arrInput = array(
             'name'  => isset($this->_requestParam['name']) ? trim($this->_requestParam['name']) : "",

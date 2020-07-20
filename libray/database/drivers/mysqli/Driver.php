@@ -23,27 +23,13 @@ class Zy_Database_Drivers_Mysqli_Driver extends Zy_Database_DBdriver {
 	 * @param	bool	是否使用持久化连接
 	 * @return	object
 	 */
-	public function db_connect($persistent = FALSE)
-	{
-		// Do we have a socket path?
-		if ($this->hostname[0] === '/')
-		{
-			$hostname = NULL;
-			$port = NULL;
-			$socket = $this->hostname;
-		}
-		else
-		{
-			$hostname = ($persistent === TRUE)
-				? 'p:'.$this->hostname : $this->hostname;
-			$port = empty($this->port) ? NULL : $this->port;
-			$socket = NULL;
-		}
+	public function db_connect($persistent = FALSE) {
 
 		$client_flags = ($this->compress === TRUE) ? MYSQLI_CLIENT_COMPRESS : 0;
+
 		$this->_mysqli = mysqli_init();
 
-		$this->_mysqli->options(MYSQLI_OPT_CONNECT_TIMEOUT, 10);
+		$this->_mysqli->options(MYSQLI_OPT_CONNECT_TIMEOUT, $this->timeout);
 
 		if (isset($this->stricton))
 		{
@@ -67,42 +53,7 @@ class Zy_Database_Drivers_Mysqli_Driver extends Zy_Database_DBdriver {
 			}
 		}
 
-		if (is_array($this->encrypt))
-		{
-			$ssl = array();
-			empty($this->encrypt['ssl_key'])    OR $ssl['key']    = $this->encrypt['ssl_key'];
-			empty($this->encrypt['ssl_cert'])   OR $ssl['cert']   = $this->encrypt['ssl_cert'];
-			empty($this->encrypt['ssl_ca'])     OR $ssl['ca']     = $this->encrypt['ssl_ca'];
-			empty($this->encrypt['ssl_capath']) OR $ssl['capath'] = $this->encrypt['ssl_capath'];
-			empty($this->encrypt['ssl_cipher']) OR $ssl['cipher'] = $this->encrypt['ssl_cipher'];
-
-			if ( ! empty($ssl))
-			{
-				if (isset($this->encrypt['ssl_verify']))
-				{
-					if ($this->encrypt['ssl_verify'])
-					{
-						defined('MYSQLI_OPT_SSL_VERIFY_SERVER_CERT') && $this->_mysqli->options(MYSQLI_OPT_SSL_VERIFY_SERVER_CERT, TRUE);
-					}
-					elseif (defined('MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT'))
-					{
-						$client_flags |= MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT;
-					}
-				}
-
-				$client_flags |= MYSQLI_CLIENT_SSL;
-				$this->_mysqli->ssl_set(
-					isset($ssl['key'])    ? $ssl['key']    : NULL,
-					isset($ssl['cert'])   ? $ssl['cert']   : NULL,
-					isset($ssl['ca'])     ? $ssl['ca']     : NULL,
-					isset($ssl['capath']) ? $ssl['capath'] : NULL,
-					isset($ssl['cipher']) ? $ssl['cipher'] : NULL
-				);
-			}
-		}
-
-		if ($this->_mysqli->real_connect($hostname, $this->username, $this->password, $this->database, $port, $socket, $client_flags))
-		{
+		if ($this->_mysqli->real_connect($this->hostname, $this->username, $this->password, $this->database, $this->port, '', $client_flags)){
 			// Prior to version 5.7.3, MySQL silently downgrades to an unencrypted connection if SSL setup fails
 			if (
 				($client_flags & MYSQLI_CLIENT_SSL)

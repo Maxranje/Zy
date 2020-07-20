@@ -39,7 +39,7 @@ class Zy_Helper_Common
         {
             return FALSE;
         }
-        return htmlspecialchars($str, ENT_QUOTES, Zy_Helper_Config::getConfig('charset'), $double_encode);
+        return htmlspecialchars($str, ENT_QUOTES, Zy_Helper_Config::getConfig('system', 'charset'), $double_encode);
     }
 
     // 检测是否是AJAX请求
@@ -51,7 +51,8 @@ class Zy_Helper_Common
     // 重定向错误页面
     public static function redirect_error ($errno)
     {
-        self::http_redirect('http://127.0.0.1/error.html?status=' . $errno) ;
+        $serverdns = Zy_Helper_Config::getConfig('system', 'serverdns');
+        self::http_redirect($serverdns . '/error.html?status=' . $errno) ;
     }
 
     // 重定向其他页面
@@ -73,7 +74,7 @@ class Zy_Helper_Common
         }
 
         $msg = sprintf("[%s] PHP Fatal error: %s in %s:%s \r\n", date('Y-m-d H:i:s', time()), $errStr, $filepath, $line);
-        error_log($msg, 3, BASEPATH . 'logs/php-error.log');
+        error_log($msg, 3, Zy_Helper_Config::getConfig('system', 'log_path'));
         exit;
         //self::redirect_error(500);
     }

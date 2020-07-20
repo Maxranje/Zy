@@ -15,9 +15,10 @@ abstract class Zy_Base_Actions {
     // output
 
     protected $output = [
-        'ec'    => 0,
-        'em'    => 'success',
-        'data'  => [],
+        'ec'        => 0,
+        'em'        => 'success',
+        'timestamp' => 0,
+        'data'      => [],
     ];
 
     // userinfo
@@ -70,7 +71,9 @@ abstract class Zy_Base_Actions {
         $this->publicParam = empty($_SERVER) ? array() : $_SERVER ;
 
         // session中有用户信息,  获取用户信息
-        $this->userInfo = $this->getSessionUserInfo();
+        $session = Zy_Base_Session::getInstance();
+        $this->userInfo = $session->getSessionUserInfo();
+
         if (empty($this->userInfo)) {
             $this->islogin = false;
         }
@@ -78,12 +81,8 @@ abstract class Zy_Base_Actions {
 
     // 结果内容处理
     protected function _after () {
+        $this->output['timestamp'] = time();
         $this->outputJson();
-    }
-
-    public function getSessionUserInfo() {
-        $session = Zy_Base_Session::getInstance()->getSessionUserInfo;
-        return $session->getSessionUserId();
     }
 
     public function outputJson () {
@@ -91,8 +90,4 @@ abstract class Zy_Base_Actions {
 		echo json_encode($this->output);
 		exit;
     }
-
-    // public function outputTemplate () {
-
-    // }
 }

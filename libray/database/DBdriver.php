@@ -66,6 +66,9 @@ abstract class Zy_Database_DBdriver {
 	// SQL构造器
 	public $sql_assember		= NULL;
 
+	// 连接的超时时间
+	public $timeout 			= 10;
+
 
 	/**
 	 * 初始化连接变量

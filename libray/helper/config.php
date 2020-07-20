@@ -16,7 +16,7 @@ class Zy_Helper_Config {
      * @param  mixed   键
      * @return mixed   值
      */
-	public static function getConfig ($key = NULL)
+	public static function getConfig ($pkg = NULL, $key = NULL)
 	{
 		if (empty(self::$config)) {
 			self::$config = self::load_config ();
@@ -26,11 +26,12 @@ class Zy_Helper_Config {
 			trigger_error ('[Error] config error [Detail] load configure error');
 		}
 
-        if ($key === NULL)
+        if ($key === NULL || $pkg === NULL)
         {
             return NULL;
         }
-        return isset(self::$config[$key]) ? self::$config[$key] : NULL;
+
+        return isset(self::$config[$pkg][$key]) ? self::$config[$pkg][$key] : NULL;
 	}
 
 
@@ -41,9 +42,9 @@ class Zy_Helper_Config {
      * @param  mixed   值
      * @return  bool
      */
-	public static function setConfig ($item, $value)
+	public static function setConfig ($pkg, $key, $value)
 	{
-		self::$config[$item] = $value;
+		self::$config[$pkg][$key] = $value;
 	}
 
 

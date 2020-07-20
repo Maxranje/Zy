@@ -64,11 +64,9 @@ class Zy_Helper_Log {
      */
     private function __construct()
     {
-        $log_path = Zy_Helper_Config::getConfig('log_path');
+        $log_path = Zy_Helper_Config::getConfig('system', 'log_path');
 
-        $this->_log_path = ($log_path !== '') ? $log_path : BASEPATH . 'logs/' ;
-        $this->_log_path .= APP_NAME . DIRECTORY_SEPARATOR;
-        $this->_file_ext = "log";
+        $this->_log_path = ($log_path !== '') ? $log_path : '/var/log/php-fpm/php-fpm.log' ;
         file_exists($this->_log_path) OR mkdir($this->_log_path, 0755, TRUE);
 
         if ( ! is_dir($this->_log_path) OR ! is_writable($this->_log_path))
@@ -114,19 +112,12 @@ class Zy_Helper_Log {
             return FALSE;
         }
 
-        if ($this->_levels[$level] <= 2) {
-            //$filepath = $this->_log_path.APP_NAME.'.'.date('Ymd').'.'.$this->_file_ext . ".wf";
-            $filepath = $this->_log_path.APP_NAME.'.'.$this->_file_ext . ".wf";
-        } else {
-            $filepath = $this->_log_path.APP_NAME.'.'.date('Ymd').'.'.$this->_file_ext;
-        }
-
-        if ( ! file_exists($filepath))
+        if ( ! file_exists($this->_log_path))
         {
             $newfile = TRUE;
         }
 
-        if ( ! $fp = @fopen($filepath, 'ab'))
+        if ( ! $fp = @fopen($this->_log_path, 'ab'))
         {
             return FALSE;
         }
@@ -138,7 +129,7 @@ class Zy_Helper_Log {
 
         if (isset($newfile) && $newfile === TRUE)
         {
-            chmod($filepath, $this->_file_permissions);
+            chmod($this->_log_path, $this->_file_permissions);
         }
 
         return true;

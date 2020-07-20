@@ -27,7 +27,7 @@ class Zy_Base_Bootstrap {
         require_once (SYSPATH . 'config/constants.php');
 
         // set charset-related stuff
-        $charset = strtoupper(Zy_Helper_Config::getConfig('charset'));
+        $charset = strtoupper(Zy_Helper_Config::getConfig('system', 'charset'));
         if (empty($charset)){
             trigger_error('[Error] system initialization, [Detail] charset empty');
         }

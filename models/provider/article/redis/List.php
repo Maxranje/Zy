@@ -1,6 +1,6 @@
 <?php
 
-class Dao_Na_List extends Zy_BaseDao {
+class Dao_Na_List extends Zy_Base_Dao {
 
     public function __construct() {
         $this->_dbName      = "maxdb";

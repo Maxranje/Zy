@@ -20,15 +20,19 @@ class Zy_Database_DBservice
 
     // 获取DB驱动程序, 可能一个程序中会连接两个不同的数据库,  所以需要根据_dbname重新指定
 	public static function getDB ($dbname = 'default') {
-		if (self::$db_config === NULL) {
-			self::_initDBConfig($dbname);
-		}
+        $db_driver_name = Zy_Helper_Config::getConfig('system', 'dbdriver');
+        if (empty($db_driver_name)) {
+            throw new Exception ('[Error] connect db failed, [Detail] db driver read failed');
+        }
 
-		if (self::$db_driver === NULL){
-			$driver = 'Zy_Database_Drivers_'.self::$db_config['dbdriver'].'_Driver';
-			self::$db_driver = new $driver(self::$db_config);
-			self::$db_driver->initialize();
-		}
+        self::$db_config = Zy_Helper_Config::getConfig('database', $db_driver_name);
+        if (empty(self::$db_config)) {
+            throw new Exception ('[Error] connect db failed, [Detail] db config read failed');
+        }
+
+		$driver_class = 'Zy_Database_Drivers_'.ucfirst($db_driver_name).'_Driver';
+		self::$db_driver = new $driver_class(self::$db_config);
+		self::$db_driver->initialize();
 
         // 如果更换数据库, 需要重新指定
         if ($dbname != self::$db_driver->database) {
@@ -38,69 +42,6 @@ class Zy_Database_DBservice
             }
         }
 		return self::$db_driver;
-	}
-
-    // init database config
-	private static function _initDBConfig ($dbname) {
-		// Load the DB config file if a DSN string wasn't passed
-		if (is_string($dbname) )
-		{
-			if ( !file_exists($file_path = SYSPATH.'config/database.php') )
-			{
-				trigger_error ('[Error] database init [Detail] database config file not exists');
-			}
-
-			include($file_path);
-
-			if ( ! isset($db) OR count($db) === 0)
-			{
-				trigger_error ('[Error] database init [Detail] database config item not set');
-			}
-
-			elseif ( ! isset($db[$dbname]))
-			{
-				trigger_error ('[Error] database init [Detail] database config item not exists');
-			}
-
-			self::$db_config = $db[$dbname];
-		}
-		elseif (is_string($dbname))
-		{
-			if (($dsn = @parse_url($dbname)) === FALSE)
-			{
-				trigger_error ('[Error] database init [Detail] Invalid DB Connection String');
-			}
-
-			self::$db_config = array(
-				'dbdriver'	=> $dsn['scheme'],
-				'hostname'	=> isset($dsn['host']) ? rawurldecode($dsn['host']) : '',
-				'port'		=> isset($dsn['port']) ? rawurldecode($dsn['port']) : '',
-				'username'	=> isset($dsn['user']) ? rawurldecode($dsn['user']) : '',
-				'password'	=> isset($dsn['pass']) ? rawurldecode($dsn['pass']) : '',
-				'database'	=> isset($dsn['path']) ? rawurldecode(substr($dsn['path'], 1)) : ''
-			);
-
-			// Were additional config items set?
-			if (isset($dsn['query']))
-			{
-				parse_str($dsn['query'], $extra);
-
-				foreach ($extra as $key => $val)
-				{
-					if (is_string($val) && in_array(strtoupper($val), array('TRUE', 'FALSE', 'NULL')))
-					{
-						$val = var_export($val, TRUE);
-					}
-
-					self::$db_config[$key] = $val;
-				}
-			}
-		}
-		// No DB specified yet? Beat them senseless...
-		if (empty(self::$db_config['dbdriver']))
-		{
-			trigger_error ('[Error] database connect [Detail] Unselected database type to connect');
-		}
 	}
 
 
