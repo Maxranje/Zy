@@ -12,19 +12,18 @@ abstract class Zy_Base_Actions {
     // _SERVER
     protected $publicParam = array();
 
-    // userid
-    protected $userInfo = [
-        'userid'        => '',
-        'islogin'       => 0,
+    // output
+
+    protected $output = [
+        'ec'    => 0,
+        'em'    => 'success',
+        'data'  => [],
     ];
 
-    // response
-    protected $output = array
-    (
-        'ec'     => 0,
-        'em'    => 'success',
-        'data'      => array(),
-    );
+    // userinfo
+    protected $userInfo = [];
+
+    protected $islogin = false;
 
     // ------------------------------
 
@@ -36,8 +35,10 @@ abstract class Zy_Base_Actions {
         $this->_before();
         try
         {
+            Zy_Helper_Benchmark::start('ts_all');
             $res = $this->invoke();
             $this->output['data'] = is_array($res) ? $res : array($res);
+            Zy_Helper_Benchmark::stop('ts_all');
         }
         catch (Exception $exception)
         {
@@ -69,21 +70,29 @@ abstract class Zy_Base_Actions {
         $this->publicParam = empty($_SERVER) ? array() : $_SERVER ;
 
         // session中有用户信息,  获取用户信息
-        $objSession = Zy_Base_Session::getInstance();
-        if ( $objSession !== NULL && $objSession->sessionStatus() )
-        {
-            $this->userInfo = $objSession->getSessionInfo();
-
-            if (!empty($this->userInfo['userid']))
-            {
-                $this->userInfo['islogin'] = 1;
-            }
+        $this->userInfo = $this->getSessionUserInfo();
+        if (empty($this->userInfo)) {
+            $this->islogin = false;
         }
     }
 
     // 结果内容处理
     protected function _after () {
-        $this->_output = new Zy_Output ();   
-        $this->_output->display($this->_tplData);
+        $this->outputJson();
     }
+
+    public function getSessionUserInfo() {
+        $session = Zy_Base_Session::getInstance()->getSessionUserInfo;
+        return $session->getSessionUserId();
+    }
+
+    public function outputJson () {
+		Zy_Helper_Log::addnotice("time: [" . Zy_Helper_Benchmark::elapsed_all() . "] request complete" );
+		echo json_encode($this->output);
+		exit;
+    }
+
+    // public function outputTemplate () {
+
+    // }
 }

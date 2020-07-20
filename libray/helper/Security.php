@@ -2,7 +2,7 @@
 /**
  * 安全类
  */
-class Zy_Security {
+class Zy_Helper_Security {
 
 	/**
 	 * List of sanitize filename strings

@@ -5,52 +5,61 @@
  * @author wangxuewen <maxranje@aliyun.com>
  */
 
-abstract class Zy_Base_Session  {
+class Zy_Base_Session  {
 
     private static $instance    = null;
 
-    private static $_config     = null;
-
-    private function __construct () {
-    }
+    private function __construct() {}
 
     public static function getInstance () {
         if (self::$instance === NULL) {
-            self::$_config = [
-                'sess_driver'       => Zy_Helper_Config::getConfig("sess_driver"),
-                'sess_cookie_name'  => Zy_Helper_Config::getConfig("sess_cookie_name"),
-                'sess_expiration'   => Zy_Helper_Config::getConfig("sess_expiration"),
-            ];
-            $sess_class_name = "Zy_Library_Sess_" . ucfirst(self::$_config['sess_driver']);
-            self::$instance = new $sess_class_name (self::$_config);
+            session_start();
+            self::$instance = new self();
         }
         return self::$instance;
     }
 
+    public function getSessionUserInfo () {
+        $userid = $this->getSessionUserId ();
+        $name = $this->getSessionUserName ();
+        $phone = $this->getSessionUserPhone ();
 
-    abstract public function makeSession ($userInfo) ;
+        if (empty($userid) || empty($name) || empty($phone)) {
+            return [];
+        }
 
-    abstract public function setSessionInfo ($key , $val) ;
-
-    abstract public function setSessionArray ($arrParam) ;
-
-    abstract public function getSessionInfo ($key) ;
-
-    abstract public function sessionStatus ();
-
-    abstract public function unsetSessionInfo ($key) ;
-
-    abstract public function destroySession() ;
-
-    public function getCookie ($key) {
-        return isset($_COOKIE[$key]) ? $_COOKIE[$key] : null;
+        return [
+            'userid' => $userid,
+            'name'   => $name,
+            'phone'  => $phone,
+        ];
     }
 
-    public function setCookie($key, $value, $time=7200) {
-        return setcookie($key, $value, $time);
+    public function getSessionUserId () {
+        return isset($_SESSION['userid']) ? $_SESSION['userid'] : '';
     }
 
-    public function bulidZyuss ($uid) {
-        return Zy_Library_IdCrypt::encodeQid($uid + time());
+    public function getSessionUserPhone () {
+        return isset($_SESSION['phone']) ? $_SESSION['phone'] : '';
+    }
+
+    public function getSessionUserName () {
+        return isset($_SESSION['name']) ? $_SESSION['name'] : '';
+    }
+
+    public function getSessionUserAvatar () {
+        return isset($_SESSION['avatar']) ? $_SESSION['avatar'] : '';
+    }
+
+    public function getSessionUserVerify () {
+        return isset($_SESSION['verify']) ? $_SESSION['verify'] : [];
+    }
+
+    public function setSessionUserName ($name) {
+        $_SESSION['name'] = $name;
+    }
+
+    public function setSessionVerify ($verify) {
+        $_SESSION['verify'] = $verify;
     }
 }

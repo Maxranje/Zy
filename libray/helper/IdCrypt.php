@@ -3,7 +3,7 @@
  * ID 加密
  */
 
-class Zy_Library_IdCrypt {
+class Zy_Helper_IdCrypt {
     const NAPI_QUESTION_CRYPT_KEY = 'iVPed<7K';
     const NAPI_ARTICLE_CRYPT_KEY  = '^.vAy$TT';
     const QB_QUESTION_CRYPT_KEY   = 'lVPed<8K';

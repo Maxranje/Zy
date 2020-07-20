@@ -126,7 +126,7 @@ abstract class Zy_Database_DBdriver {
 			}
 		}
 
-		Zy_Log::addnotice('Database Driver Class Initialized');
+		Zy_Helper_Log::addnotice('Database Driver Class Initialized');
 		return $this->db_set_charset($this->char_set);
 	}
 
@@ -231,7 +231,7 @@ abstract class Zy_Database_DBdriver {
 		$_sql_type = $this->sql_type($sql);
 
 		if ( $_sql_type != 'dml' && $_sql_type != 'dql' ){
-			Zy_Log::warning('Illegal operation SQL type');
+			Zy_Helper_Log::warning('Illegal operation SQL type');
 			return FALSE;
 		}
 
@@ -246,20 +246,20 @@ abstract class Zy_Database_DBdriver {
 			$this->queries[] = $sql;
 		}
 
-		Zy_Benchmark::start('db_query');
+		Zy_Helper_Benchmark::start('db_query');
 		if (FALSE === ($this->result_id = $this->simple_query($sql)))
 		{
 			$error = $this->error();
-			Zy_Log::warning('db query error: '.$error['message'].' - Invalid query: '.$sql);
+			Zy_Helper_Log::warning('db query error: '.$error['message'].' - Invalid query: '.$sql);
 
 			return FALSE;
 		}
-		Zy_Benchmark::stop('db_query');
+		Zy_Helper_Benchmark::stop('db_query');
 
 		// 记录本次查询时间
 		if ($this->save_queries === TRUE)
 		{
-			$this->query_times[] = Zy_Benchmark::elapsed('db_query');
+			$this->query_times[] = Zy_Helper_Benchmark::elapsed('db_query');
 		}
 
 		// DML语句直接返回

@@ -1,5 +1,5 @@
 <?php
-class Zy_Database_Drivers_mysqli_Driver extends Zy_Database_DBdriver {
+class Zy_Database_Drivers_Mysqli_Driver extends Zy_Database_DBdriver {
 
 	// 本类DB驱动
 	public $dbdriver = 'mysqli';
@@ -177,9 +177,7 @@ class Zy_Database_Drivers_mysqli_Driver extends Zy_Database_DBdriver {
 	protected function _trans_start()
 	{
 		$this->conn_id->autocommit(FALSE);
-		return Zy_Common::is_php('5.5')
-			? $this->conn_id->begin_transaction()
-			: $this->simple_query('START TRANSACTION'); // can also be BEGIN or BEGIN WORK
+		$this->conn_id->begin_transaction()
 	}
 
 

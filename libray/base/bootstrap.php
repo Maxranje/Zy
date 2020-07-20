@@ -73,11 +73,11 @@ class Zy_Base_Bootstrap {
             trigger_error ('Error] router error [Detail] controller or action empty');
         }
 
-        if (! file_exists(APPPATH.'controllers/' . $controller . '.php')) {
+        if (! file_exists(BASEPATH.'controllers/' . $controller . '.php')) {
             trigger_error ('Error] router error [Detail] file not found "' . $controller . '.php"');
         }
 
-        require_once(APPPATH.'controllers/' . $controller . '.php');
+        require_once(BASEPATH.'controllers/' . $controller . '.php');
         if ( !class_exists('Controller_' . $controller, FALSE) ) {
             trigger_error ('Error] router error [Detail] class not found "Controller_'.$controller .'"');
         }
@@ -95,7 +95,6 @@ class Zy_Base_Bootstrap {
      * @return  object
      */
     public function run() {
-        Zy_Helper_Benchmark::start('ts_all');
         $this->_initVariables ();
         $this->_initAutoRoute ();
     }

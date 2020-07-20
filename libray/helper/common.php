@@ -39,7 +39,7 @@ class Zy_Helper_Common
         {
             return FALSE;
         }
-        return htmlspecialchars($str, ENT_QUOTES, config_item('charset'), $double_encode);
+        return htmlspecialchars($str, ENT_QUOTES, Zy_Helper_Config::getConfig('charset'), $double_encode);
     }
 
     // 检测是否是AJAX请求
@@ -54,7 +54,7 @@ class Zy_Helper_Common
         self::http_redirect('http://127.0.0.1/error.html?status=' . $errno) ;
     }
 
-    // 重定向登录页面
+    // 重定向其他页面
     public static function http_redirect ($url, $status = 301)
     {
         self::set_header_status($status);

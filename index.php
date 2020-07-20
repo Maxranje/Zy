@@ -1,6 +1,6 @@
 <?php
 define('APP_NAME',  'napi');
-define('ENV',       'production');
+define('ENV',       'development');
 
 # init error reporting by env
 switch (ENV) {

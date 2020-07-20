@@ -67,8 +67,8 @@ class Zy_Helper_Config {
         }
 
         // load application config
-        $project_config_path = APPPATH.'config/config.php';
-        if (file_exists($project_config_path))
+        $project_config_path = BASEPATH . 'config/config.php';
+        if (file_exists($project_config_path)) 
         {
             require($project_config_path);
         }

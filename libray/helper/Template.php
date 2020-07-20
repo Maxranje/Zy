@@ -3,7 +3,7 @@
  * TWIG 模板引擎外部调用入口, 封装了TWIG引擎的调用
  *
  */
-class Zy_Template {
+class Zy_Helper_Template {
 
     /**
      * 模板引擎使用的输出参数

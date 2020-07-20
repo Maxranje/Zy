@@ -21,7 +21,7 @@ class Zy_Base_Controller {
             trigger_error ('[Error] base controller error, [Detail] action request param error');
         }
 
-        $action_real_path = APPPATH . $this->actions[$act];
+        $action_real_path = BASEPATH . $this->actions[$act];
 
         if (!file_exists ($action_real_path)) {
             trigger_error ('[Error] base controller error, [Detail] action file does not exist ');

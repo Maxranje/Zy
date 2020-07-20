@@ -4,7 +4,7 @@
  * Redis连接工具类
  *
  */
-class Zy_Library_Redis  {
+class Zy_Helper_Redis  {
 
     // 简化固化REDIS连接方式
 

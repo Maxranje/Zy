@@ -1,6 +1,6 @@
 <?php
 
-class Zy_Library_StrCrypt {
+class Zy_Helper_StrCrypt {
 
     const CRYPT_KEYA = 'd711e5723db5b03e';   // 密匙a会参与加解密 //'.>,df-zZ&';
     const CRYPT_KEYB = '8b912ff2723de14a';   // 密匙b会用来做数据完整性验证
