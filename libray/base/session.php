@@ -35,6 +35,17 @@ class Zy_Base_Session  {
         ];
     }
 
+    public function setSessionUserInfo ($userid, $name, $phone, $avatar = "") {
+        if (empty($userid) || empty($name) || empty($phone)) {
+            return false;
+        }
+
+        $this->setSessionUserId($userid);
+        $this->setSessionUserName($name);
+        $this->setSessionUserPhone($phone);
+        $this->setSessionUserAvatar($avatar);
+    }
+
     public function getSessionUserId () {
         return isset($_SESSION['userid']) ? $_SESSION['userid'] : '';
     }
@@ -51,12 +62,24 @@ class Zy_Base_Session  {
         return isset($_SESSION['avatar']) ? $_SESSION['avatar'] : '';
     }
 
-    public function getSessionUserVerify () {
-        return isset($_SESSION['verify']) ? $_SESSION['verify'] : [];
-    }
-
     public function setSessionUserName ($name) {
         $_SESSION['name'] = $name;
+    }
+
+    public function setSessionUserId ($userid) {
+        $_SESSION['userid'] = $userid;
+    }
+
+    public function setSessionUserPhone ($phone) {
+        $_SESSION['phone'] = $phone;
+    }
+
+    public function setSessionUserAvatar ($avatar) {
+        $_SESSION['avatar'] = $avatar;
+    }
+
+    public function getSessionUserVerify () {
+        return isset($_SESSION['verify']) ? $_SESSION['verify'] : [];
     }
 
     public function setSessionVerify ($verify) {

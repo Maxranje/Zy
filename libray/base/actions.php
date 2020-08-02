@@ -7,24 +7,21 @@
 abstract class Zy_Base_Actions {
 
     // _GET 或 _POST
-    protected $requestParam = array();
+    protected $_requestParam = array();
 
     // _SERVER
-    protected $publicParam = array();
+    protected $_publicParam = array();
 
-    // output
+    protected $_userInfo = array();
 
-    protected $output = [
-        'ec'        => 0,
-        'em'        => 'success',
+    protected $isLogin = false;
+
+    protected $_output = array(
+        'ec'  => 0,
+        'em'  => 'success',
+        'data' => array(),
         'timestamp' => 0,
-        'data'      => [],
-    ];
-
-    // userinfo
-    protected $userInfo = [];
-
-    protected $islogin = false;
+    );
 
     // ------------------------------
 
@@ -38,13 +35,13 @@ abstract class Zy_Base_Actions {
         {
             Zy_Helper_Benchmark::start('ts_all');
             $res = $this->invoke();
-            $this->output['data'] = is_array($res) ? $res : array($res);
+            $this->_output['data'] = is_array($res) ? $res : array($res);
             Zy_Helper_Benchmark::stop('ts_all');
         }
         catch (Exception $exception)
         {
-            $this->output['ec'] = $exception->getCode ();
-            $this->output['em'] = $exception->getMessage ();
+            $this->_output['ec'] = $exception->getCode ();
+            $this->_output['em'] = $exception->getMessage ();
         }
         $this->_after();
     }
@@ -55,39 +52,59 @@ abstract class Zy_Base_Actions {
         $_GET   = !empty($_GET)  && is_array($_GET)  ? $_GET  : array();
         $_POST  = !empty($_POST) && is_array($_POST) ? $_POST : array();
 
-        $this->requestParam = array_merge ($_GET, $_POST) ;
+        $this->_requestParam = array_merge ($_GET, $_POST) ;
 
-        if ( !empty($this->requestParam ))
+        if ( !empty($this->_requestParam ))
         {
-            foreach ($this->requestParam as $key => $value)
+            foreach ($this->_requestParam as $key => $value)
             {
                 if ( is_numeric( $key ) )
                 {
-                    unset ($this->requestParam[$key]);
+                    unset ($this->_requestParam[$key]);
                 }
             }
         }
 
-        $this->publicParam = empty($_SERVER) ? array() : $_SERVER ;
+        $this->_publicParam = empty($_SERVER) ? array() : $_SERVER ;
 
         // session中有用户信息,  获取用户信息
         $session = Zy_Base_Session::getInstance();
-        $this->userInfo = $session->getSessionUserInfo();
+        $this->_userInfo = $session->getSessionUserInfo();
 
-        if (empty($this->userInfo)) {
-            $this->islogin = false;
-        }
+        $this->checkLogin ();
     }
 
     // 结果内容处理
     protected function _after () {
-        $this->output['timestamp'] = time();
+        $this->_output['timestamp'] = time();
+        if (!isset($this->_output['userInfo'])) {
+            $this->_output['userInfo'] = $this->_userInfo;
+        }
         $this->outputJson();
+    }
+
+    public function checkLogin () {
+        if (empty($this->_userInfo)) {
+            if (Zy_Helper_URI::spencryptApi() ) {
+                $this->error(401, '请先登录');
+            }
+            $this->isLogin = false;
+            return false;
+        }
+        return true;
     }
 
     public function outputJson () {
 		Zy_Helper_Log::addnotice("time: [" . Zy_Helper_Benchmark::elapsed_all() . "] request complete" );
-		echo json_encode($this->output);
+		echo json_encode($this->_output);
 		exit;
+    }
+
+    public function error($ec = 405, $em = '', $data = []) {
+        $this->_output['ec'] = $ec;
+        $this->_output['em'] = $em;
+        $this->_output['data'] = $data;
+        $this->_output['timestamp'] = time();
+        $this->outputJson();
     }
 }

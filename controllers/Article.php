@@ -2,6 +2,7 @@
 class Controller_Article extends Zy_Base_Controller{
 
     public $actions = array(
-        'list'      => 'actions/article/List.php',
+        'lists'      => 'actions/article/lists.php',
+        'details'    => 'actions/article/details.php',
     );
 }

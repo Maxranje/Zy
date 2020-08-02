@@ -212,4 +212,5 @@ class Zy_Helper_Common
 
         header($server_protocol.' '.$code.' '.$text, TRUE, $code);
     }
+    
 }

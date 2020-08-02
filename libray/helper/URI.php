@@ -46,4 +46,13 @@ class Zy_Helper_URI {
 
 		return $segments;
 	}
+
+	public static function spencryptApi() {
+
+		$requestUri = $_SERVER['REQUEST_URI'];
+		preg_match('/^([^\?]*)(\?.*)?$/', $requestUri, $arr);
+		$requestApi = $arr[1];
+
+		return !empty(Zy_Helper_Config::getConfig('spencrypt', $requestApi));
+	}
 }

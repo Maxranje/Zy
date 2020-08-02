@@ -1,6 +1,6 @@
 <?php
 
-class Action_Lists extends Zy_Base_Actions {
+class Action_Login extends Zy_Base_Actions {
     public function invoke () {
         $arrInput = array(
             'userid'  => isset($this->_userInfo['userid']) ? trim($this->_requestParam['userid']) : '',
