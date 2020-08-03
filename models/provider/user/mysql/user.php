@@ -1,14 +1,25 @@
 <?php
 
-class Dao_User_Mysql_ extends Zy_Base_Dao {
+class Dao_User_Mysql_User extends Zy_Base_Dao {
 
     public function __construct() {
-        $this->_dbName      = "maxdb";
-        $this->_table       = "tblTestColumn";
+        $this->_dbName      = "zdby";
+        $this->_table       = "tblUser";
         $this->arrFieldsMap = array(
-            'id' => 'id',
-            'name' => 'name',
-            'info' => 'info',
+            "userid"  => "userid" , 
+            "type"  => "type" , 
+            "name"  => "name" , 
+            "school"  => "school" , 
+            "graduate"  => "graduate" , 
+            "class"  => "class" , 
+            "birthday"  => "birthday" , 
+            "sex"  => "sex" , 
+            "phone"  => "phone" , 
+            "email"  => "email" , 
+            "vip"  => "vip" , 
+            "createtime"  => "createtime" , 
+            "updatetime"  => "updatetime" , 
+            "ext"  => "ext" , 
         );
     }
 }

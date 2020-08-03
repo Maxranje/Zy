@@ -15,11 +15,19 @@ class Zy_Database_DBservice
     /**
      * DB驱动程序
      */
-	private static $db_driver =  NULL;
+    private static $db_driver =  NULL;
+
+    /**
+     * 承载DB驱动数组, 无需多次申请
+     */
+    private static $db_driver_pool = array();
 
 
     // 获取DB驱动程序, 可能一个程序中会连接两个不同的数据库,  所以需要根据_dbname重新指定
 	public static function getDB ($dbname = 'default') {
+        if ( !empty(self::$db_driver_pool[$dbname]) ) { 
+            return self::$db_driver_pool[$dbname];
+        }
         $db_driver_name = Zy_Helper_Config::getConfig('system', 'dbdriver');
         if (empty($db_driver_name)) {
             throw new Exception ('[Error] connect db failed, [Detail] db driver read failed');
@@ -41,6 +49,8 @@ class Zy_Database_DBservice
                 throw new Exception ('[Error] connect db failed, [Detail] change database failed');
             }
         }
+        
+        self::$db_driver_pool[$dbname] = self::$db_driver;
 		return self::$db_driver;
 	}
 

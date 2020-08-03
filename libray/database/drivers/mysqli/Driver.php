@@ -84,7 +84,7 @@ class Zy_Database_Drivers_Mysqli_Driver extends Zy_Database_DBdriver {
 
 
 	// 选择数据库
-	public function db_select($database = '')
+	public function db_select($database)
 	{
 		if ($database === '')
 		{
