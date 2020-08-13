@@ -20,7 +20,7 @@ switch (ENV) {
 
 # set file path
 define('BASEPATH',  dirname(__FILE__).DIRECTORY_SEPARATOR);
-define('SYSPATH',   BASEPATH . 'libray/');
+define('SYSPATH',   BASEPATH . 'base/');
 
 require_once SYSPATH . 'autoload/autoload.php';
-Zy_Base_Bootstrap::getInstance()->run();
+Zy_Core_Bootstrap::getInstance()->run();

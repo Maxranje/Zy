@@ -18,5 +18,15 @@ class Dao_Teacher_Mysql_Teacher extends Zy_Base_Dao {
             "updatetime" => "updatetime",
             "ext" => "ext",
         );
+
+        $this->simpleFields = array(
+            "teacherid" => "teacherid",
+            "teachertype" => "teachertype",
+            "teachername" => "teachername",
+            "teacheravatar" => "teacheravatar",
+            "teacherdesc" => "teacherdesc",
+            "status" => "status",
+            "createtime" => "createtime",
+        );
     }
 }

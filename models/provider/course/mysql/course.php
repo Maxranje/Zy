@@ -19,10 +19,26 @@ class Dao_Course_Mysql_Course extends Zy_Base_Dao {
             "coursedetails"   => "coursedetails",
             "status"   => "status",
             "isvip"   => "isvip",
-            "vipcount"   => "vipcount",
+            "price"   => "price",
+            "recommend" => "recommend",
             "createtime"   => "createtime",
             "updatetime"   => "updatetime",
             "ext"   => "ext",
         );
+
+        $this->simpleFields = [
+            "courseid"   => "courseid",
+            "coursetype"   => "coursetype",
+            "coursename"   => "coursename",
+            "courseno"   => "courseno",
+            "courseimg"   => "courseimg",
+            "location"   => "location",
+            "coursetime"   => "coursetime",
+            "maxstunum"   => "maxstunum",
+            "coursetype"   => "coursetype",
+            "coursedesc"   => "coursedesc",
+            "status"   => "status",
+            "createtime"   => "createtime",
+        ];
     }
 }

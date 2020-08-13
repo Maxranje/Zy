@@ -16,5 +16,10 @@ class Dao_Teacher_Mysql_Course extends Zy_Base_Dao {
             "updatetime"  => "updatetime",
             "ext"  => "ext",
         );
+
+        $this->simpleFields = array(
+            "teacherid"  => "teacherid",
+            "courseid"  => "courseid",
+        );
     }
 }

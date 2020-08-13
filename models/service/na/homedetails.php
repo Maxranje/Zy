@@ -2,33 +2,55 @@
 
 class Service_Na_Homedetails {
 
+    public $bannerPs;
+
+    public $articlePs;
+
+    public $coursePs;
+
+    public $teacherPs;
+
+    public $thoughtPs;
+
     public function __construct() {
-        $this->bannerService = new Service_Banner_Index ();
-        $this->articleService = new Service_Article_Index ();
+        $this->bannerPs   = new Service_Banner_Lists ();
+        $this->articlePs  = new Service_Actical_Lists ();
+        $this->coursePs   = new Service_Course_Lists ();
+        $this->teacherPs  = new Service_Teacher_Lists ();
+        $this->thoughtPs  = new Service_Thought_Lists ();
     }
 
-    public function execute ($arrInput){
+    public function execute (){
 
         $arrOutput = [
-
-            'coursetype' => array(),        
-
-            'banner' => array(),
-
-            'article' => array(),
+            // 课程类型
+            'coursetype'    => Service_Course_Lists::COURSE_TYPE_LISTS,
             
-            'courses' => array(),
+            // banner 列表
+            'banner'        => array(),
 
-            'teacher' => array(),
+            // 热门文章列表
+            'article'       => array(),
 
-            'thought' => array(), 
+            // 热门课程列表
+            'courses'       => array(),
 
-            'vediourl' => '',
+            // 老师列表
+            'teacher'       => array(),
+
+            // 附加
+            'thought'       => array(), 
+
+            // uri
+            'vediourl'      => '',
         ];
 
-
-        $arrOutput['coursetype'] = Service_Course_Index::COURSE_TYPE;
-        $arrOutput['banner']     = $this->banner->getBannerList(0, 5);
+        // banner 列表
+        $arrOutput['banner']     = $this->bannerPs->getBannerList(0, 5);
+        $arrOutput['article']    = $this->articlePs->getRecommendArticleList ();
+        $arrOutput['courses']    = $this->coursePs->getCourseList ("", 0, 1, 0, 5);
+        $arrOutput['teacher']    = $this->teacherPs->getTeacherList ();
+        $arrOutput['thought']    = $this->thoughtPs->getThoughtList ();
 
         return $arrOutput;
     }

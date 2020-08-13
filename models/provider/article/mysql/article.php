@@ -10,8 +10,7 @@ class Dao_Article_Mysql_Article extends Zy_Base_Dao {
             'articlename'   => 'articlename',
             'articledesc'   => 'articledesc',
             'articleimg'   => 'articleimg',
-            'author'   => 'author',
-            'maxstunum'   => 'maxstunum',
+            'articleauthor'   => 'articleauthor',
             'articletype'   => 'articletype',
             'articledetails'   => 'articledetails',
             'status'   => 'status',
@@ -19,6 +18,19 @@ class Dao_Article_Mysql_Article extends Zy_Base_Dao {
             'createtime'   => 'createtime',
             'updatetime'   => 'updatetime',
             'ext'   => 'ext',
+        );
+
+        $this->simpleFields = array(
+            'articleid'   => 'articleid',
+            'articlename'   => 'articlename',
+            'articledesc'   => 'articledesc',
+            'articleimg'   => 'articleimg',
+            'articleauthor'   => 'articleauthor',
+            'articletype'   => 'articletype',
+            'status'   => 'status',
+            'recommend'   => 'recommend',
+            'createtime'   => 'createtime',
+            'updatetime'   => 'updatetime',
         );
     }
 }
