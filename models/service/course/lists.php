@@ -7,12 +7,12 @@ class Service_Course_Lists {
     private $daoTeacherCourse ;
 
     const COURSE_TYPE_LISTS = [
-        ['id'    => 's', 'name'  => '',],
-        ['id'    => '','name'  => '',],
-        ['id'    => '','name'  => '',],
-        ['id'    => 's', 'name'  => '',],
-        ['id'    => '','name'  => '',],
-        ['id'    => '','name'  => '',],
+        ['id'    => 'toefl',    'name'  => 'TOEFL',],
+        ['id'    => 'ielts',    'name'  => 'IELTS',],
+        ['id'    => 'sat',      'name'  => 'SAT',],
+        ['id'    => 'sat2',     'name'  => 'SATⅡ/AP',],
+        ['id'    => 'gre',      'name'  => 'GRE/GMAT',],
+        ['id'    => 'other',    'name'  => '其他课程',],
     ];
 
     const COURSE_STATUS_NORMAL = 1;

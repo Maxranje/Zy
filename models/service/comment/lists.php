@@ -5,10 +5,10 @@ class Service_Comment_Lists {
     private $daoComment ;
 
     const COMMENT_TYPE = [
-        1 => '',
-        2 => '',
-        3 => '',
-        4 => '',
+        'toefl' => '托福牛人',
+        'ielts' => '雅思牛人',
+        'sat'   => 'SAT牛人',
+        'other' => '其他牛人',
     ];
 
     public function __construct() {
