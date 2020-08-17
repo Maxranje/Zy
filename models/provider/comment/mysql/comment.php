@@ -1,10 +1,10 @@
 <?php
 
-class Dao_Tought_Mysql_Tought extends Zy_Core_Dao {
+class Dao_Comment_Mysql_Comment extends Zy_Core_Dao {
 
     public function __construct() {
         $this->_dbName      = "zdby";
-        $this->_table       = "tblTought";
+        $this->_table       = "tblComment";
 
         $this->arrFieldsMap = array(
             "id"  => "id",

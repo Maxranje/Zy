@@ -10,14 +10,14 @@ class Service_Na_Homedetails {
 
     public $teacherPs;
 
-    public $thoughtPs;
+    public $commentPs;
 
     public function __construct() {
         $this->bannerPs   = new Service_Banner_Lists ();
         $this->articlePs  = new Service_Artical_Lists ();
         $this->coursePs   = new Service_Course_Lists ();
         $this->teacherPs  = new Service_Teacher_Lists ();
-        $this->thoughtPs  = new Service_Thought_Lists ();
+        $this->commentPs  = new Service_Comment_Lists ();
     }
 
     public function execute (){
@@ -39,7 +39,7 @@ class Service_Na_Homedetails {
             'teacher'       => array(),
 
             // 附加
-            'thought'       => array(), 
+            'comment'       => array(), 
 
             // uri
             'vediourl'      => '',
@@ -53,7 +53,7 @@ class Service_Na_Homedetails {
         $arrOutput['article']    = $this->articlePs->getRecommendArticleList ();
         $arrOutput['courses']    = $this->coursePs->getCourseList ("", 0, 1, 0, 5);
         $arrOutput['teacher']    = $this->teacherPs->getTeacherList ();
-        $arrOutput['thought']    = $this->thoughtPs->getThoughtList ();
+        $arrOutput['comment']    = $this->commentPs->getCommentList ();
 
         if (Zy_Core_Session::getInstance()->getSessionUserType() == Service_Account_User::USER_TYPE_INNER) {
             $arrOutput['platformurl'] = "";

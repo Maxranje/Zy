@@ -1,10 +1,10 @@
 <?php
 
-class Service_Thought_Lists {
+class Service_Comment_Lists {
 
-    private $daoThought ;
+    private $daoComment ;
 
-    const THOUGHT_TYPE = [
+    const COMMENT_TYPE = [
         1 => '',
         2 => '',
         3 => '',
@@ -12,17 +12,17 @@ class Service_Thought_Lists {
     ];
 
     public function __construct() {
-        $this->daoThought = new Dao_Tought_Mysql_Tought () ;
+        $this->daoComment = new Dao_Comment_Mysql_Comment () ;
     }
 
-    public function getThoughtList (){
+    public function getCommentList (){
         $arrConds = array(
             'status' => 1,
         );
 
-        $arrFields = $this->daoThought->simpleFields;
+        $arrFields = $this->daoComment->simpleFields;
 
-        $lists = $this->daoThought->getListByConds($arrConds, $arrFields);
+        $lists = $this->daoComment->getListByConds($arrConds, $arrFields);
 
         if (empty($lists)) {
             return [];
@@ -30,12 +30,12 @@ class Service_Thought_Lists {
 
         $result = [];
         foreach ($lists as $index => $item) {
-            if (!isset(self::THOUGHT_TYPE[$item['type']])) {
+            if (!isset(self::COMMENT_TYPE[$item['type']])) {
                 continue;
             }
 
             if (!isset($result[$item['type']])) {
-                $result[$item['type']] = ['type' => self::THOUGHT_TYPE[$item['type']], 'lists' => []];
+                $result[$item['type']] = ['type' => self::COMMENT_TYPE[$item['type']], 'lists' => []];
             }
 
             if (count($result[$item['type']]['lists']) > 3) {
