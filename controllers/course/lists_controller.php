@@ -1,24 +1,25 @@
 <?php
-class Controller_Index extends Zy_Core_Controller{
+class Controller_Lists extends Zy_Core_Controller{
 
-    public function getDetailsInfo () {
-        $serivce = new Service_Na_Homedetails ();
-        $output = $serivce->execute();        
+    public function getCourseList () {
+        $pn = empty($this->_request['pn']) ? 0 : $this->_request['pn'];
+        $rn = empty($this->_request['rn']) ? 20 : $this->_request['rn'];
+        $coursetype = empty($this->_request['coursetype']) ? '' : strval($this->_request['coursetype']);
+        $teacherid = empty($this->_request['teacherid']) ? 0 : intval($this->_request['teacherid']);
 
-        if (empty($output)) {
-            $this->error(500, '服务异常');
+        $pn = $pn * 20;
+
+        if (empty($coursetype) && empty($teacherid)) {
+            $coursetype = Service_Course_Lists::COURSE_TYPE_LISTS[0]['id'];
         }
 
-        return $output;
+        $serivce = new Service_Course_Lists ();
+        $total = $serivce->getCourseList($coursetype, $teacherid);
+        $lists = $serivce->getCourseList($coursetype, $teacherid, 0, $pn, $rn);
+        $coursetype = $serivce->getCourseTypes ($coursetype);
+
+        return ['coursetype' => $coursetype, 'lists' => $lists, 'total' => $total];
     }
 
-
-    public function getPlainDetails () {
-
-    }
-
-    public function getCampusDetails () {
-
-    }
 
 }

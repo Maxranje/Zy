@@ -1,6 +1,6 @@
 <?php
 
-class Dao_User_Mysql_User extends Zy_Base_Dao {
+class Dao_User_Mysql_User extends Zy_Core_Dao {
 
     public function __construct() {
         $this->_dbName      = "zdby";
@@ -8,7 +8,7 @@ class Dao_User_Mysql_User extends Zy_Base_Dao {
         $this->arrFieldsMap = array(
             "userid"  => "userid" , 
             "type"  => "type" , 
-            "name"  => "name" , 
+            "uname"  => "uname" , 
             "school"  => "school" , 
             "graduate"  => "graduate" , 
             "class"  => "class" , 
@@ -17,9 +17,22 @@ class Dao_User_Mysql_User extends Zy_Base_Dao {
             "phone"  => "phone" , 
             "email"  => "email" , 
             "vip"  => "vip" , 
-            "createtime"  => "createtime" , 
+            "regtime"  => "regtime" , 
             "updatetime"  => "updatetime" , 
             "ext"  => "ext" , 
+        );
+
+        $this->simpleFields = array(
+            "userid"  => "userid" , 
+            "uname"  => "uname" , 
+            "school"  => "school" , 
+            "graduate"  => "graduate" , 
+            "class"  => "class" , 
+            "birthday"  => "birthday" , 
+            "sex"  => "sex" , 
+            "phone"  => "phone" , 
+            "email"  => "email" , 
+            "regtime"  => "regtime" , 
         );
     }
 }

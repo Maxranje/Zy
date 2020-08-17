@@ -10,17 +10,19 @@
  * 关闭
  */
 
-require_once SYSPATH.'/library/pay/wxwpay/lib/WxPay.Api.php';
-require_once SYSPATH.'/library/pay/wxwpay/ext/WxPay.NativePay.php';
+require_once SYSPATH.'/helper/pay/wxwpay/lib/WxPay.Api.php';
+require_once SYSPATH.'/helper/pay/wxwpay/ext/WxPay.NativePay.php';
 
-class Alipay_Api{
+class Zy_Helper_Pay_Wxpay_Api{
+
+    public static $instance;
 
     private function __construct() {
     }
 
     public static function getInstance () {
         if (self::$instance === NULL) {
-            self::$instance = new Alipay_Api ();
+            self::$instance = new Zy_Helper_Pay_Wxpay_Api ();
         }
         return self::$instance ;
     }
@@ -29,24 +31,25 @@ class Alipay_Api{
      * 获取支付的二维码
      *
      * @param  [string]     $out_trade_no [商户订单号，商户网站订单系统中唯一订单号]
+     * @param  [string]     $productid    [商品id, 必填]
      * @param  [string]     $subject      [订单名称, 必填]
      * @param  [string]     $total_amount [付款金额, 必填]
      * @param  [string]     $body         [商品描述, 非必填]
      * @return [type]               [description]
      */
-    public function getQrCode ($out_trade_no, $subject, $total_amount, $body = "") {
+    public function getQrCode ($out_trade_no, $product_id, $total_amount, $body = "") {
 
         $input = new WxPayUnifiedOrder();
-        $input->SetBody("test");
-        $input->SetAttach("test");
-        $input->SetOut_trade_no("sdkphp123456789".date("YmdHis"));
-        $input->SetTotal_fee("1");
+        $input->SetBody($body);
+        $input->SetAttach("zdby");
+        $input->SetOut_trade_no($out_trade_no);
+        $input->SetTotal_fee($total_amount);
         $input->SetTime_start(date("YmdHis"));
         $input->SetTime_expire(date("YmdHis", time() + 600));
-        $input->SetGoods_tag("test");
+        $input->SetGoods_tag("none");
         $input->SetNotify_url("http://paysdk.weixin.qq.com/notify.php");
         $input->SetTrade_type("NATIVE");
-        $input->SetProduct_id("123456789");
+        $input->SetProduct_id($product_id);
 
         $notify = new NativePay();
         $result = $notify->GetPayUrl($input);
@@ -64,7 +67,7 @@ class Alipay_Api{
      */
     public function query ($out_trade_no, $trade_no) {
         $requestBuilder = array(
-            'trade_no'      => $tradeNo,
+            'trade_no'      => $trade_no,
             'out_trade_no'  => $out_trade_no,
         );
         $requestBuilder = json_encode($this->requestBuilder,JSON_UNESCAPED_UNICODE);
@@ -98,7 +101,7 @@ class Alipay_Api{
         $requestBuilder = json_encode($this->requestBuilder,JSON_UNESCAPED_UNICODE);
 
         $request = new AlipayTradeRefundRequest();
-        $request->setBizContent ( $biz_content );
+        $request->setBizContent ( $requestBuilder );
 
         $response = $this->aopclientRequestExecute ($request);
         $response = $response->alipay_trade_refund_response;
@@ -124,7 +127,7 @@ class Alipay_Api{
         $requestBuilder = json_encode($this->requestBuilder,JSON_UNESCAPED_UNICODE);
 
         $request = new AlipayTradeFastpayRefundQueryRequest();
-        $request->setBizContent ( $biz_content );
+        $request->setBizContent ( $requestBuilder );
 
         $response = $this->aopclientRequestExecute ($request);
         return $response;
@@ -140,13 +143,13 @@ class Alipay_Api{
     public function close ($out_trade_no, $trade_no) {
         require_once dirname(__FILE__).'/build/AlipayTradeCloseContentBuilder.php';
         $requestBuilder = array(
-            'out_trade_no'  => $out_request_no,
+            'out_trade_no'  => $out_trade_no,
             'trade_no'      => $trade_no,
         );
-        $requestBuilder = json_encode($this->requestBuilder,JSON_UNESCAPED_UNICODE);
+        $requestBuilder = json_encode($requestBuilder,JSON_UNESCAPED_UNICODE);
 
         $request = new AlipayTradeCloseRequest();
-        $request->setBizContent ( $biz_content );
+        $request->setBizContent ( $requestBuilder );
 
         $response = $this->aopclientRequestExecute ($request);
         $response = $response->alipay_trade_close_response;
@@ -161,8 +164,6 @@ class Alipay_Api{
      */
     public function downloadurlQuery($builder){
         $biz_content=$builder->getBizContent();
-        //打印业务参数
-        $this->writeLog($biz_content);
         $request = new alipaydatadataservicebilldownloadurlqueryRequest();
         $request->setBizContent ( $biz_content );
 

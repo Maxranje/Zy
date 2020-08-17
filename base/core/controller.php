@@ -15,7 +15,11 @@ class Zy_Core_Controller {
     protected $_userInfo    = array();
 
     // 是否登录
-    protected $isLogin      = false;
+    protected $_isLogin     = false;
+
+    protected $_userid      = 0;
+
+    protected $_data        = array();
 
     // ------------------------------
 
@@ -32,6 +36,9 @@ class Zy_Core_Controller {
 
         // session中有用户信息,  获取用户信息
         $this->_userInfo = Zy_Core_Session::getInstance()->getSessionUserInfo();
+        if (!empty($this->_userInfo['userid'])) {
+            $this->_userid = $this->_userInfo['userid'] ;
+        } 
 
         $this->_output  = [
             'ec'        => 0,
@@ -47,7 +54,7 @@ class Zy_Core_Controller {
             $this->_output['data'] = is_array($res) ? $res : array($res);
             Zy_Helper_Benchmark::stop('ts_all');
         }
-        catch (Zy_Base_Exception $exception)
+        catch (Zy_Core_Exception $exception)
         {
             $this->_output['ec'] = $exception->getCode ();
             $this->_output['em'] = $exception->getMessage ();
@@ -61,7 +68,7 @@ class Zy_Core_Controller {
     }
 
     public function isLogin () {
-        return empty ($this->_userInfo);
+        return !empty ($this->_userInfo);
     }
 
     public function displayJson () {

@@ -1,6 +1,6 @@
 <?php
 
-class Dao_Tought_Mysql_Tought extends Zy_Base_Dao {
+class Dao_Tought_Mysql_Tought extends Zy_Core_Dao {
 
     public function __construct() {
         $this->_dbName      = "zdby";

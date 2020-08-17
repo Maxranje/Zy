@@ -14,7 +14,7 @@ class Service_Na_Homedetails {
 
     public function __construct() {
         $this->bannerPs   = new Service_Banner_Lists ();
-        $this->articlePs  = new Service_Actical_Lists ();
+        $this->articlePs  = new Service_Artical_Lists ();
         $this->coursePs   = new Service_Course_Lists ();
         $this->teacherPs  = new Service_Teacher_Lists ();
         $this->thoughtPs  = new Service_Thought_Lists ();
@@ -43,6 +43,9 @@ class Service_Na_Homedetails {
 
             // uri
             'vediourl'      => '',
+
+            // platform
+            "platformurl"   => "",
         ];
 
         // banner 列表
@@ -51,6 +54,10 @@ class Service_Na_Homedetails {
         $arrOutput['courses']    = $this->coursePs->getCourseList ("", 0, 1, 0, 5);
         $arrOutput['teacher']    = $this->teacherPs->getTeacherList ();
         $arrOutput['thought']    = $this->thoughtPs->getThoughtList ();
+
+        if (Zy_Core_Session::getInstance()->getSessionUserType() == Service_Account_User::USER_TYPE_INNER) {
+            $arrOutput['platformurl'] = "";
+        }
 
         return $arrOutput;
     }

@@ -13,22 +13,10 @@ class Zy_Helper_Common
      * @return boolean
      */
     public static function checkPhoneAvalilable($phone) {
-        if( (0 >= $phone) || (10000000000 >= $phone) || (20000000000 <= $phone) ) {
+        if( (0 >= $phone) || (10000000000 >= $phone) || (20000000000 <= $phone || !is_numeric($phone)) ) {
             return false;
         }
-        $phonePrefix = intval(substr($phone, 0, 3));
-        //以下为分运营商手机号开头规则
-        $arrPhonePrefixs = array(
-            'CMCC'    => array(134=>1, 135=>1, 136=>1, 137=>1, 138=>1, 139=>1, 150=>1, 151=>1, 152=>1,157=>1, 158=>1, 159=>1, 178=>1, 182=>1, 183=>1, 184=>1, 187=>1, 188=>1, 147=>1),
-            'UNICOM'  => array(130=>1, 131=>1, 132=>1, 155=>1, 156=>1, 176=>1, 185=>1, 186=>1, 145=>1),
-            'TELECOM' => array(133=>1, 153=>1, 173=>1, 177=>1, 180=>1, 181=>1, 189=>1),
-        );
-        foreach ($arrPhonePrefixs as $ISP => $prefixs) {
-            if (isset($prefixs[$phonePrefix])) {
-                return true;
-            }
-        }
-        return false;
+        return preg_match('#^1001[\d]{7}$|^13[\d]{9}$|^14[\d]{9}$|^15[^4]{1}\d{8}$|^16[\d]{9}$|^17\d{9}$|^18[\d]{9}|^19[\d]{9}$#', $phone) ? true : false;
     }
 
 
@@ -212,5 +200,76 @@ class Zy_Helper_Common
 
         header($server_protocol.' '.$code.' '.$text, TRUE, $code);
     }
-    
+
+    static public function rand_string($len=6,$type=0,$addChars='') {
+        $str ='';
+        switch($type) {
+            case 0:
+                $chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.$addChars;
+                break;
+            case 1:
+                $chars= str_repeat('0123456789',3);
+                break;
+            case 2:
+                $chars='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.$addChars;
+                break;
+            case 3:
+                $chars='abcdefghijkmnpqrstuvwxyz'.$addChars;//edited  zdf    去掉 o和l
+                break;
+            case 6://三个字母 + 一个数字   fixed iOS联想功能 造成验证码错误
+                $chars='abcdefghijkmnpqrstuvwxyz'.$addChars;//edited  zdf    去掉 o和l
+                break;
+            default :
+                // 默认去掉了容易混淆的字符oOLl和数字01，要添加请使用addChars参数
+                $chars='ABCDEFGHIJKMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789'.$addChars;
+                break;
+        }
+        if($len>10 ) {//位数过长重复字符串一定次数
+            $chars= $type==1? str_repeat($chars,$len) : str_repeat($chars,5);
+        }
+        if($type==6){//新增3个字母+一个数字
+            $chars   =   str_shuffle($chars);
+            $str     =   substr($chars,0,$len-1);
+            $str.= mt_rand(1,9);
+        }else{
+            $chars   =   str_shuffle($chars);
+            $str     =   substr($chars,0,$len);
+        }
+        return $str;
+    }
+
+    public static function sendCaptchaMsg ($mobile, $code) {
+        $api = 'https://dysmsapi.aliyuncs.com/?PhoneNumbers=%s&SignName=%s&TemplateCode=%s&TemplateParam=%s';
+        $SignName       = "中鼎博雅";
+        $TemplateCode   = 'SMS_153055065';
+        $AccessKeyId    = 'LTAI4Fxy55DiXm1EwhqHAcnF';
+        $TemplateParam  = json_encode(['code' => $code]);
+
+        $api = sprintf($api, $mobile, $SignName, $TemplateCode, $AccessKeyId. $TemplateParam);
+
+        return self::http($api, 'GET');
+    }
+
+    public static function http($url, $method = 'POST', $params = [], $header = [], $cookie = '', $userAgent = '', $option = [], & $httpcode = 0) {
+
+        $request = Zy_Helper_Curl::getInstance();
+        $request->setUrl($url);
+        $request->setParams($params);
+        $request->setMethod($method);
+        $request->setHeader($header);
+        $request->setCookie($cookie);
+        $request->setOptions($option);
+        $request->setUserAgent($userAgent);
+
+        $request->exec();
+
+        $result = $request->fetch();
+
+        $httpcode = $request->httpInfo();
+
+        $request->close();
+
+        return $result;
+
+    }
 }

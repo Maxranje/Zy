@@ -1,24 +1,19 @@
 <?php
-class Controller_Index extends Zy_Core_Controller{
+class Controller_Profile extends Zy_Core_Controller{
 
-    public function getDetailsInfo () {
-        $serivce = new Service_Na_Homedetails ();
-        $output = $serivce->execute();        
-
-        if (empty($output)) {
-            $this->error(500, '服务异常');
+    public function getArticlDetails () {
+        $articleid = empty($this->_request['articleid']) ? 0 : intval($this->_request['articleid']);
+        if (empty($articleid)) {
+            $this->error(405, '无法检索到相关文章');
         }
 
-        return $output;
+        $serivce = new Service_Artical_Lists ();
+        $details = $serivce->getArticleDetails($articleid);
+        
+        if (empty($details)) {
+            $this->error(405, '无法检索到相关文章');
+        }
+
+        return $details;
     }
-
-
-    public function getPlainDetails () {
-
-    }
-
-    public function getCampusDetails () {
-
-    }
-
 }

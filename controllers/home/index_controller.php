@@ -12,13 +12,4 @@ class Controller_Index extends Zy_Core_Controller{
         return $output;
     }
 
-
-    public function getPlainDetails () {
-
-    }
-
-    public function getCampusDetails () {
-
-    }
-
 }
