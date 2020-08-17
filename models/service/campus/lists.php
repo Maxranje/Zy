@@ -8,10 +8,13 @@ class Service_Campus_Lists {
         $this->daoCampus = new Dao_Campus_Mysql_Campus () ;
     }
 
-    public function getCampusList ($campusid = 0) {
+    const CAMPUS_STATUS_ONLINE  = 1;
+    const CAMPUS_STATUS_OFFLINE = 2;
+
+    public function getCampusList ($campusid) {
 
         $arrConds = [
-            'status' => 1,
+            'status' => self::CAMPUS_STATUS_ONLINE,
         ];
 
         $arrFields = $this->daoCampus->simpleFields;

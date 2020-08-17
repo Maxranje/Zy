@@ -7,10 +7,10 @@ class Dao_Campus_Mysql_Campus extends Zy_Core_Dao {
         $this->_table       = "tblCampus";
         $this->arrFieldsMap = array(
             "campusid"   => "campusid",
-            "city"   => "city",
+            "city"      => "city",
             "area"   => "area",
             "campusname"   => "campusname",
-            "campusdetailsid"   => "campusdetailsid",
+            "articleid"   => "articleid",
             "status"   => "status",
             "createtime"   => "createtime",
             "updatetime"   => "updatetime",
@@ -19,11 +19,8 @@ class Dao_Campus_Mysql_Campus extends Zy_Core_Dao {
 
         $this->simpleFields = [
             "campusid" => "campusid",
-            "city"   => "city",
-            "area"   => "area",
             "campusname"   => "campusname",
-            "campusdetailsid"   => "campusdetailsid",
-            "status"   => "status",
+            "articleid"   => "articleid",
             "createtime"   => "createtime",
         ];
     }

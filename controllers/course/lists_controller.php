@@ -14,8 +14,8 @@ class Controller_Lists extends Zy_Core_Controller{
         }
 
         $serivce = new Service_Course_Lists ();
-        $total = $serivce->getCourseList($coursetype, $teacherid);
-        $lists = $serivce->getCourseList($coursetype, $teacherid, 0, $pn, $rn);
+        $total = $serivce->getCourseTotal($coursetype, $teacherid);
+        $lists = $serivce->getCourseList ($coursetype, $teacherid, 0, $pn, $rn);
         $coursetype = $serivce->getCourseTypes ($coursetype);
 
         return ['coursetype' => $coursetype, 'lists' => $lists, 'total' => $total];

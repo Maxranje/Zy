@@ -21,12 +21,11 @@ class Dao_Teacher_Mysql_Teacher extends Zy_Core_Dao {
 
         $this->simpleFields = array(
             "teacherid" => "teacherid",
-            "teachertype" => "teachertype",
             "teachername" => "teachername",
             "teacheravatar" => "teacheravatar",
+            "teacherpic" => "teacherpic",
             "teacherdesc" => "teacherdesc",
-            "status" => "status",
-            "createtime" => "createtime",
+            "teacherdetails" => "teacherdetails",
         );
     }
 }

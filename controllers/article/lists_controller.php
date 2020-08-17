@@ -24,7 +24,7 @@ class Controller_Lists extends Zy_Core_Controller{
         $campusid = empty($this->_request['campusid']) ? 0 : intval($this->_request['campusid']);
 
         $serivce = new Service_Campus_Lists();
-        list($articleid, $lists) = $serivce->getCampusList();
+        list($articleid, $lists) = $serivce->getCampusList($campusid);
         if (empty($lists) || empty($articleid)) {
             $this->error(405, '系统错误, 请重试');
         }

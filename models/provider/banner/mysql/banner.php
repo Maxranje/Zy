@@ -11,6 +11,7 @@ class Dao_Banner_Mysql_Banner extends Zy_Core_Dao {
             'bannertitle' => 'bannertitle',
             'bannerurl' => 'bannerurl',
             'bannerimg' => 'bannerimg',
+            'weight'    => 'weight',
             'status' => 'status',
             'createtime' => 'createtime',
             'updatetime' => 'updatetime',

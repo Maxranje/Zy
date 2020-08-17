@@ -8,6 +8,9 @@ class Service_Artical_Lists {
     const ARTICLE_TYPE_ABROAD   = 2;
     const ARTICLE_TYPE_CAMPUS   = 3;
 
+    const ARTICLE_STATUS_ONLINE  = 1;
+    const ARTICLE_STATUS_OFFLINE = 2;
+
     public function __construct() {
         $this->articleDao = new Dao_Article_Mysql_Article () ;
     }
@@ -15,8 +18,9 @@ class Service_Artical_Lists {
     public function getArticleList ($articleType, $isrecommend = 0, $pn = 0, $rn = 20) {
         $arrConds = [
             'articletype' => $articleType,
+            'status' => self::ARTICLE_STATUS_ONLINE,
         ];
-        $arrOptions = [
+        $arrAppends = [
             "limit {$pn} , {$rn}",
         ];
         if ($articleType == self::ARTICLE_TYPE_ABROAD) {
@@ -26,11 +30,11 @@ class Service_Artical_Lists {
         }
 
         if ($isrecommend == 1) {
-            $arrOptions[] = 'order by id desc';
+            $arrAppends[] = 'order by id desc';
         } else {
-            $arrOptions[] = 'order by recommend desc, id desc';
+            $arrAppends[] = 'order by recommend desc, id desc';
         }
-        $articlelist = $this->articleDao->getListByConds($arrConds, $arrFields, NULL, $arrOptions);
+        $articlelist = $this->articleDao->getListByConds($arrConds, $arrFields, NULL, $arrAppends);
         if (empty($articlelist)) {
             return [];
         }

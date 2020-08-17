@@ -15,8 +15,8 @@ class Service_Course_Lists {
         ['id'    => 'other',    'name'  => '其他课程',],
     ];
 
-    const COURSE_STATUS_NORMAL = 1;
-    const COURSE_STATUS_OFLINE = 0;
+    const COURSE_STATUS_ONLINE  = 1;
+    const COURSE_STATUS_OFFLINE = 2;
 
     public function __construct() {
         $this->daoCourse = new Dao_Course_Mysql_Course () ;
@@ -33,21 +33,18 @@ class Service_Course_Lists {
         }
 
         foreach ($courseList as $index => $course) {
-            $course = date('Y年m月d日', $course['createtime']);
+            $course['createtime'] = date('Y年m月d日', $course['createtime']);
+            $course['updatetime'] = date('Y年m月d日', $course['updatetime']);
             $courseList[$index] = $course;
         }
 
-        return $courseList;
+        return array_values($courseList);
     }
 
     public function getCourseListByType ($courseType, $pn = 0, $rn = 20) {
-        
-        if (empty($courseType)) {
-            return [];
-        }
 
         $arrConds = [
-            'status' => 1,
+            'status' => self::COURSE_STATUS_ONLINE,
             'coursetype' => $courseType,
         ];
 
@@ -72,7 +69,7 @@ class Service_Course_Lists {
         }
 
         $arrConds = [
-            'status' => 1,
+            'status' => self::COURSE_STATUS_ONLINE,
             'coursetype' => $courseType,
         ];
 
@@ -80,12 +77,8 @@ class Service_Course_Lists {
     }
 
     public function getCourseListByTeacher ($teacherid, $pn = 0, $rn = 20) {
-        if (empty($teacherid)) {
-            return [];
-        }
-
         $arrConds = [
-            'status' => 1,
+            'status' => Service_Teacher_Lists::TEACHER_STATUS_ONLINE,
             'teacherid' => $teacherid,
         ];
 
@@ -101,7 +94,7 @@ class Service_Course_Lists {
 
         $courseIds = array_column($lists, 'courseid');
         $arrAppends = [
-            'status = 1',
+            'status = ' . self::COURSE_STATUS_ONLINE,
             "courseid in (" . implode(",", $courseIds) . ")",
         ];
         $lists = $this->daoCourse->getListByConds($arrConds, $this->daoCourse->simpleFields, NULL, $arrAppends);
@@ -113,13 +106,8 @@ class Service_Course_Lists {
     }
 
     public function getCourseTotalByTeacher ($teacherid) {
-        
-        if (empty($teacherid)) {
-            return 0;
-        }
-
         $arrConds = [
-            'status' => 1,
+            'status' => Service_Teacher_Lists::TEACHER_STATUS_ONLINE,
             'teacherid' => $teacherid,
         ];
 
@@ -128,7 +116,7 @@ class Service_Course_Lists {
 
     public function getCourseListByRecommend ($isrecommend = 0, $pn = 0, $rn = 20) {
         $arrConds = [
-            'status' => 1,
+            'status' => self::COURSE_STATUS_ONLINE
         ];
 
         $arrAppends = array(
@@ -151,7 +139,7 @@ class Service_Course_Lists {
 
     public function getCourseTotalByRecommend () {
         $arrConds = [
-            'status' => 1,
+            'status' => self::COURSE_STATUS_ONLINE,
         ];
 
         return (int)$this->daoTeacherCourse->getCntByConds($arrConds);
@@ -170,7 +158,7 @@ class Service_Course_Lists {
 
     public function getCourseDetails ($courseid) {
         $arrConds = [
-            'status' => 1,
+            'status' => self::COURSE_STATUS_ONLINE,
             'courseid' => $courseid,
         ];
 
@@ -180,6 +168,7 @@ class Service_Course_Lists {
         }
 
         $details['createtime'] = date('Y年m月d日', $details['createtime']);
+        $details['updatetime'] = date('Y年m月d日', $details['updatetime']);
         return $details;
     }
 

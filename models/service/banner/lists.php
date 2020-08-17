@@ -8,26 +8,23 @@ class Service_Banner_Lists {
         $this->daoBanner = new Dao_Banner_Mysql_Banner () ;
     }
 
-    public function getBannerList ($pn = 0, $rn = 10){
+    public function getBannerList ($pn = 0, $rn = 5){
         $arrConds = array(
             'status' => 1,
         );
 
-        $arrFields = array(
-            'bannerid',
-            'bannerurl',
-            'bannerimg',
-        );
+        $arrFields = $this->daoBanner->simpleFields;
 
-        $arrOptions = array(
-            'order by id desc',
+        $arrAppends = array(
+            'order by weight desc, id desc',
             "limit {$pn} , {$rn}",
         );
 
-        $lists = $this->daoBanner->getListByConds($arrConds, $arrFields, $arrOptions);
+        $lists = $this->daoBanner->getListByConds($arrConds, $arrFields, NULL, $arrAppends);
         if (empty($lists)) {
             return [];
         }
+
         return array_values($lists);
     }
 }

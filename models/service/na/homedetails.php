@@ -49,7 +49,7 @@ class Service_Na_Homedetails {
         ];
 
         // banner 列表
-        $arrOutput['banner']     = $this->bannerPs->getBannerList(0, 5);
+        $arrOutput['banner']     = $this->bannerPs->getBannerList();
         $arrOutput['article']    = $this->articlePs->getRecommendArticleList ();
         $arrOutput['courses']    = $this->coursePs->getCourseList ("", 0, 1, 0, 5);
         $arrOutput['teacher']    = $this->teacherPs->getTeacherList ();

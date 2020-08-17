@@ -16,9 +16,8 @@ class Service_Comment_Lists {
     }
 
     public function getCommentList (){
-        $arrConds = array(
-            'status' => 1,
-        );
+
+        $arrConds = array();
 
         $arrFields = $this->daoComment->simpleFields;
 
@@ -38,7 +37,7 @@ class Service_Comment_Lists {
                 $result[$item['type']] = ['type' => self::COMMENT_TYPE[$item['type']], 'lists' => []];
             }
 
-            if (count($result[$item['type']]['lists']) > 3) {
+            if (count($result[$item['type']]['lists']) > 9) {
                 continue;
             }
 
