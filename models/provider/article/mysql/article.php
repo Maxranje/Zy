@@ -14,6 +14,7 @@ class Dao_Article_Mysql_Article extends Zy_Core_Dao {
             'articletype'   => 'articletype',
             'articledetails'   => 'articledetails',
             'status'   => 'status',
+            'country'   => 'country',
             'recommend'   => 'recommend',
             'createtime'   => 'createtime',
             'updatetime'   => 'updatetime',
@@ -28,24 +29,10 @@ class Dao_Article_Mysql_Article extends Zy_Core_Dao {
             'articleauthor'   => 'articleauthor',
             'articletype'   => 'articletype',
             'status'   => 'status',
+            'country'   => 'country',
             'recommend'   => 'recommend',
             'createtime'   => 'createtime',
             'updatetime'   => 'updatetime',
         );
-    }
-
-    public function getListByConds($arrConds, $arrFields, $arrOptions = NULL, $arrAppends = NULL, $strIndex = NULL){
-        $arrConds['status'] = 1;
-        return parent::getListByConds($arrConds, $arrFields, $arrOptions, $arrOptions, $strIndex);
-    }
-
-    public function getRecordByConds($arrConds, $arrFields, $arrOptions = NULL, $arrAppends = NULL, $strIndex = NULL){
-        $arrConds['status'] = 1;
-        return parent::getRecordByConds($arrConds, $arrFields, $arrOptions, $arrOptions, $strIndex);
-    }
-
-    public function getCntByConds($arrConds){
-        $arrConds['status'] = 1;
-        return parent::getCntByConds($arrConds);
     }
 }

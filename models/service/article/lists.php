@@ -58,11 +58,10 @@ class Service_Artical_Lists {
 
         if (!empty($articlelist)) {
             foreach ($articlelist as $index => $article) {
-                $ext = json_encode($article['ext'], true);
-                if (empty($ext['country'])) {
+                if (empty($article['country'])) {
                     continue;
                 }
-                $abroadlist[$ext['country']] = $article;
+                $abroadlist['country'] = $article;
             }
         }
         return $abroadlist;
