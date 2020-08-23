@@ -1,6 +1,6 @@
 <?php
 
-class Service_Artical_Lists {
+class Service_Articel_Lists {
 
     private $articleDao ;
 

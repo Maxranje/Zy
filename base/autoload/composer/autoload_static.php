@@ -8,9 +8,9 @@ class ComposerStaticInit5dd2bcd33707ad3654caeb1d6ecaae61
 {
     // 指派路径到其上一级文件夹
     public static $prefixesPsr0 = array (
-        'Service'       => BASEPATH . '/' . 'models' . '/' . 'service/',
-        'Provider'      => BASEPATH . '/' . 'models' . '/' . 'provider/',
-        'Zy'            => SYSPATH . '/' . 'base/',
+        'Service'       => BASEPATH . 'models' . '/' . 'service/',
+        'Dao'           => BASEPATH . 'models' . '/' . 'provider/',
+        'Zy'            => SYSPATH ,
     );
 
     public static function getInitializer(ClassLoader $loader)

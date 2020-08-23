@@ -7,15 +7,15 @@ class Controller_Lists extends Zy_Core_Controller{
 
         $pn = $pn * 20;
 
-        $serivce = new Service_Artical_Lists ();
-        $total = $serivce->getArticleTotal(Service_Artical_Lists::ARTICLE_TYPE_NORMAL);
-        $lists = $serivce->getArticleList(Service_Artical_Lists::ARTICLE_TYPE_NORMAL, 0, $pn, $rn);
+        $serivce = new Service_Articel_Lists ();
+        $total = $serivce->getArticleTotal(Service_Articel_Lists::ARTICLE_TYPE_NORMAL);
+        $lists = $serivce->getArticleList(Service_Articel_Lists::ARTICLE_TYPE_NORMAL, 0, $pn, $rn);
 
         return ['lists' => $lists, 'total' => $total];
     }
 
     public function getAbroadArticleList () {
-        $serivce = new Service_Artical_Lists ();
+        $serivce = new Service_Articel_Lists ();
         $output = $serivce->getAbroadArticleList();
         return $output;
     }
@@ -29,7 +29,7 @@ class Controller_Lists extends Zy_Core_Controller{
             $this->error(405, '系统错误, 请重试');
         }
 
-        $serivce = new Service_Artical_Lists ();
+        $serivce = new Service_Articel_Lists ();
         $details = $serivce->getArticleDetails($articleid);
         if (empty($details)) {
             $this->error(405, '相关校区尚未开启');

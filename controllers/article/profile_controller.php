@@ -7,7 +7,7 @@ class Controller_Profile extends Zy_Core_Controller{
             $this->error(405, '无法检索到相关文章');
         }
 
-        $serivce = new Service_Artical_Lists ();
+        $serivce = new Service_Articel_Lists ();
         $details = $serivce->getArticleDetails($articleid);
         
         if (empty($details)) {

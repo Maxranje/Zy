@@ -14,7 +14,7 @@ class Service_Na_Homedetails {
 
     public function __construct() {
         $this->bannerPs   = new Service_Banner_Lists ();
-        $this->articlePs  = new Service_Artical_Lists ();
+        $this->articlePs  = new Service_Articel_Lists ();
         $this->coursePs   = new Service_Course_Lists ();
         $this->teacherPs  = new Service_Teacher_Lists ();
         $this->commentPs  = new Service_Comment_Lists ();

@@ -88,7 +88,7 @@ class Zy_Core_Bootstrap {
             trigger_error ('Error] router error [Detail] method not found "Controller_'.$controller_name .':' . $method . ' "');
         }
 
-        call_user_func([$controller, '_init'], $method);
+        call_user_func([new $controller, '_init'], $method);
     }
 
 
@@ -107,7 +107,7 @@ class Zy_Core_Bootstrap {
 
     public static function getInstance () {
         if ( self::$instance === NULL ) {
-            self::$instance = new Zy_Base_Bootstrap();
+            self::$instance = new Zy_Core_Bootstrap();
         }
         return self::$instance ;
     }
