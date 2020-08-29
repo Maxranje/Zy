@@ -71,7 +71,7 @@ class Service_Account_User {
         $userid = $this->daoUser->getInsertId();
 
         return [
-            'userid' => $profile['userid'],
+            'userid' => $userid,
             'uname'  => $profile['uname'],
             'phone'  => $profile['phone'],
             'type'  => 3,

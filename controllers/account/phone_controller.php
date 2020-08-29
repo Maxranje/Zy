@@ -27,7 +27,7 @@ class Controller_Phone extends Zy_Core_Controller{
         return $this->_data;
     }
 
-    public function verfiy () {
+    public function verify () {
         $phone = empty($this->_request['phone']) ? "" : strval($this->_request['phone']);
         $country = empty($this->_request['country']) ? "+86" : strval($this->_request['country']);
         $code = empty($this->_request['code']) ? "" : strval($this->_request['code']);

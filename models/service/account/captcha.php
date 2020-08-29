@@ -26,7 +26,7 @@ class Service_Account_Captcha {
             return false;
         }
 
-        if ($this->captchaRecord['isverify'] == 1 && $this->captchaRecord['verifytime'] - time() >= 0) {
+        if ($this->captchaRecord['isverify'] == 0 || $this->captchaRecord['verifytime'] - time() <= 0) {
             return false;
         }
 
@@ -73,8 +73,6 @@ class Service_Account_Captcha {
             return false;
         }
 
-        
-        Zy_Core_Session::getInstance()->setSessionVerify($data);
         Zy_Helper_Common::sendCaptchaMsg ($country.$phone, $code); 
         return true;
     }
@@ -100,7 +98,7 @@ class Service_Account_Captcha {
             throw new Zy_Core_Exception(405, '验证码错误');
         }
 
-        if ($this->captchaRecord['verifytime'] < time()) {
+        if ($this->captchaRecord['verifytime'] > time()) {
             throw new Zy_Core_Exception(405, '验证码已失效');
         }
 
@@ -122,7 +120,6 @@ class Service_Account_Captcha {
             "isverify"  => 0 , 
         ];
         $this->daoCaptcha->updateByConds($arrConds, $data);
-        Zy_Core_Session::getInstance()->setSessionVerify($data);
         Zy_Core_Session::getInstance()->setSessionUserInfo($userRecord['userid'], $userRecord['uname'], $userRecord['phone'], $userRecord['type']);
         $userRecord =  Zy_Core_Session::getInstance()->getSessionUserInfo();
         return $userRecord;

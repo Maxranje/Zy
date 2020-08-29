@@ -13,13 +13,21 @@ class Zy_Core_Session  {
 
     public static function getInstance () {
         if (self::$instance === NULL) {
-            session_start();
+            if (array_key_exists('zyuuid', $_COOKIE)) {
+                $session_id = $_COOKIE['zyuuid'];
+                session_id($session_id);
+                session_start();
+            }
             self::$instance = new self();
         }
         return self::$instance;
     }
 
     public function getSessionUserInfo () {
+        if (session_status() != PHP_SESSION_NONE) {
+            return [];
+        }
+
         $userid = $this->getSessionUserId ();
         $name = $this->getSessionUserName ();
         $phone = $this->getSessionUserPhone ();
@@ -40,11 +48,18 @@ class Zy_Core_Session  {
             return false;
         }
 
+        session_name('zyuuid');
+        session_start();
+        $session_id = session_id();
+        $expire = time()+864000;
+        setcookie('zyuuid', $session_id, $expire , "/");
+
         $this->setSessionUserId($userid);
         $this->setSessionUserName($name);
         $this->setSessionUserPhone($phone);
         $this->setSessionUserType($type);
         $this->setSessionUserAvatar($avatar);
+
     }
 
     public function getSessionUserId () {

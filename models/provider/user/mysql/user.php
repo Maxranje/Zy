@@ -26,6 +26,7 @@ class Dao_User_Mysql_User extends Zy_Core_Dao {
         $this->simpleFields = array(
             "userid"  => "userid" , 
             "uname"  => "uname" , 
+            "type"  => "type",
             "school"  => "school" , 
             "graduate"  => "graduate" , 
             "class"  => "class" , 
