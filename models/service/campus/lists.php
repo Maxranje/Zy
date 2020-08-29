@@ -20,7 +20,7 @@ class Service_Campus_Lists {
         $arrFields = $this->daoCampus->simpleFields;
 
         $arrAppends = array(
-            'order by id asc',
+            'order by campusis asc',
         );
 
         $lists = $this->daoCourse->getListByConds($arrConds, $arrFields, null , $arrAppends);

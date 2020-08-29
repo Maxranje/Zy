@@ -30,9 +30,9 @@ class Service_Article_Lists {
         }
 
         if ($isrecommend == 1) {
-            $arrAppends[] = 'order by id desc';
+            $arrAppends[] = 'order by articleid desc';
         } else {
-            $arrAppends[] = 'order by recommend desc, id desc';
+            $arrAppends[] = 'order by recommend desc, articleid desc';
         }
         $articlelist = $this->articleDao->getListByConds($arrConds, $arrFields, NULL, $arrAppends);
         if (empty($articlelist)) {

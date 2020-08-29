@@ -19,7 +19,7 @@ class Service_Teacher_Lists {
         $arrFields = $this->daoTeacher->simpleFields;
 
         $arrAppends = array(
-            'order by id asc',
+            'order by teacherid asc',
             "limit {$pn} , {$rn}",
         );
 

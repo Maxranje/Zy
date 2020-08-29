@@ -51,7 +51,7 @@ class Service_Course_Lists {
         $arrFields = $this->daoCourse->simpleFields;
 
         $arrAppends = array(
-            'order by id desc',
+            'order by courseid desc',
             "limit {$pn} , {$rn}",
         );
 
@@ -83,7 +83,7 @@ class Service_Course_Lists {
         ];
 
         $arrAppends = array(
-            'order by id desc',
+            'order by courseid desc',
             "limit {$pn} , {$rn}",
         );
 

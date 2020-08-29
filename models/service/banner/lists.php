@@ -16,7 +16,7 @@ class Service_Banner_Lists {
         $arrFields = $this->daoBanner->simpleFields;
 
         $arrAppends = array(
-            'order by weight desc, id desc',
+            'order by weight desc, bannerid desc',
             "limit {$pn} , {$rn}",
         );
 
