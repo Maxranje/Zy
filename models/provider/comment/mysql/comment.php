@@ -17,5 +17,13 @@ class Dao_Comment_Mysql_Comment extends Zy_Core_Dao {
             "updatetime"  => "updatetime",
             "ext"  => "ext",
         );
+
+        $this->simpleFields = array(
+            "type"  => "type",
+            "name"  => "name",
+            "avatar"  => "avatar",
+            "content"  => "content",
+            "score"  => "score",
+        );
     }
 }

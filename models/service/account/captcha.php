@@ -58,18 +58,14 @@ class Service_Account_Captcha {
             "isverify"  => 1 , 
         ];
 
-        if (!empty($this->captchaRecord)) {
-            $data = [
-                "country"  => $country , 
-                "phone"  => $phone , 
-                "createtime"  => time() , 
-                "updatetime"  => time() , 
-            ];
+        if (empty($this->captchaRecord)) {
+            $data['country'] = $country;
+            $data['phone'] = $phone;
+            $data['updatetime'] = $data['createtime'] = time();
+            
             $ret = $this->daoCaptcha->insertRecords($data);
         } else {
-            $data = [
-                "updatetime"  => time() , 
-            ];
+            $data['updatetime'] = time();
             $ret = $this->daoCaptcha->updateByConds($arrConds, $data);
         }
 
@@ -104,7 +100,7 @@ class Service_Account_Captcha {
             throw new Zy_Core_Exception(405, '验证码错误');
         }
 
-        if ($this->captchaRecord['verifytime'] - 300 < time()) {
+        if ($this->captchaRecord['verifytime'] < time()) {
             throw new Zy_Core_Exception(405, '验证码已失效');
         }
 

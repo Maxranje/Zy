@@ -46,7 +46,6 @@ class Service_Comment_Lists {
                 "avatar"    =>  $item["avatar"],
                 "content"   =>  $item["content"],
                 "score"     =>  $item["score"],
-                "createtime" => $item['createtime'],
             ];
         }
 

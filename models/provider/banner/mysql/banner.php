@@ -16,5 +16,11 @@ class Dao_Banner_Mysql_Banner extends Zy_Core_Dao {
             'updatetime' => 'updatetime',
             'ext' => 'ext',
         );
+
+        $this->simpleFields = array(
+            'bannertitle' => 'bannertitle',
+            'bannerurl' => 'bannerurl',
+            'bannerimg' => 'bannerimg',
+        );
     }
 }

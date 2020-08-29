@@ -20,20 +20,21 @@ class Service_Article_Lists {
             'articletype' => $articleType,
             'status' => self::ARTICLE_STATUS_ONLINE,
         ];
-        $arrAppends = [
-            "limit {$pn} , {$rn}",
-        ];
+        
         if ($articleType == self::ARTICLE_TYPE_ABROAD) {
             $arrFields = $this->articleDao->arrFieldsMap ;
         } else {
             $arrFields = $this->articleDao->simpleFields ;
         }
 
-        if ($isrecommend == 1) {
+        if ($isrecommend == 0) {
             $arrAppends[] = 'order by articleid desc';
         } else {
             $arrAppends[] = 'order by recommend desc, articleid desc';
         }
+
+        $arrAppends[] = "limit {$pn} , {$rn}";
+
         $articlelist = $this->articleDao->getListByConds($arrConds, $arrFields, NULL, $arrAppends);
         if (empty($articlelist)) {
             return [];

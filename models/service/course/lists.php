@@ -119,15 +119,13 @@ class Service_Course_Lists {
             'status' => self::COURSE_STATUS_ONLINE
         ];
 
-        $arrAppends = array(
-            "limit {$pn} , {$rn}",
-        );
-
-        if ($isrecommend == 1) {
-            $arrAppends[] =  'order by id desc';
+        if ($isrecommend == 0) {
+            $arrAppends[] =  'order by courseid desc';
         } else {
-            $arrAppends[] =  'order by recommend desc, id desc';
+            $arrAppends[] =  'order by recommend desc, courseid desc';
         }
+
+        $arrAppends[] = "limit {$pn} , {$rn}";
 
         $lists = $this->daoCourse->getListByConds($arrConds, $this->daoCourse->simpleFields, null , $arrAppends);
         if (empty($lists)) {

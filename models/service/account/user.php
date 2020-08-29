@@ -57,12 +57,25 @@ class Service_Account_User {
             'class' => '',
             'birthday' => strtotime('2005-01-01'),
             'sex' => 'M',
+            'type' => 3,
             'email' => '',
             'updatetime' => time(),
             'regtime' => time(),
         ];
 
-        return $this->daoUser->insertRecords($profile);
+        $ret = $this->daoUser->insertRecords($profile);
+        if ($ret == false) {
+            return false;
+        }
+
+        $userid = $this->daoUser->getInsertId();
+
+        return [
+            'userid' => $profile['userid'],
+            'uname'  => $profile['uname'],
+            'phone'  => $profile['phone'],
+            'type'  => 3,
+        ];
     }
 
     public function checkUserStatus ($userid) {

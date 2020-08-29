@@ -6,7 +6,7 @@ class Controller_Phone extends Zy_Core_Controller{
         $phone = empty($this->_request['phone']) ? "" : strval($this->_request['phone']);
         $country = empty($this->_request['country']) ? "+86" : strval($this->_request['country']);
 
-        if ($country != "+86" || Zy_Helper_Common::checkPhoneAvalilable($phone)) {
+        if ($country != "+86" || empty($phone) || !Zy_Helper_Common::checkPhoneAvalilable($phone)) {
             $this->error(405, "请填写有效的手机号");
         }
 
@@ -32,7 +32,7 @@ class Controller_Phone extends Zy_Core_Controller{
         $country = empty($this->_request['country']) ? "+86" : strval($this->_request['country']);
         $code = empty($this->_request['code']) ? "" : strval($this->_request['code']);
 
-        if ($country != "+86" || Zy_Helper_Common::checkPhoneAvalilable($phone)) {
+        if ($country != "+86" || empty($phone) || !Zy_Helper_Common::checkPhoneAvalilable($phone)) {
             $this->error(405, "请填写有效的手机号");
         }
         if (empty($code) || !is_numeric($code) || strlen($code) != 4) {
