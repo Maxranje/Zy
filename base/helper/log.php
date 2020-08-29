@@ -69,7 +69,7 @@ class Zy_Helper_Log {
         $this->_log_path = ($log_path !== '') ? $log_path : '/var/log/php-fpm/php-fpm.log' ;
         file_exists($this->_log_path) OR mkdir($this->_log_path, 0755, TRUE);
 
-        if ( ! is_dir($this->_log_path) OR ! is_writable($this->_log_path))
+        if ( ! is_file($this->_log_path) OR ! is_writable($this->_log_path))
         {
             $this->_enabled = FALSE;
         }
@@ -151,9 +151,9 @@ class Zy_Helper_Log {
     protected function _format_line($level, $message)
     {
 
-        $uri         = $_SERVER['PHP_SELF'];
-        $refer       = $_SERVER['HTTP_REFERER'];
-        $client_ip   = $_SERVER['REMOTE_ADDR'];
+        $uri         = empty($_SERVER['REQUEST_URI']) ? "" : $_SERVER['REQUEST_URI'];
+        $refer       = empty($_SERVER['HTTP_REFERER']) ? "" : $_SERVER['HTTP_REFERER'];
+        $client_ip   = empty($_SERVER['REMOTE_ADDR']) ? "" : $_SERVER['REMOTE_ADDR'];
         $date        = date($this->_date_fmt);
 
         if ($this->_levels[$level] == 1 || $this->_levels[$level] == 2)

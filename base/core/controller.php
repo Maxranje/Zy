@@ -61,7 +61,7 @@ class Zy_Core_Controller {
         }
 
         if (!isset($this->_output['data']['userInfo'])) {
-            $this->_output['data']['userInfo'] = $this->_userInfo;
+            // $this->_output['data']['userInfo'] = $this->_userInfo;
         }
 
         $this->displayJson();

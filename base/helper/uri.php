@@ -1,5 +1,5 @@
 <?php
-class Zy_Helper_URI {
+class Zy_Helper_Uri {
 
 
 	/**

@@ -3,7 +3,7 @@
 class Dao_User_Mysql_User extends Zy_Core_Dao {
 
     public function __construct() {
-        $this->_dbName      = "zdby";
+        $this->_dbName      = "zy_platform";
         $this->_table       = "tblUser";
         $this->arrFieldsMap = array(
             "userid"  => "userid" , 
@@ -15,10 +15,9 @@ class Dao_User_Mysql_User extends Zy_Core_Dao {
             "birthday"  => "birthday" , 
             "sex"  => "sex" , 
             "phone"  => "phone" , 
-            "country" => "country",
             "email"  => "email" , 
             "isvip"  => "isvip" , 
-            "discount" => "discount",
+            "discount"  => "discount" , 
             "regtime"  => "regtime" , 
             "updatetime"  => "updatetime" , 
             "ext"  => "ext" , 

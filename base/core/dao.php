@@ -42,7 +42,7 @@ class Zy_Core_Dao{
      * 程序中的字段名和数据表列名的映射数组
      * @var array
      */
-    protected $arrFieldsMap;
+    public $arrFieldsMap;
 
     /**
      * Dao基类的构造函数，子类需要写自己的构造函数覆盖父类构造函数.
@@ -70,7 +70,7 @@ class Zy_Core_Dao{
      */
     public function query($sql, $bind_param = FALSE) {
         if (empty($this->_db)) {
-            $this->_db = Zy_Database_DBservice::getDB($this->_dbName);
+            $this->_db = Zy_Database_Dbservice::getDB($this->_dbName);
         }
         $this->_res = $this->_db->query($sql);
 
@@ -87,7 +87,7 @@ class Zy_Core_Dao{
      */
     public function getAffectedRows() {
         if (empty($this->_db)) {
-            $this->_db = Zy_Database_DBservice::getDB($this->_dbName);
+            $this->_db = Zy_Database_Dbservice::getDB($this->_dbName);
         }
         $nums = $this->_db->affected_rows();
         return $nums < 0 ? FALSE : intval($nums);
@@ -134,17 +134,17 @@ class Zy_Core_Dao{
      */
     public function getListByConds($arrConds, $arrFields, $arrOptions = NULL, $arrAppends = NULL, $strIndex = NULL) {
         if (empty($this->_db)) {
-             $this->_db = Zy_Database_DBservice::getDB($this->_dbName);
+             $this->_db = Zy_Database_Dbservice::getDB($this->_dbName);
         }
         //限制条件字段以及格式的转换
-        $arrConds  = Zy_Database_DBservice::mapRow($arrConds, $this->arrFieldsMap);
-        $arrConds  = Zy_Database_DBservice::getConds($arrConds);
+        $arrConds  = Zy_Database_Dbservice::mapRow($arrConds, $this->arrFieldsMap);
+        $arrConds  = Zy_Database_Dbservice::getConds($arrConds);
 
         //查询字段的转换
-        $arrFields = Zy_Database_DBservice::mapField($arrFields, $this->arrFieldsMap, true);
+        $arrFields = Zy_Database_Dbservice::mapField($arrFields, $this->arrFieldsMap, true);
         //表名以及强制索引字段的添加
         $tableName = (empty($strIndex)) ? $this->_table : $this->_table." {$strIndex}";
-        $querySql = Zy_Database_DBsqlmaker::getSelect ($this->_db, $tableName, $arrFields,$arrConds, $arrOptions, $arrAppends);
+        $querySql = Zy_Database_Dbsqlmaker::getSelect ($this->_db, $tableName, $arrFields,$arrConds, $arrOptions, $arrAppends);
         $this->_res = $this->_db->query($querySql);
         if ($this->_res === false){
             return FALSE;
@@ -154,7 +154,7 @@ class Zy_Core_Dao{
 
     public function getRecordByConds($arrConds, $arrFields, $arrOptions = NULL, $arrAppends = NULL, $strIndex = NULL) {
         if (empty($this->_db)) {
-             $this->_db = Zy_Database_DBservice::getDB($this->_dbName);
+             $this->_db = Zy_Database_Dbservice::getDB($this->_dbName);
         }
 
         $arrRes = $this->getListByConds($arrConds, $arrFields, $arrOptions, $arrAppends, $strIndex);
@@ -177,11 +177,11 @@ class Zy_Core_Dao{
      */
     public function insertRecords($arrFields) {
         if (empty($this->_db)) {
-            $this->_db = Zy_Database_DBservice::getDB($this->_dbName);
+            $this->_db = Zy_Database_Dbservice::getDB($this->_dbName);
         }
 
-        $arrFields = Zy_Database_DBservice::mapRow($arrFields, $this->arrFieldsMap);
-        $querySql = Zy_Database_DBsqlmaker::getInsert ($this->_db, $this->_table, $arrFields);
+        $arrFields = Zy_Database_Dbservice::mapRow($arrFields, $this->arrFieldsMap);
+        $querySql = Zy_Database_Dbsqlmaker::getInsert ($this->_db, $this->_table, $arrFields);
 
         $this->_res = $this->_db->query($querySql);
         return $this->_res === false ? false : true;
@@ -194,7 +194,7 @@ class Zy_Core_Dao{
      */
     public function getInsertId() {
         if (empty($this->_db)) {
-            $this->_db = Zy_Database_DBservice::getDB($this->_dbName);
+            $this->_db = Zy_Database_Dbservice::getDB($this->_dbName);
         }
         return $this->_db->insert_id();
     }
@@ -206,7 +206,7 @@ class Zy_Core_Dao{
      */
     public function getLastSQL() {
         if (empty($this->_db)) {
-            $this->_db = Zy_Database_DBservice::getDB($this->_dbName, $this->_new, $this->_logFile, $this->_autoRotate);
+            $this->_db = Zy_Database_Dbservice::getDB($this->_dbName, $this->_new, $this->_logFile, $this->_autoRotate);
         }
         return $this->_db->last_sql();
     }
@@ -222,14 +222,14 @@ class Zy_Core_Dao{
      */
     public function updateByConds($arrConds, $arrFields, $arrOptions=NULL, $arrAppends=NULL) {
         if (empty($this->_db)) {
-            $this->_db = Zy_Database_DBservice::getDB($this->_dbName);
+            $this->_db = Zy_Database_Dbservice::getDB($this->_dbName);
         }
 
-        $arrConds  = Zy_Database_DBservice::mapRow($arrConds, $this->arrFieldsMap);
-        $arrConds  = Zy_Database_DBservice::getConds($arrConds);
-        $arrFields = Zy_Database_DBservice::mapRow($arrFields, $this->arrFieldsMap);
+        $arrConds  = Zy_Database_Dbservice::mapRow($arrConds, $this->arrFieldsMap);
+        $arrConds  = Zy_Database_Dbservice::getConds($arrConds);
+        $arrFields = Zy_Database_Dbservice::mapRow($arrFields, $this->arrFieldsMap);
 
-        $querySql = Zy_Database_DBsqlmaker::getUpdate ($this->_db, $this->_table, $arrFields, $arrConds, $arrOptions, $arrAppends);
+        $querySql = Zy_Database_Dbsqlmaker::getUpdate ($this->_db, $this->_table, $arrFields, $arrConds, $arrOptions, $arrAppends);
         $this->_res = $this->_db->query($querySql);
         return $this->_res === false ? false : true;
     }
@@ -242,13 +242,13 @@ class Zy_Core_Dao{
      */
     public function deleteByConds($arrConds) {
         if (empty($this->_db)) {
-            $this->_db = Zy_Database_DBservice::getDB($this->_dbName);
+            $this->_db = Zy_Database_Dbservice::getDB($this->_dbName);
         }
 
-        $arrConds = Zy_Database_DBservice::mapRow($arrConds, $this->arrFieldsMap);
-        $arrConds = Zy_Database_DBservice::getConds($arrConds);
+        $arrConds = Zy_Database_Dbservice::mapRow($arrConds, $this->arrFieldsMap);
+        $arrConds = Zy_Database_Dbservice::getConds($arrConds);
 
-        $querySql = Zy_Database_DBsqlmaker::getDelete ($this->_db, $this->_table, $arrConds, NULL);
+        $querySql = Zy_Database_Dbsqlmaker::getDelete ($this->_db, $this->_table, $arrConds, NULL);
         $this->_res = $this->_db->query($querySql);
         return $this->_res === false ? false : true;
     }
@@ -261,12 +261,12 @@ class Zy_Core_Dao{
      */
     public function getCntByConds($arrConds) {
         if (empty($this->_db)) {
-            $this->_db = Zy_Database_DBservice::getDB($this->_dbName);
+            $this->_db = Zy_Database_Dbservice::getDB($this->_dbName);
         }
-        $arrConds = Zy_Database_DBservice::mapRow($arrConds, $this->arrFieldsMap);
-        $arrConds = Zy_Database_DBservice::getConds($arrConds);
+        $arrConds = Zy_Database_Dbservice::mapRow($arrConds, $this->arrFieldsMap);
+        $arrConds = Zy_Database_Dbservice::getConds($arrConds);
 
-        $querySql = Zy_Database_DBsqlmaker::getSelect ($this->_db, $this->_table, array('count(*) as count') , $arrConds);
+        $querySql = Zy_Database_Dbsqlmaker::getSelect ($this->_db, $this->_table, array('count(*) as count') , $arrConds);
         $this->_res = $this->_db->query($querySql);
         if ($this->_res === false){
             return FALSE;
@@ -295,7 +295,7 @@ class Zy_Core_Dao{
      */
     public function reconnect() {
         if (!empty($this->_db) && !$this->_db->isConnected()) {
-            $this->_db = Zy_Database_DBservice::getDB($this->_dbName, true, $this->_logFile);
+            $this->_db = Zy_Database_Dbservice::getDB($this->_dbName, true, $this->_logFile);
         }
         return $this->_db->reconnect();
     }
@@ -320,7 +320,7 @@ class Zy_Core_Dao{
      */
     public function startTransaction() {
         if (empty($this->_db)) {
-            $this->_db = Zy_Database_DBservice::getDB($this->_dbName);
+            $this->_db = Zy_Database_Dbservice::getDB($this->_dbName);
         }
         if (!empty($this->_db)) {
             return $this->_db->trans_start();

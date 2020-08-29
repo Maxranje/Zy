@@ -62,7 +62,8 @@ class Zy_Helper_Common
         }
 
         $msg = sprintf("[%s] PHP Fatal error: %s in %s:%s \r\n", date('Y-m-d H:i:s', time()), $errStr, $filepath, $line);
-        error_log($msg, 3, Zy_Helper_Config::getConfig('system', 'log_path'));
+        var_dump($msg);
+        // error_log($msg, 3, Zy_Helper_Config::getConfig('system', 'log_path'));
         exit;
         //self::redirect_error(500);
     }

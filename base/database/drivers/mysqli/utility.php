@@ -32,19 +32,21 @@
  * @copyright	Copyright (c) 2014 - 2018, British Columbia Institute of Technology (http://bcit.ca/)
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
- * @since	Version 1.0.0
+ * @since	Version 1.3.0
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * MySQL Utility Class
+ * MySQLi Utility Class
  *
+ * @package		CodeIgniter
+ * @subpackage	Drivers
  * @category	Database
  * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/database/
  */
-class CI_DB_mysql_utility extends CI_DB_utility {
+class CI_DB_mysqli_utility extends CI_DB_utility {
 
 	/**
 	 * List databases statement
@@ -150,12 +152,10 @@ class CI_DB_mysql_utility extends CI_DB_utility {
 			$i = 0;
 			$field_str = '';
 			$is_int = array();
-			while ($field = mysql_fetch_field($query->result_id))
+			while ($field = $query->result_id->fetch_field())
 			{
 				// Most versions of MySQL store timestamp as a string
-				$is_int[$i] = in_array(strtolower(mysql_field_type($query->result_id, $i)),
-							array('tinyint', 'smallint', 'mediumint', 'int', 'bigint'), //, 'timestamp'),
-							TRUE);
+				$is_int[$i] = in_array($field->type, array(MYSQLI_TYPE_TINY, MYSQLI_TYPE_SHORT, MYSQLI_TYPE_INT24, MYSQLI_TYPE_LONG), TRUE);
 
 				// Create a string of field names
 				$field_str .= $this->db->escape_identifiers($field->name).', ';

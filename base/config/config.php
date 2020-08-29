@@ -6,7 +6,7 @@ $configure = [
     'system' => [
         'language'      => 'en',
         'charset'       => 'UTF-8',
-        'log_path'      =>  '/var/log/php/php-fpm.log',
+        'log_path'      =>  '/var/log/php-fpm/php-fpm.log',
         'serverdns'     => 'http://127.0.0.1/',
         'dbdriver'      => 'mysqli',
     ],

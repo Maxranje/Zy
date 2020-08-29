@@ -32,26 +32,28 @@
  * @copyright	Copyright (c) 2014 - 2018, British Columbia Institute of Technology (http://bcit.ca/)
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
- * @since	Version 2.1.0
+ * @since	Version 1.3.0
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * CUBRID Forge Class
+ * MySQLi Forge Class
  *
+ * @package		CodeIgniter
+ * @subpackage	Drivers
  * @category	Database
- * @author		Esen Sagynov
+ * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/database/
  */
-class CI_DB_cubrid_forge extends CI_DB_forge {
+class CI_DB_mysqli_forge extends CI_DB_forge {
 
 	/**
 	 * CREATE DATABASE statement
 	 *
 	 * @var	string
 	 */
-	protected $_create_database	= FALSE;
+	protected $_create_database	= 'CREATE DATABASE %s CHARACTER SET %s COLLATE %s';
 
 	/**
 	 * CREATE TABLE keys flag
@@ -64,33 +66,64 @@ class CI_DB_cubrid_forge extends CI_DB_forge {
 	protected $_create_table_keys	= TRUE;
 
 	/**
-	 * DROP DATABASE statement
-	 *
-	 * @var	string
-	 */
-	protected $_drop_database	= FALSE;
-
-	/**
-	 * CREATE TABLE IF statement
-	 *
-	 * @var	string
-	 */
-	protected $_create_table_if	= FALSE;
-
-	/**
 	 * UNSIGNED support
 	 *
 	 * @var	array
 	 */
 	protected $_unsigned		= array(
-		'SHORT'		=> 'INTEGER',
-		'SMALLINT'	=> 'INTEGER',
-		'INT'		=> 'BIGINT',
-		'INTEGER'	=> 'BIGINT',
-		'BIGINT'	=> 'NUMERIC',
-		'FLOAT'		=> 'DOUBLE',
-		'REAL'		=> 'DOUBLE'
+		'TINYINT',
+		'SMALLINT',
+		'MEDIUMINT',
+		'INT',
+		'INTEGER',
+		'BIGINT',
+		'REAL',
+		'DOUBLE',
+		'DOUBLE PRECISION',
+		'FLOAT',
+		'DECIMAL',
+		'NUMERIC'
 	);
+
+	/**
+	 * NULL value representation in CREATE/ALTER TABLE statements
+	 *
+	 * @var	string
+	 */
+	protected $_null = 'NULL';
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * CREATE TABLE attributes
+	 *
+	 * @param	array	$attributes	Associative array of table attributes
+	 * @return	string
+	 */
+	protected function _create_table_attr($attributes)
+	{
+		$sql = '';
+
+		foreach (array_keys($attributes) as $key)
+		{
+			if (is_string($key))
+			{
+				$sql .= ' '.strtoupper($key).' = '.$attributes[$key];
+			}
+		}
+
+		if ( ! empty($this->db->char_set) && ! strpos($sql, 'CHARACTER SET') && ! strpos($sql, 'CHARSET'))
+		{
+			$sql .= ' DEFAULT CHARACTER SET = '.$this->db->char_set;
+		}
+
+		if ( ! empty($this->db->dbcollat) && ! strpos($sql, 'COLLATE'))
+		{
+			$sql .= ' COLLATE = '.$this->db->dbcollat;
+		}
+
+		return $sql;
+	}
 
 	// --------------------------------------------------------------------
 
@@ -104,27 +137,36 @@ class CI_DB_cubrid_forge extends CI_DB_forge {
 	 */
 	protected function _alter_table($alter_type, $table, $field)
 	{
-		if (in_array($alter_type, array('DROP', 'ADD'), TRUE))
+		if ($alter_type === 'DROP')
 		{
 			return parent::_alter_table($alter_type, $table, $field);
 		}
 
 		$sql = 'ALTER TABLE '.$this->db->escape_identifiers($table);
-		$sqls = array();
 		for ($i = 0, $c = count($field); $i < $c; $i++)
 		{
 			if ($field[$i]['_literal'] !== FALSE)
 			{
-				$sqls[] = $sql.' CHANGE '.$field[$i]['_literal'];
+				$field[$i] = ($alter_type === 'ADD')
+						? "\n\tADD ".$field[$i]['_literal']
+						: "\n\tMODIFY ".$field[$i]['_literal'];
 			}
 			else
 			{
-				$alter_type = empty($field[$i]['new_name']) ? ' MODIFY ' : ' CHANGE ';
-				$sqls[] = $sql.$alter_type.$this->_process_column($field[$i]);
+				if ($alter_type === 'ADD')
+				{
+					$field[$i]['_literal'] = "\n\tADD ";
+				}
+				else
+				{
+					$field[$i]['_literal'] = empty($field[$i]['new_name']) ? "\n\tMODIFY " : "\n\tCHANGE ";
+				}
+
+				$field[$i] = $field[$i]['_literal'].$this->_process_column($field[$i]);
 			}
 		}
 
-		return $sqls;
+		return array($sql.implode(',', $field));
 	}
 
 	// --------------------------------------------------------------------
@@ -153,36 +195,8 @@ class CI_DB_cubrid_forge extends CI_DB_forge {
 			.$field['default']
 			.$field['auto_increment']
 			.$field['unique']
+			.(empty($field['comment']) ? '' : ' COMMENT '.$field['comment'])
 			.$extra_clause;
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Field attribute TYPE
-	 *
-	 * Performs a data type mapping between different databases.
-	 *
-	 * @param	array	&$attributes
-	 * @return	void
-	 */
-	protected function _attr_type(&$attributes)
-	{
-		switch (strtoupper($attributes['TYPE']))
-		{
-			case 'TINYINT':
-				$attributes['TYPE'] = 'SMALLINT';
-				$attributes['UNSIGNED'] = FALSE;
-				return;
-			case 'MEDIUMINT':
-				$attributes['TYPE'] = 'INTEGER';
-				$attributes['UNSIGNED'] = FALSE;
-				return;
-			case 'LONGTEXT':
-				$attributes['TYPE'] = 'STRING';
-				return;
-			default: return;
-		}
 	}
 
 	// --------------------------------------------------------------------

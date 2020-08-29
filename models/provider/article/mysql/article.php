@@ -3,7 +3,7 @@
 class Dao_Article_Mysql_Article extends Zy_Core_Dao {
 
     public function __construct() {
-        $this->_dbName      = "zdby";
+        $this->_dbName      = "zy_platform";
         $this->_table       = "tblArticle";
         $this->arrFieldsMap = array(
             'articleid'   => 'articleid',
@@ -13,8 +13,8 @@ class Dao_Article_Mysql_Article extends Zy_Core_Dao {
             'articleauthor'   => 'articleauthor',
             'articletype'   => 'articletype',
             'articledetails'   => 'articledetails',
-            'status'   => 'status',
             'country'   => 'country',
+            'status'   => 'status',
             'recommend'   => 'recommend',
             'createtime'   => 'createtime',
             'updatetime'   => 'updatetime',
@@ -23,7 +23,7 @@ class Dao_Article_Mysql_Article extends Zy_Core_Dao {
 
         $this->simpleFields = array(
             'articleid'   => 'articleid',
-            'articlename'   => 'articlename',
+            'articletitle'   => 'articletitle',
             'articledesc'   => 'articledesc',
             'articleimg'   => 'articleimg',
             'articleauthor'   => 'articleauthor',

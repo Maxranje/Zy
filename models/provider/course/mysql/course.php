@@ -3,7 +3,7 @@
 class Dao_Course_Mysql_Course extends Zy_Core_Dao {
 
     public function __construct() {
-        $this->_dbName      = "zdby";
+        $this->_dbName      = "zy_platform";
         $this->_table       = "tblCourse";
         $this->arrFieldsMap = array(
             "courseid"   => "courseid",
@@ -18,6 +18,7 @@ class Dao_Course_Mysql_Course extends Zy_Core_Dao {
             "coursedesc"   => "coursedesc",
             "coursedetails"   => "coursedetails",
             "status"   => "status",
+            "isvip"   => "isvip",
             "price"   => "price",
             "recommend" => "recommend",
             "createtime"   => "createtime",
@@ -38,6 +39,7 @@ class Dao_Course_Mysql_Course extends Zy_Core_Dao {
             "coursedesc"   => "coursedesc",
             "status"   => "status",
             "createtime"   => "createtime",
+            "updatetime"   => "updatetime",
         ];
     }
 }
