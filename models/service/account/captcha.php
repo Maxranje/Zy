@@ -98,7 +98,7 @@ class Service_Account_Captcha {
             throw new Zy_Core_Exception(405, '验证码错误');
         }
 
-        if ($this->captchaRecord['verifytime'] > time()) {
+        if ($this->captchaRecord['verifytime'] < time()) {
             throw new Zy_Core_Exception(405, '验证码已失效');
         }
 

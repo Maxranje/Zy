@@ -15,8 +15,8 @@ class Zy_Core_Session  {
         if (self::$instance === NULL) {
             if (array_key_exists('zyuuid', $_COOKIE)) {
                 $session_id = $_COOKIE['zyuuid'];
-                session_id($session_id);
                 session_start();
+                session_id($session_id);
             }
             self::$instance = new self();
         }
@@ -24,7 +24,7 @@ class Zy_Core_Session  {
     }
 
     public function getSessionUserInfo () {
-        if (session_status() != PHP_SESSION_NONE) {
+        if (session_status() == PHP_SESSION_NONE) {
             return [];
         }
 

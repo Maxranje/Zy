@@ -20,12 +20,12 @@ class Service_Campus_Lists {
         $arrFields = $this->daoCampus->simpleFields;
 
         $arrAppends = array(
-            'order by campusis asc',
+            'order by campusid asc',
         );
 
-        $lists = $this->daoCourse->getListByConds($arrConds, $arrFields, null , $arrAppends);
+        $lists = $this->daoCampus->getListByConds($arrConds, $arrFields, null , $arrAppends);
         if (empty($lists)) {
-            return [];
+            return [0, []];
         }
 
         $articleid = null;

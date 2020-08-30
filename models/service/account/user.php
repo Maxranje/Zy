@@ -31,8 +31,8 @@ class Service_Account_User {
             return [];
         }
 
-        $userinfo['regtime'] = date('Y-m-d H:i:s');
-        $userinfo['birthday']   = date('Y-m-d H:i:s');
+        $userinfo['regtime'] = date('Y-m-d H:i:s', $userinfo['regtime']);
+        $userinfo['birthday']   = date('Y-m-d H:i:s', $userinfo['birthday']);
         return $userinfo;
     }
 

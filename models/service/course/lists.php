@@ -140,7 +140,7 @@ class Service_Course_Lists {
             'status' => self::COURSE_STATUS_ONLINE,
         ];
 
-        return (int)$this->daoTeacherCourse->getCntByConds($arrConds);
+        return (int)$this->daoCourse->getCntByConds($arrConds);
     }
 
     public function getCourseTotal ($courseType, $teacherid) {

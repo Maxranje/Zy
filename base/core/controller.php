@@ -60,8 +60,8 @@ class Zy_Core_Controller {
             $this->_output['em'] = $exception->getMessage ();
         }
 
-        if (!isset($this->_output['data']['userInfo'])) {
-            $this->_output['data']['userInfo'] = $this->_userInfo;
+        if (!isset($this->_output['data']['userinfo'])) {
+            $this->_output['data']['userinfo'] = $this->_userInfo;
         }
 
         $this->displayJson();

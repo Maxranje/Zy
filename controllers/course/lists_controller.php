@@ -6,16 +6,17 @@ class Controller_Lists extends Zy_Core_Controller{
         $rn = empty($this->_request['rn']) ? 20 : $this->_request['rn'];
         $coursetype = empty($this->_request['coursetype']) ? '' : strval($this->_request['coursetype']);
         $teacherid = empty($this->_request['teacherid']) ? 0 : intval($this->_request['teacherid']);
+        $isrecommend = empty($this->_request['isrecommend']) ? 0 : intval($this->_request['isrecommend']);
 
         $pn = $pn * 20;
-
-        if (empty($coursetype) && empty($teacherid)) {
-            $coursetype = Service_Course_Lists::COURSE_TYPE_LISTS[0]['id'];
+        
+        if (!empty($coursetype) && !isset(Service_Course_Lists::COURSE_TYPE_LISTS[$coursetype])) {
+            $this->error(405, "课程类型错误, 请重试");
         }
 
         $serivce = new Service_Course_Lists ();
-        $total = $serivce->getCourseTotal($coursetype, $teacherid);
-        $lists = $serivce->getCourseList ($coursetype, $teacherid, 0, $pn, $rn);
+        $total = $serivce->getCourseTotal($coursetype, $teacherid, $isrecommend);
+        $lists = $serivce->getCourseList ($coursetype, $teacherid, $isrecommend, 0, $pn, $rn);
         $coursetype = $serivce->getCourseTypes ($coursetype);
 
         return ['coursetype' => $coursetype, 'lists' => $lists, 'total' => $total];
