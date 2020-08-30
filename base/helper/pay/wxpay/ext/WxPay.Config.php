@@ -6,7 +6,7 @@
 * 请勿直接直接使用样例对外提供服务
 * 
 **/
-require_once "../lib/WxPay.Config.Interface.php";
+require_once SYSPATH . "/helper/pay/wxpay/lib/WxPay.Config.Interface.php";
 
 /**
 *

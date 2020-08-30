@@ -6,7 +6,7 @@
 * 请勿直接直接使用样例对外提供服务
 * 
 **/
-require_once 'phpqrcode/phpqrcode.php';
+require_once SYSPATH . '/helper/pay/wxpay/ext/phpqrcode/phpqrcode.php';
 $url = urldecode($_GET["data"]);
 if(substr($url, 0, 6) == "weixin"){
 	QRcode::png($url);

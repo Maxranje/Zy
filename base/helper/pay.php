@@ -15,7 +15,10 @@ class Zy_Helper_Pay {
 
     public function wxpayorder ($out_trade_no, $productid, $total_amount) {
         $service = Zy_Helper_Pay_Wxpay_Api::getInstance();
-        $qrurl = $service->getQrCode($out_trade_no, $productid, $total_amount);
+        $qrurl = $service->getQrCode($out_trade_no, $productid, $total_amount, "中鼎教育-在线支付");
+        if (empty($qrurl)) {
+            return false;
+        }
         return $qrurl;
     }
 

@@ -1,4 +1,6 @@
 <?php
+require_once SYSPATH . '/helper/pay/wxpay/ext/phpqrcode/phpqrcode.php';
+
 class Controller_Pay extends Zy_Core_Controller{
 
     public function index () {
@@ -28,11 +30,27 @@ class Controller_Pay extends Zy_Core_Controller{
             $this->error(405, '系统错误, 请重试');
         }
 
-        return ['qrurl' => $data];
+        return ['qrurl' => $data, 'token' => md5('maxranje' . $data . $this->_userid)];
     }
 
     public function makeimg () {
-        
+
+        if (!$this->isLogin()) {
+            $this->error(405, '清先登陆');
+        }
+
+        $qrurl = empty($this->_request['qrurl']) ? '' : strval($this->_request['qrurl']);
+        $token = empty($this->_request['token']) ? '' : strval($this->_request['token']);
+
+        if (empty($qrurl) || empty($token) || $token !=  md5('maxranje' . $qrurl . $this->_userid)) {
+            $this->error(405, 'token错误, 请重试');
+        }
+
+        if(substr($qrurl, 0, 6) == "weixin"){
+            QRcode::png($qrurl);
+        }else{
+            $this->error(405, 'token错误');
+        }
     }
 
     public function lists () {

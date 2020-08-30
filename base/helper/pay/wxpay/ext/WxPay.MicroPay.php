@@ -6,8 +6,8 @@
 * 请勿直接直接使用样例对外提供服务
 * 
 **/
-require_once "../lib/WxPay.Api.php";
-require_once "WxPay.Config.php";
+require_once SYSPATH.'/helper/pay/wxpay/lib/WxPay.Api.php';
+require_once SYSPATH.'/helper/pay/wxpay/ext/WxPay.Config.php';
 /**
  * 
  * 刷卡支付实现类

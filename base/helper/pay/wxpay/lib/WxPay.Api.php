@@ -1,7 +1,7 @@
 <?php
-require_once "WxPay.Exception.php";
-require_once "WxPay.Config.Interface.php";
-require_once "WxPay.Data.php";
+require_once SYSPATH . "/helper/pay/wxpay/lib/WxPay.Exception.php";
+require_once SYSPATH . "/helper/pay/wxpay/lib/WxPay.Config.Interface.php";
+require_once SYSPATH . "/helper/pay/wxpay/lib/WxPay.Data.php";
 
 /**
  * 

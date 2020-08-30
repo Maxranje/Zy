@@ -75,6 +75,9 @@ class Service_Pay_Order {
 
         if ($paytype == self::PAY_TYPE_WX) {
             $qrurl = $this->pay->wxpayorder($data['tradeid'], $data['productid'], $realprice);
+            if ($qrurl == false){
+                return false;
+            }
             $this->daoOrder->insertRecords($data);
 
         } else {
