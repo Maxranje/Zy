@@ -2,8 +2,8 @@
 /**
 * 2015-06-29 修复签名问题
 **/
-require_once SYSPATH.'/library/pay/wxwpay/lib/WxPay.Config.Interface.php';
-require_once SYSPATH.'/library/pay/wxwpay/lib/WxPay.Exception.php';
+require_once SYSPATH.'/library/pay/wxpay/lib/WxPay.Config.Interface.php';
+require_once SYSPATH.'/library/pay/wxpay/lib/WxPay.Exception.php';
 
 /**
  *

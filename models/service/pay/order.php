@@ -12,9 +12,9 @@ class Service_Pay_Order {
 
     private $nowtime ;
 
-    const PAY_TYPE_WX = 'WX';
+    const PAY_TYPE_WX = 'wx';
 
-    const PAY_TYPE_ALI = 'ALI';
+    const PAY_TYPE_ALI = 'ali';
 
     const PAY_TYPE = [
         self::PAY_TYPE_WX => '微信支付',
@@ -39,7 +39,7 @@ class Service_Pay_Order {
 
     public function payOrder ($userid, $courseid, $paytype) {
 
-        $user = $this->daoUser->getRecordByConds(['userid' => $userid], $this->daoUser->simpleFields);
+        $user = $this->daoUser->getRecordByConds(['userid' => $userid], $this->daoUser->arrFieldsMap);
         if (empty($user)) {
             throw new Zy_Core_Exception(405, '用户信息不存在, 请重新登陆');
         }
@@ -47,15 +47,15 @@ class Service_Pay_Order {
             throw new Zy_Core_Exception(405, '您的账户已被锁定, 请联系工作人员解封');
         }
 
-        $course = $this->daoCourse->getRecordByConds(['courseid' => $courseid], $this->daoCourse->simpleFields);
-        if (empty($course) || $course['status'] == Service_Course_Lists::COURSE_STATUS_OFLINE) {
+        $course = $this->daoCourse->getRecordByConds(['courseid' => $courseid], ['courseid', 'price', 'isvip','status']);
+        if (empty($course) || $course['status'] == Service_Course_Lists::COURSE_STATUS_OFFLINE) {
             throw new Zy_Core_Exception(405, '课程已下线');
         }
 
         $price = $course['price'];
         $realprice = $course['price'];
-        if ($course['isvip'] == 1 && $user['vip'] > 0 && $user['vip'] < 100) {
-            $realprice = (intval($course['price']) / 100 ) * intval($user['vip']);
+        if ($course['isvip'] == 1 && $user['isvip'] ==1 && $user['discount']> 0 && $user['discount'] < 100) {
+            $realprice = ceil((intval($course['price']) / 100 ) * intval($user['discount']));
         }
 
         $data = [
@@ -74,8 +74,8 @@ class Service_Pay_Order {
         ];
 
         if ($paytype == self::PAY_TYPE_WX) {
-            $this->daoOrder->insertRecords($data);
             $qrurl = $this->pay->wxpayorder($data['tradeid'], $data['productid'], $realprice);
+            $this->daoOrder->insertRecords($data);
 
         } else {
             $qrurl = $this->pay->alipayorder();

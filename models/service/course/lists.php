@@ -6,6 +6,8 @@ class Service_Course_Lists {
 
     private $daoTeacherCourse ;
 
+    private $daoTeacher;
+
     const COURSE_TYPE_LISTS = [
         ['id'    => 'toefl',    'name'  => 'TOEFL',],
         ['id'    => 'ielts',    'name'  => 'IELTS',],
@@ -20,6 +22,7 @@ class Service_Course_Lists {
 
     public function __construct() {
         $this->daoCourse = new Dao_Course_Mysql_Course () ;
+        $this->daoTeacher = new Dao_Teacher_Mysql_Teacher();
         $this->daoTeacherCourse = new Dao_Teacher_Mysql_Course();
     }
 
@@ -165,6 +168,26 @@ class Service_Course_Lists {
             return [];
         }
 
+        $teacherids = $this->daoTeacherCourse->getListByConds($arrConds, $this->daoTeacherCourse->simpleFields, NULL, NULL);
+        $teacherids = array_column($teacherids, 'teacherid');
+        $arrConds = [
+            'status = ' . self::COURSE_STATUS_ONLINE,
+            "teacherid in (" . implode(",", $teacherids) . ")",
+        ];
+
+        $teachers = $this->daoTeacher->getListByConds($arrConds, $this->daoTeacher->simpleFields);
+        $teachers = empty($teachers) ? [] : $teachers;
+        if (!empty($teachers)) {
+            foreach ($teachers as $index=>$teacher) {
+                $teachers[$index] = [
+                    "teacherid" => $teacher['teacherid'],
+                    "teachername" => $teacher["teachername"],
+                    "teacheravatar" => $teacher["teacheravatar"],
+                ];
+            }
+        }
+
+        $details['teachers']   = $teachers;
         $details['createtime'] = date('Y年m月d日', $details['createtime']);
         $details['updatetime'] = date('Y年m月d日', $details['updatetime']);
         return $details;

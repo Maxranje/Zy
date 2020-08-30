@@ -6,8 +6,8 @@
 * 请勿直接直接使用样例对外提供服务
 *
 **/
-require_once SYSPATH.'/library/pay/wxwpay/lib/WxPay.Api.php';
-require_once SYSPATH.'/library/pay/wxwpay/ext/WxPay.Config.php';
+require_once SYSPATH.'/library/pay/wxpay/lib/WxPay.Api.php';
+require_once SYSPATH.'/library/pay/wxpay/ext/WxPay.Config.php';
 
 /**
  *

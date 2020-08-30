@@ -10,13 +10,14 @@ class Controller_Lists extends Zy_Core_Controller{
 
         $pn = $pn * 20;
         
-        if (!empty($coursetype) && !isset(Service_Course_Lists::COURSE_TYPE_LISTS[$coursetype])) {
+        $coursetypelist = array_column(Service_Course_Lists::COURSE_TYPE_LISTS, 'id');
+        if (!empty($coursetype) && !in_array($coursetype, $coursetypelist)) {
             $this->error(405, "课程类型错误, 请重试");
         }
 
         $serivce = new Service_Course_Lists ();
         $total = $serivce->getCourseTotal($coursetype, $teacherid, $isrecommend);
-        $lists = $serivce->getCourseList ($coursetype, $teacherid, $isrecommend, 0, $pn, $rn);
+        $lists = $serivce->getCourseList ($coursetype, $teacherid, $isrecommend, $pn, $rn);
         $coursetype = $serivce->getCourseTypes ($coursetype);
 
         return ['coursetype' => $coursetype, 'lists' => $lists, 'total' => $total];
