@@ -75,7 +75,12 @@ class Zy_Core_Controller {
         header('Content-Type: application/json; charset=utf-8');
         header('Cache-Control: no-cache');
 
-		Zy_Helper_Log::addnotice("time: [" . Zy_Helper_Benchmark::elapsed_all() . "] request complete" );
+        Zy_Helper_Log::addnotice("time: [" . Zy_Helper_Benchmark::elapsed_all() . "] request complete" );
+        if (!empty($_REQUEST['cros_callback'])) {
+            header('Content-Type: text/javascript');
+            echo $_REQUEST['cros_callback'] . '(' . json_encode($this->_output) . ');';
+            exit;
+        }
 		echo json_encode($this->_output);
 		exit;
     }

@@ -1,5 +1,5 @@
 <?php
-require_once SYSPATH . '/helper/pay/wxpay/ext/phpqrcode/phpqrcode.php';
+require_once SYSPATH . '/helper/pay/wxpay/ext/qrcode/phpqrcode.php';
 
 class Controller_Pay extends Zy_Core_Controller{
 
@@ -48,6 +48,7 @@ class Controller_Pay extends Zy_Core_Controller{
 
         if(substr($qrurl, 0, 6) == "weixin"){
             QRcode::png($qrurl);
+            exit;
         }else{
             $this->error(405, 'token错误');
         }
@@ -65,7 +66,7 @@ class Controller_Pay extends Zy_Core_Controller{
 
         $service = new Service_Pay_Order();
         $total = $service->getOrderTotal ($this->_userid);
-        $lists = $service->getOrderLists ($this->_userid);
+        $lists = $service->getOrderLists ($this->_userid, $pn, $rn);
 
         return ['lists' => $lists, 'total' => $total];
     }
