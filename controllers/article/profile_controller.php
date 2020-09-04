@@ -1,7 +1,7 @@
 <?php
 class Controller_Profile extends Zy_Core_Controller{
 
-    public function getArticlDetails () {
+    public function getArticleDetails () {
         $articleid = empty($this->_request['articleid']) ? 0 : intval($this->_request['articleid']);
         if (empty($articleid)) {
             $this->error(405, '无法检索到相关文章');

@@ -15,6 +15,7 @@ class Service_Campus_Lists {
 
         $arrConds = [
             'status' => self::CAMPUS_STATUS_ONLINE,
+            'articleid > 0',
         ];
 
         $arrFields = $this->daoCampus->simpleFields;
@@ -34,8 +35,9 @@ class Service_Campus_Lists {
             $lists[$index] = [
                 'campusid'    => $item['campusid'],
                 'campusname'  => $item['campusname'],
-                'active'      => $item['campusid'] == $campusid ? 1 : 0,
+                'active'      => empty($campusid) ? 1 : ($item['campusid'] == $campusid ? 1 : 0),
             ];
+            $campusid = $item['campusid'];
 
             if ($lists[$index]['active'] == 1) {
                 $articleid = $item['articleid'];

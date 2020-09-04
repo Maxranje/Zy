@@ -20,11 +20,8 @@ class Controller_Lists extends Zy_Core_Controller{
         return $output;
     }
 
-    public function getCampusArticleDetails () {
+    public function getCampusArticleList () {
         $campusid = empty($this->_request['campusid']) ? 0 : intval($this->_request['campusid']);
-        if (empty($campusid)) {
-            $this->error(405, '请求错误');
-        }
 
         $serivce = new Service_Campus_Lists();
         list($articleid, $lists) = $serivce->getCampusList($campusid);
