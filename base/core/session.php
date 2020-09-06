@@ -48,6 +48,7 @@ class Zy_Core_Session  {
             return false;
         }
 
+        session_destroy();
         session_name('zyuuid');
         session_start();
         $session_id = session_id();

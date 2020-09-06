@@ -21,5 +21,18 @@ class Dao_User_Mysql_Order extends Zy_Core_Dao {
             "updatetime"  => "updatetime" , 
             "ext"  => "ext" , 
         );
+
+        $this->simpleFields = array(
+            "id"  => "id" , 
+            "userid"  => "userid" , 
+            "courseid"  => "courseid" , 
+            "status"  => "status" ,  
+            "price"  => "price" , 
+            "realprice" => "realprice",
+            "paytype"  => "paytype",
+            "createtime"  => "createtime" , 
+            "updatetime"  => "updatetime" , 
+            "ext"  => "ext" , 
+        );
     }
 }

@@ -12,6 +12,8 @@ class Service_Pay_Order {
 
     private $nowtime ;
 
+    private $tradeid ;
+
     const PAY_TYPE_WX = 'wx';
 
     const PAY_TYPE_ALI = 'ali';
@@ -58,11 +60,13 @@ class Service_Pay_Order {
             $realprice = ceil((intval($course['price']) / 100 ) * intval($user['discount']));
         }
 
+        $this->tradeid = Zy_Helper_Guid::toString() ;
+
         $data = [
             "userid"  => $userid , 
             "courseid"  => $courseid , 
             "status"  => 2, 
-            "tradeid"  => Zy_Helper_Guid::toString() , 
+            "tradeid"  => $this->tradeid,
             "productid"  => '110000202011000011000000000' . $course['courseid'] , 
             "price"  =>  $price, 
             "realprice" => $realprice,
@@ -85,6 +89,10 @@ class Service_Pay_Order {
         }
 
         return $qrurl;
+    }
+
+    public function getTradeid () {
+        return empty($this->tradeid) ? "" : $this->tradeid;
     }
 
     public function getOrderTotal ($userid) {
@@ -139,5 +147,15 @@ class Service_Pay_Order {
         }
 
         return $lists;
+    }
+
+    public function checkOrder ($userid, $tradeid) {
+        $arrConds = [
+            'userid' => $userid,
+            'tradeid' => $tradeid,
+        ];
+
+        $record = $this->daoOrder->getRecordByConds($arrConds, ['status']);
+        return empty($record['status']) || $record['status'] != 1 ? false : true;
     }
 }

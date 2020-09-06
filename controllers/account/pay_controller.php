@@ -6,7 +6,7 @@ class Controller_Pay extends Zy_Core_Controller{
     public function index () {
 
         if (!$this->isLogin()) {
-            $this->error(405, '清先登陆');
+            $this->error(405, '请先登陆');
         }
 
         $courseid = empty($this->_request['courseid']) ? 0 : intval($this->_request['courseid']);
@@ -30,19 +30,24 @@ class Controller_Pay extends Zy_Core_Controller{
             $this->error(405, '系统错误, 请重试');
         }
 
-        return ['qrurl' => $data, 'token' => md5('maxranje' . $data . $this->_userid)];
+        return [
+            'qrurl' => $data, 
+            'token' => md5('maxranje' . $data . $this->_userid), 
+            'tracecode' => $service->getTradeid()
+        ];
     }
 
     public function makeimg () {
 
         if (!$this->isLogin()) {
-            $this->error(405, '清先登陆');
+            $this->error(405, '请先登陆');
         }
 
         $qrurl = empty($this->_request['qrurl']) ? '' : strval($this->_request['qrurl']);
         $token = empty($this->_request['token']) ? '' : strval($this->_request['token']);
+        $tracecode = empty($this->_request['tracecode']) ? '' : strval($this->_request['tracecode']);
 
-        if (empty($qrurl) || empty($token) || $token !=  md5('maxranje' . $qrurl . $this->_userid)) {
+        if (empty($qrurl) || empty($tracecode) || empty($token) || $token !=  md5('maxranje' . $qrurl . $this->_userid)) {
             $this->error(405, 'token错误, 请重试');
         }
 
@@ -54,9 +59,33 @@ class Controller_Pay extends Zy_Core_Controller{
         }
     }
 
+    public function checkorder () {
+
+        if (!$this->isLogin()) {
+            $this->error(405, '请先登陆');
+        }
+
+        $qrurl = empty($this->_request['qrurl']) ? '' : strval($this->_request['qrurl']);
+        $token = empty($this->_request['token']) ? '' : strval($this->_request['token']);
+        $tracecode = empty($this->_request['tracecode']) ? '' : strval($this->_request['tracecode']);
+
+        if (empty($qrurl) || empty($tracecode) || empty($token) || $token !=  md5('maxranje' . $qrurl . $this->_userid)) {
+            $this->error(405, 'token错误, 请重试');
+        }
+
+        $service = new Service_Pay_Order();
+        $ret = $service->checkOrder ($this->_userid, $tracecode);
+
+        $data =[
+            'status' => intval($ret),
+        ];
+
+        return $data;
+    }
+
     public function lists () {
         if (!$this->isLogin()) {
-            $this->error(405, '清先登陆');
+            $this->error(405, '请先登陆');
         }
 
         $pn = empty($this->_request['pn']) ? 0 : intval($this->_request['pn']);
@@ -71,8 +100,19 @@ class Controller_Pay extends Zy_Core_Controller{
         return ['lists' => $lists, 'total' => $total];
     }
 
-    public function callback () {
+    public function wxcallbackv1 () {
+        $result = [
+            'return_code'   => 'SUCCESS',
+            'return_msg'    => 'OK',
+        ];
         
+        $return_code = empty($this->_request['return_code']) ? '' : strval($this->_request['return_code']);
+        $return_msg = empty($this->_request['return_msg']) ? '' : strval($this->_request['return_msg']);
+
+        if ($return_code != "SUCCESS") {
+            Zy_Helper_Log::warning(json_encode($this->_request));
+            
+        }
     }
 
 }
