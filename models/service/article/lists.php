@@ -62,7 +62,7 @@ class Service_Article_Lists {
                 if (empty($article['country'])) {
                     continue;
                 }
-                $abroadlist[$article['country']] = $article;
+                $abroadlist['country'][$article['country']] = $article;
             }
         }
         return $abroadlist;

@@ -158,4 +158,26 @@ class Service_Pay_Order {
         $record = $this->daoOrder->getRecordByConds($arrConds, ['status']);
         return empty($record['status']) || $record['status'] != 1 ? false : true;
     }
+
+    public function callback ($input) {
+        $out_trade_no = empty($input['out_trade_no']) ? "" : $input['out_trade_no'];
+        if (empty($out_trade_no)) {
+            return false;
+        }
+
+        $order = $this->daoOrder->getRecordByConds(['tradeid' => $out_trade_no], $this->daoOrder->arrFieldsMap);
+        if (empty($order)) {
+            return true;
+        }
+
+        $data = [
+            "status"  => 1, 
+            "openid"  => $input['openid'],
+            "banktype" => $input['bank_type'],
+            "updatetime"  => time() , 
+        ];
+
+        $ret = $this->daoOrder->updateByConds(['userid' => $order['userid'] , 'tradeid' => $out_trade_no], $data);
+        return true;
+    }
 }

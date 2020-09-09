@@ -111,8 +111,18 @@ class Controller_Pay extends Zy_Core_Controller{
 
         if ($return_code != "SUCCESS") {
             Zy_Helper_Log::warning(json_encode($this->_request));
-            
+            echo json_encode($result);
+            exit;
         }
+
+        $service = new Service_Pay_Order();
+        $data = $service->callback ($this->_request);
+        if ($data == false) {
+            $this->error('失败');
+        }
+        echo json_encode($result);
+        exit;
+        
     }
 
 }
