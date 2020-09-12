@@ -16,7 +16,7 @@ class Service_Teacher_Lists {
             'status' => self::TEACHER_STATUS_ONLINE,
         );
 
-        $arrFields = $this->daoTeacher->simpleFields;
+        $arrFields = $this->daoTeacher->arrFieldsMap;
 
         $arrAppends = array(
             'order by teacherid asc',

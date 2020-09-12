@@ -42,7 +42,10 @@ class Service_Na_Homedetails {
             'comment'       => array(), 
 
             // uri
-            'vediourl'      => '',
+            'vedio'      => array(
+                "media"   => 'https://www.w3school.com.cn/i/movie.ogg',
+                'cover'   => 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=398410923,2572619355&fm=111&gp=0.jpg', 
+            ),
         ];
 
         // banner 列表
