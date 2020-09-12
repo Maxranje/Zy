@@ -96,10 +96,13 @@ class Service_Course_Lists {
         }
 
         $courseIds = array_column($lists, 'courseid');
-        $arrAppends = [
+        $arrConds = [
             'status = ' . self::COURSE_STATUS_ONLINE,
             "courseid in (" . implode(",", $courseIds) . ")",
         ];
+        $arrAppends = array(
+            'order by courseid desc',
+        );
         $lists = $this->daoCourse->getListByConds($arrConds, $this->daoCourse->simpleFields, NULL, $arrAppends);
         if (empty($lists)) {
             return [];
