@@ -31,8 +31,9 @@ class Zy_Core_Session  {
         $userid = $this->getSessionUserId ();
         $name = $this->getSessionUserName ();
         $phone = $this->getSessionUserPhone ();
+        $type = $this->getSessionUserType ();
 
-        if (empty($userid) || empty($name) || empty($phone)) {
+        if (empty($userid) || empty($name) || empty($phone) || empty($type)) {
             return [];
         }
 
@@ -40,6 +41,7 @@ class Zy_Core_Session  {
             'userid' => $userid,
             'name'   => $name,
             'phone'  => $phone,
+            'type'   => $type,
         ];
     }
 

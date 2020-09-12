@@ -20,6 +20,10 @@ class Service_Article_Lists {
             'articletype' => $articleType,
             'status' => self::ARTICLE_STATUS_ONLINE,
         ];
+
+        if ($isrecommend == 1) {
+            $arrConds['recommend'] = 1;
+        }
         
         if ($articleType == self::ARTICLE_TYPE_ABROAD) {
             $arrFields = $this->articleDao->arrFieldsMap ;
@@ -27,11 +31,7 @@ class Service_Article_Lists {
             $arrFields = $this->articleDao->simpleFields ;
         }
 
-        if ($isrecommend == 0) {
-            $arrAppends[] = 'order by articleid desc';
-        } else {
-            $arrAppends[] = 'order by recommend desc, articleid desc';
-        }
+        $arrAppends[] = 'order by recommend desc, articleid desc';
 
         $arrAppends[] = "limit {$pn} , {$rn}";
 
@@ -50,7 +50,7 @@ class Service_Article_Lists {
     }
 
     public function getRecommendArticleList () {
-        return $this->getArticleList(self::ARTICLE_TYPE_NORMAL, 1, 0, 5);
+        return $this->getArticleList(self::ARTICLE_TYPE_NORMAL, 1, 0, 4);
     }
 
     public function getAbroadArticleList () {

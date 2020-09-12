@@ -122,11 +122,11 @@ class Service_Course_Lists {
             'status' => self::COURSE_STATUS_ONLINE
         ];
 
-        if ($isrecommend == 0) {
-            $arrAppends[] =  'order by courseid desc';
-        } else {
-            $arrAppends[] =  'order by recommend desc, courseid desc';
+        if ($isrecommend == 1) {
+            $arrConds['recommend'] = 1;
         }
+
+        $arrAppends[] =  'order by recommend desc, courseid desc';
 
         $arrAppends[] = "limit {$pn} , {$rn}";
 

@@ -43,9 +43,6 @@ class Service_Na_Homedetails {
 
             // uri
             'vediourl'      => '',
-
-            // platform
-            "platformurl"   => "",
         ];
 
         // banner 列表
@@ -54,10 +51,6 @@ class Service_Na_Homedetails {
         $arrOutput['courses']    = $this->coursePs->getCourseList ("", 0, 1, 0, 5);
         $arrOutput['teacher']    = $this->teacherPs->getTeacherList ();
         $arrOutput['comment']    = $this->commentPs->getCommentList ();
-
-        if (Zy_Core_Session::getInstance()->getSessionUserType() == Service_Account_User::USER_TYPE_INNER) {
-            $arrOutput['platformurl'] = "";
-        }
 
         return $arrOutput;
     }
