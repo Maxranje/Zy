@@ -46,6 +46,7 @@ class Service_Comment_Lists {
                 "avatar"    =>  $item["avatar"],
                 "content"   =>  $item["content"],
                 "score"     =>  $item["score"],
+                "tiem"      =>  date('Y年m月d日', $item['time']),
             ];
         }
 

@@ -37,7 +37,7 @@ class Service_Campus_Lists {
                 'campusname'  => $item['campusname'],
                 'active'      => empty($campusid) ? 1 : ($item['campusid'] == $campusid ? 1 : 0),
             ];
-            empty($item['campusid']) && $campusid = $item['campusid'];
+            empty($campusid) && $campusid = $item['campusid'];
 
             if ($lists[$index]['active'] == 1) {
                 $articleid = $item['articleid'];

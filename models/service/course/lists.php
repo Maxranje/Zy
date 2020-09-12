@@ -183,6 +183,7 @@ class Service_Course_Lists {
                     "teacherid" => $teacher['teacherid'],
                     "teachername" => $teacher["teachername"],
                     "teacheravatar" => $teacher["teacheravatar"],
+                    "teacherdesc" => $teacher['teacherdesc'],
                 ];
             }
         }
