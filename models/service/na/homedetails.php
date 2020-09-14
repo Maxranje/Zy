@@ -44,7 +44,7 @@ class Service_Na_Homedetails {
             // uri
             'vedio'      => array(
                 "media"   => 'https://www.w3school.com.cn/i/movie.ogg',
-                'cover'   => 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=398410923,2572619355&fm=111&gp=0.jpg', 
+                'cover'   => 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2067279115,186115572&fm=15&gp=0.jpg', 
             ),
         ];
 
